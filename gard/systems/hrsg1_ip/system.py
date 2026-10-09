@@ -1,18 +1,11 @@
-"""hrsg1_ip system assembly and composite boundaries."""
-import pandas as pd
-from src.base.system import SystemBook, ThermodynamicSystem
-from .components import build_components
+"""hrsg1_ip full system definition."""
 
 
-def build_system(row, streams, ports=None):
-    s = streams.connect(ports or {})
-    components = build_components(row, s, "hrsg1_ip")
-    model = SystemBook("hrsg1_ip", row)
-    model.add_many(components.components.values())
-    ip1_bank = ThermodynamicSystem("ip1_pump_bank", "composite")
-    ip1_bank.add_component(model.components["ip1_pump_split"])
-    ip1_bank.add_component(model.components["ip1_pump1"])
-    ip1_bank.add_component(model.components["ip1_pump2"])
-    ip1_bank.add_component(model.components["ip1_pump_merge"])
-    model.composites = [ip1_bank.result()]
-    return model
+SYSTEM_DEFINITIONS = {
+    "hrsg1_ip": {
+        "devices": ["ip1_pump_split", "ip1_pump1", "ip1_pump2", "ip1_pump_merge", "ip1_feed_split", "ip1_economizer", "ip1_feed_valve", "ip1_drum_evaporator", "ip1_superheater", "ip1_cold_reheat_bypass_mix", "ip1_fresh_steam_mix", "ip1_reheater1", "ip1_attemperator", "ip1_reheater2", "ip1_reheater3", "ip1_main_split", "ip1_bypass_valve", "ip1_bypass_spray", "ip1_bypass_destination"],
+        "work": "hrsg1_ip.work",
+        "heat": "hrsg1_ip.heat",
+        "heat_exergy": "hrsg1_ip.heat_exergy",
+    },
+}

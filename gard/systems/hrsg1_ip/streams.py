@@ -1,40 +1,201 @@
-"""hrsg1_ip owned streams."""
-from src.working_fluid.stream import StreamBook
+"""本系统流股定义；按需构建，输入使用 SI 单位。"""
 
-# 2. 流股
-def build_streams(row, ref_env):
-    row = dict(row)
-    row.setdefault("hrsg1.ip_drum_steam.P", row.get("hrsg1.ip_drum_pressure"))
-    row.setdefault("hrsg1.ip_drum_steam.x", 1.0)
-    streams = StreamBook(row, ref_env)
-    streams.add("hrsg1.ip_pump_in")
-    streams.add("hrsg1.ip_pump1_in")
-    streams.add("hrsg1.ip_pump2_in")
-    streams.add("hrsg1.ip_pump1_out")
-    streams.add("hrsg1.ip_pump2_out")
-    streams.add("hrsg1.ip_pump_out")
-    streams.add("hrsg1.ip_feed")
-    streams.add("hrsg1.ip_economizer_out")
-    streams.add("hrsg1.ip_to_drum")
-    streams.add("hrsg1.ip_drum_steam")
-    streams.add("hrsg1.ip_drum_drain")
-    streams.add("hrsg1.ip_fresh")
-    streams.add("hrsg1.cold_reheat")
-    streams.add("hrsg1.cold_reheat_with_bypass")
-    streams.add("hrsg1.reheat_mixed")
-    streams.add("hrsg1.rh1_out")
-    streams.add("hrsg1.rh_spray")
-    streams.add("hrsg1.rh_after_spray")
-    streams.add("hrsg1.rh2_out")
-    streams.add("hrsg1.hot_reheat")
-    streams.add("hrsg1.rh_to_st")
-    streams.add("hrsg1.ip_bypass_in")
-    streams.add("hrsg1.ip_bypass_throttled")
-    streams.add("hrsg1.ip_bypass_spray")
-    streams.add("hrsg1.ip_bypass_out")
-    streams.add("hrsg1.ip_bypass_to_heat")
-    streams.add("hrsg1.ip_bypass_to_condenser")
-    streams.add("hrsg1.ip_pump_return", "含反冲洗等其他用水，不能默认为零")
-    return streams
-
-
+STREAM_DEFINITIONS = {
+    "1号炉中压给水泵入口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump_in.P",
+        "T": "hrsg1.ip_pump_in.T",
+        "m_dot": "hrsg1.ip_pump_in.m_dot",
+    },
+    "1号炉中压给水泵1入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump1_in.P",
+        "T": "hrsg1.ip_pump1_in.T",
+        "m_dot": "hrsg1.ip_pump1_in.m_dot",
+    },
+    "1号炉中压给水泵2入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump2_in.P",
+        "T": "hrsg1.ip_pump2_in.T",
+        "m_dot": "hrsg1.ip_pump2_in.m_dot",
+    },
+    "1号炉中压给水泵1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump1_out.P",
+        "T": "hrsg1.ip_pump1_out.T",
+        "m_dot": "hrsg1.ip_pump1_out.m_dot",
+    },
+    "1号炉中压给水泵2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump2_out.P",
+        "T": "hrsg1.ip_pump2_out.T",
+        "m_dot": "hrsg1.ip_pump2_out.m_dot",
+    },
+    "1号炉低压汽包中压给水泵后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump_out.P",
+        "T": "hrsg1.ip_pump_out.T",
+        "m_dot": "hrsg1.ip_pump_out.m_dot",
+    },
+    "1号炉中压给水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_feed.P",
+        "T": "hrsg1.ip_feed.T",
+        "m_dot": "hrsg1.ip_feed.m_dot",
+    },
+    "1号炉中压省煤器出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_economizer_out.P",
+        "T": "hrsg1.ip_economizer_out.T",
+        "m_dot": "hrsg1.ip_economizer_out.m_dot",
+    },
+    "1号炉中压汽包入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_to_drum.P",
+        "T": "hrsg1.ip_to_drum.T",
+        "m_dot": "hrsg1.ip_to_drum.m_dot",
+    },
+    "1号炉中压汽包饱和蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_Px",
+        "P": "hrsg1.ip_drum_pressure",
+        "x": 1.0,
+        "m_dot": "hrsg1.ip_drum_steam.m_dot",
+    },
+    "1号炉中压汽包排污": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_drum_drain.P",
+        "T": "hrsg1.ip_drum_drain.T",
+        "m_dot": "hrsg1.ip_drum_drain.m_dot",
+    },
+    "1号炉中压新蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_fresh.P",
+        "T": "hrsg1.ip_fresh.T",
+        "m_dot": "hrsg1.ip_fresh.m_dot",
+    },
+    "1号炉冷再热蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.cold_reheat.P",
+        "T": "hrsg1.cold_reheat.T",
+        "m_dot": "hrsg1.cold_reheat.m_dot",
+    },
+    "1号炉冷再热与高旁混合蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.cold_reheat_with_bypass.P",
+        "T": "hrsg1.cold_reheat_with_bypass.T",
+        "m_dot": "hrsg1.cold_reheat_with_bypass.m_dot",
+    },
+    "1号炉再热器入口混合蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.reheat_mixed.P",
+        "T": "hrsg1.reheat_mixed.T",
+        "m_dot": "hrsg1.reheat_mixed.m_dot",
+    },
+    "1号炉再热器1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.rh1_out.P",
+        "T": "hrsg1.rh1_out.T",
+        "m_dot": "hrsg1.rh1_out.m_dot",
+    },
+    "1号炉再热减温水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.rh_spray.P",
+        "T": "hrsg1.rh_spray.T",
+        "m_dot": "hrsg1.rh_spray.m_dot",
+    },
+    "1号炉再热减温后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.rh_after_spray.P",
+        "T": "hrsg1.rh_after_spray.T",
+        "m_dot": "hrsg1.rh_after_spray.m_dot",
+    },
+    "1号炉再热器2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.rh2_out.P",
+        "T": "hrsg1.rh2_out.T",
+        "m_dot": "hrsg1.rh2_out.m_dot",
+    },
+    "1号炉热再热蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.hot_reheat.P",
+        "T": "hrsg1.hot_reheat.T",
+        "m_dot": "hrsg1.hot_reheat.m_dot",
+    },
+    "1号炉再热蒸汽至汽轮机": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.rh_to_st.P",
+        "T": "hrsg1.rh_to_st.T",
+        "m_dot": "hrsg1.rh_to_st.m_dot",
+    },
+    "1号炉中压旁路入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_bypass_in.P",
+        "T": "hrsg1.ip_bypass_in.T",
+        "m_dot": "hrsg1.ip_bypass_in.m_dot",
+    },
+    "1号炉中压旁路节流后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_bypass_throttled.P",
+        "T": "hrsg1.ip_bypass_throttled.T",
+        "m_dot": "hrsg1.ip_bypass_throttled.m_dot",
+    },
+    "1号炉中压旁路减温水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_bypass_spray.P",
+        "T": "hrsg1.ip_bypass_spray.T",
+        "m_dot": "hrsg1.ip_bypass_spray.m_dot",
+    },
+    "1号炉中压旁路出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_bypass_out.P",
+        "T": "hrsg1.ip_bypass_out.T",
+        "m_dot": "hrsg1.ip_bypass_out.m_dot",
+    },
+    "1号炉中压旁路至供热": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_bypass_to_heat.P",
+        "T": "hrsg1.ip_bypass_to_heat.T",
+        "m_dot": "hrsg1.ip_bypass_to_heat.m_dot",
+    },
+    "1号炉中压旁路至凝汽器": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_bypass_to_condenser.P",
+        "T": "hrsg1.ip_bypass_to_condenser.T",
+        "m_dot": "hrsg1.ip_bypass_to_condenser.m_dot",
+    },
+    "1号炉中压给水泵回流": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg1.ip_pump_return.P",
+        "T": "hrsg1.ip_pump_return.T",
+        "m_dot": "hrsg1.ip_pump_return.m_dot",
+        "note": "含反冲洗等其他用水，不能默认为零",
+    }
+}

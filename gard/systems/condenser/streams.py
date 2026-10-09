@@ -1,45 +1,253 @@
-"""condenser owned streams."""
-from src.working_fluid.stream import StreamBook
+"""本系统流股定义；按需构建，输入使用 SI 单位。"""
 
-# 2. 流股
-def build_streams(row, ref_env):
-    streams = StreamBook(row, ref_env)
-    streams.add("cond.hotwell")
-    streams.add("cond.pre_header_in")
-    streams.add("cond.pre_pump1_in")
-    streams.add("cond.pre_pump2_in")
-    streams.add("cond.pre_pump3_in")
-    streams.add("cond.pre_pump1_out")
-    streams.add("cond.pre_pump2_out")
-    streams.add("cond.pre_pump3_out")
-    streams.add("cond.pre_header_out")
-    streams.add("cond.pre_forward")
-    streams.add("cond.pre_recycle")
-    streams.add("cond.overflow")
-    streams.add("cond.control_in")
-    streams.add("cond.control_out")
-    streams.add("cond.control_bypass_in")
-    streams.add("cond.control_bypass_out")
-    streams.add("cond.before_drain_mix")
-    streams.add("cond.gland_heater_in")
-    streams.add("cond.gland_heater_out")
-    streams.add("cond.pump1_in")
-    streams.add("cond.pump2_in")
-    streams.add("cond.pump3_in")
-    streams.add("cond.pump1_out")
-    streams.add("cond.pump2_out")
-    streams.add("cond.pump3_out")
-    streams.add("cond.pump_header_out")
-    streams.add("cond.filter_in")
-    streams.add("cond.to_boilers")
-    streams.add("cond.main_recycle")
-    streams.add("cond.other_users", "凝结水其他用水边界未量化")
-    streams.add("cond.makeup")
-    streams.add("cond.drains")
-    streams.add(
-        "cond.vacuum_extraction",
-        "汽气混合物，需另行提供非凝结气体模型；此处仅留汽侧端口",
-    )
-    return streams
-
-
+STREAM_DEFINITIONS = {
+    "凝结水系统热井": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.hotwell.P",
+        "T": "cond.hotwell.T",
+        "m_dot": "cond.hotwell.m_dot",
+    },
+    "凝结水系统前置泵入口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_header_in.P",
+        "T": "cond.pre_header_in.T",
+        "m_dot": "cond.pre_header_in.m_dot",
+    },
+    "凝结水系统前置泵1入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_pump1_in.P",
+        "T": "cond.pre_pump1_in.T",
+        "m_dot": "cond.pre_pump1_in.m_dot",
+    },
+    "凝结水系统前置泵2入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_pump2_in.P",
+        "T": "cond.pre_pump2_in.T",
+        "m_dot": "cond.pre_pump2_in.m_dot",
+    },
+    "凝结水系统前置泵3入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_pump3_in.P",
+        "T": "cond.pre_pump3_in.T",
+        "m_dot": "cond.pre_pump3_in.m_dot",
+    },
+    "凝结水系统前置泵1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_pump1_out.P",
+        "T": "cond.pre_pump1_out.T",
+        "m_dot": "cond.pre_pump1_out.m_dot",
+    },
+    "凝结水系统前置泵2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_pump2_out.P",
+        "T": "cond.pre_pump2_out.T",
+        "m_dot": "cond.pre_pump2_out.m_dot",
+    },
+    "凝结水系统前置泵3出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_pump3_out.P",
+        "T": "cond.pre_pump3_out.T",
+        "m_dot": "cond.pre_pump3_out.m_dot",
+    },
+    "凝结水系统前置泵出口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_header_out.P",
+        "T": "cond.pre_header_out.T",
+        "m_dot": "cond.pre_header_out.m_dot",
+    },
+    "凝结水系统前置泵向前输送": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_forward.P",
+        "T": "cond.pre_forward.T",
+        "m_dot": "cond.pre_forward.m_dot",
+    },
+    "凝结水系统前置泵再循环": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pre_recycle.P",
+        "T": "cond.pre_recycle.T",
+        "m_dot": "cond.pre_recycle.m_dot",
+    },
+    "凝结水系统溢流": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.overflow.P",
+        "T": "cond.overflow.T",
+        "m_dot": "cond.overflow.m_dot",
+    },
+    "凝结水系统调节阀入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.control_in.P",
+        "T": "cond.control_in.T",
+        "m_dot": "cond.control_in.m_dot",
+    },
+    "凝结水系统调节阀出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.control_out.P",
+        "T": "cond.control_out.T",
+        "m_dot": "cond.control_out.m_dot",
+    },
+    "凝结水系统调节阀旁路入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.control_bypass_in.P",
+        "T": "cond.control_bypass_in.T",
+        "m_dot": "cond.control_bypass_in.m_dot",
+    },
+    "凝结水系统调节阀旁路出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.control_bypass_out.P",
+        "T": "cond.control_bypass_out.T",
+        "m_dot": "cond.control_bypass_out.m_dot",
+    },
+    "凝结水系统疏水混合前": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.before_drain_mix.P",
+        "T": "cond.before_drain_mix.T",
+        "m_dot": "cond.before_drain_mix.m_dot",
+    },
+    "凝结水系统轴封加热器入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.gland_heater_in.P",
+        "T": "cond.gland_heater_in.T",
+        "m_dot": "cond.gland_heater_in.m_dot",
+    },
+    "凝结水系统轴封加热器出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.gland_heater_out.P",
+        "T": "cond.gland_heater_out.T",
+        "m_dot": "cond.gland_heater_out.m_dot",
+    },
+    "凝结水系统凝结水泵1入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump1_in.P",
+        "T": "cond.pump1_in.T",
+        "m_dot": "cond.pump1_in.m_dot",
+    },
+    "凝结水系统凝结水泵2入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump2_in.P",
+        "T": "cond.pump2_in.T",
+        "m_dot": "cond.pump2_in.m_dot",
+    },
+    "凝结水系统凝结水泵3入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump3_in.P",
+        "T": "cond.pump3_in.T",
+        "m_dot": "cond.pump3_in.m_dot",
+    },
+    "凝结水系统凝结水泵1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump1_out.P",
+        "T": "cond.pump1_out.T",
+        "m_dot": "cond.pump1_out.m_dot",
+    },
+    "凝结水系统凝结水泵2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump2_out.P",
+        "T": "cond.pump2_out.T",
+        "m_dot": "cond.pump2_out.m_dot",
+    },
+    "凝结水系统凝结水泵3出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump3_out.P",
+        "T": "cond.pump3_out.T",
+        "m_dot": "cond.pump3_out.m_dot",
+    },
+    "凝结水系统凝结水泵出口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.pump_header_out.P",
+        "T": "cond.pump_header_out.T",
+        "m_dot": "cond.pump_header_out.m_dot",
+    },
+    "凝结水系统除铁过滤器入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.filter_in.P",
+        "T": "cond.filter_in.T",
+        "m_dot": "cond.filter_in.m_dot",
+    },
+    "凝结水系统至锅炉母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.to_boilers.P",
+        "T": "cond.to_boilers.T",
+        "m_dot": "cond.to_boilers.m_dot",
+    },
+    "凝结水系统主再循环": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.main_recycle.P",
+        "T": "cond.main_recycle.T",
+        "m_dot": "cond.main_recycle.m_dot",
+    },
+    "凝结水系统其他用户": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.other_users.P",
+        "T": "cond.other_users.T",
+        "m_dot": "cond.other_users.m_dot",
+        "note": "凝结水其他用水边界未量化",
+    },
+    "凝结水系统补水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.makeup.P",
+        "T": "cond.makeup.T",
+        "m_dot": "cond.makeup.m_dot",
+    },
+    "凝结水系统疏水汇集": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.drains.P",
+        "T": "cond.drains.T",
+        "m_dot": "cond.drains.m_dot",
+    },
+    "凝结水系统真空抽气边界": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.vacuum_extraction.P",
+        "T": "cond.vacuum_extraction.T",
+        "m_dot": "cond.vacuum_extraction.m_dot",
+        "note": "汽气混合物，需另行提供非凝结气体模型；此处仅留汽侧端口",
+    },
+    "凝结水系统轴封加热器汽侧入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.gland_steam.P",
+        "T": "cond.gland_steam.T",
+        "m_dot": "cond.gland_steam.m_dot",
+        "note": "外部汽侧入口；上游来源与连接待核对",
+    },
+    "凝结水系统轴封加热器疏水出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "cond.gland_drain.P",
+        "T": "cond.gland_drain.T",
+        "m_dot": "cond.gland_drain.m_dot",
+        "note": "外部疏水出口；下游去向与连接待核对",
+    },
+}

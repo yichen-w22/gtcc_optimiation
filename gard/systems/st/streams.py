@@ -1,20 +1,83 @@
-"""st owned streams."""
-from src.working_fluid.stream import StreamBook
+"""本系统流股定义；按需构建，输入使用 SI 单位。"""
 
-# 2. 流股
-def build_streams(row, ref_env):
-    streams = StreamBook(row, ref_env)
-    streams.add("st.hp_in")
-    streams.add("st.hp_out")
-    streams.add("st.ip_in")
-    streams.add("st.ip_out")
-    streams.add("st.ip_to_lp")
-    streams.add("st.heat_extraction")
-    streams.add("st.lp_admission")
-    streams.add("st.lp_in")
-    streams.add("st.lp_out", "湿蒸汽需要实测/独立推导 h 或 x；不默认 x=0.97")
-    streams.add("st.gland_leakage", "高压缸轴封等支路合计；不能默认为零")
-    streams.add("st.ip_leakage")
-    return streams
-
-
+STREAM_DEFINITIONS = {
+    "汽轮机高压缸入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.hp_in.P",
+        "T": "st.hp_in.T",
+        "m_dot": "st.hp_in.m_dot",
+    },
+    "汽轮机高压缸出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.hp_out.P",
+        "T": "st.hp_out.T",
+        "m_dot": "st.hp_out.m_dot",
+    },
+    "汽轮机中压缸入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.ip_in.P",
+        "T": "st.ip_in.T",
+        "m_dot": "st.ip_in.m_dot",
+    },
+    "汽轮机中压缸出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.ip_out.P",
+        "T": "st.ip_out.T",
+        "m_dot": "st.ip_out.m_dot",
+    },
+    "汽轮机中压至低压连通管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.ip_to_lp.P",
+        "T": "st.ip_to_lp.T",
+        "m_dot": "st.ip_to_lp.m_dot",
+    },
+    "汽轮机供热抽汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.heat_extraction.P",
+        "T": "st.heat_extraction.T",
+        "m_dot": "st.heat_extraction.m_dot",
+    },
+    "汽轮机低压补汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.lp_admission.P",
+        "T": "st.lp_admission.T",
+        "m_dot": "st.lp_admission.m_dot",
+    },
+    "汽轮机低压缸入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.lp_in.P",
+        "T": "st.lp_in.T",
+        "m_dot": "st.lp_in.m_dot",
+    },
+    "汽轮机低压缸排汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.lp_out.P",
+        "T": "st.lp_out.T",
+        "m_dot": "st.lp_out.m_dot",
+        "note": "湿蒸汽需要实测/独立推导 h 或 x；不默认 x=0.97",
+    },
+    "汽轮机轴封漏汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.gland_leakage.P",
+        "T": "st.gland_leakage.T",
+        "m_dot": "st.gland_leakage.m_dot",
+        "note": "高压缸轴封等支路合计；不能默认为零",
+    },
+    "汽轮机中压缸漏汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "st.ip_leakage.P",
+        "T": "st.ip_leakage.T",
+        "m_dot": "st.ip_leakage.m_dot",
+    },
+}

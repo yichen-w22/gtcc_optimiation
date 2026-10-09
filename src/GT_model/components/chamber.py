@@ -1,76 +1,81 @@
-from functools import cached_property
-
-from dataclasses import dataclass
-
-from src.base.converter import EnergyConverter
+from src.base.device import Device
 from src.working_fluid.gas import GasComposition, GasState, calc_fuel_lhv
 
 
-@dataclass
-class Chamber(EnergyConverter):
-    inlet_air: GasState | None = None
-    inlet_fuel: GasState | None = None
-    outlet_composition: GasComposition | None = None
-    total_pressure_recovery: float = 0.95
-    combustion_efficiency: float = 0.99
-    bleeding: GasState | None = None
+class Chamber(Device):
+    def __init__(
+        self, name, inlet_air=None, inlet_fuel=None, outlet_composition=None,
+        total_pressure_recovery=None, combustion_efficiency=0.99,
+        bleeding=None, fuel_chemical_exergy=None,
+    ):
+        self.name = name
+        self.inlet_air = inlet_air
+        self.inlet_fuel = inlet_fuel
+        self.outlet_composition = outlet_composition
+        self.total_pressure_recovery = total_pressure_recovery
+        self.combustion_efficiency = combustion_efficiency
+        self.bleeding = bleeding
+        self.fuel_chemical_exergy = fuel_chemical_exergy
 
-    @cached_property
-    def fuel_lhv(self) -> float | None:
-        # 空组分 molar_mass 为 0 会导致除零；按缺失传播为 None。
+    @property
+    def inlets(self):
+        streams = [
+            self.inlet_air or GasState(name=f"{self.name}_air"),
+            self.inlet_fuel or GasState(name=f"{self.name}_fuel"),
+        ]
+        if self.bleeding is not None:
+            streams.append(self.bleeding)
+        return streams
+
+    @property
+    def outlets(self):
+        return [self.state_3_c]
+
+    @property
+    def fuel_lhv(self):
+        if self.inlet_fuel is None:
+            return None
         try:
             return calc_fuel_lhv(self.inlet_fuel.composition)
-        except Exception:
+        except (ValueError, AttributeError):
             return None
 
-    @cached_property
-    def released_heat(self) -> float | None:
-        return (self.combustion_efficiency * self.fuel_lhv * self.inlet_fuel.m_dot)
+    @property
+    def released_heat(self):
+        return self.combustion_efficiency * (self.fuel_lhv * getattr(self.inlet_fuel, 'm_dot', None))
 
-    @cached_property
-    def state_3(self) -> GasState: # 燃烧室出口状态
-        m_air = self.inlet_air.m_dot
-        m_fuel = self.inlet_fuel.m_dot
-        m_out = (m_air + m_fuel)
-        h_3 = (sum([
-                (m_air * self.inlet_air.h),
-                (m_fuel * self.inlet_fuel.h),
-                self.released_heat,
-            ]) / m_out)
-        p_3 = (self.inlet_air.P * self.total_pressure_recovery)
+    @property
+    def energy_source(self):
+        # Effective released chemical energy; unreleased fuel energy is excluded.
+        return self.released_heat
 
+    @property
+    def exergy_source(self):
+        # Physical stream exergy alone cannot close a combustion exergy balance.
+        return self.fuel_chemical_exergy * getattr(self.inlet_fuel, 'm_dot', None)
+
+    def _outlet_state(self, include_bleed):
+        streams = self.inlets if include_bleed else self.inlets[:2]
+        m_out = (sum((s.m_dot for s in streams)))
+        h_out = (sum([*(s.energy_flow for s in streams), self.released_heat]) / m_out)
+        pressure = (getattr(self.inlet_air, 'P', None) * self.total_pressure_recovery)
         return GasState.from_Ph(
-            P=p_3,
-            h=h_3,
+            P=pressure,
+            h=h_out,
             m_dot=m_out,
             composition=self.outlet_composition,
-            name=f"{self.name}_state_3",
-            ref=self.inlet_air.ref,
+            name=f"{self.name}_state_3" + ("_c" if include_bleed else ""),
+            ref=getattr(self.inlet_air, "ref", None),
         )
 
-    @cached_property
-    def state_3_c(self) -> GasState: # 等效冷却后的燃烧室出口/透平入口状态
-        m_air = self.inlet_air.m_dot
-        m_fuel = self.inlet_fuel.m_dot
-        m_bleeding = self.bleeding.m_dot
-        m_out_c = (m_air + m_fuel + m_bleeding)
-        h_3_c = (sum([
-                (m_air * self.inlet_air.h),
-                (m_fuel * self.inlet_fuel.h),
-                (m_bleeding * self.bleeding.h),
-                self.released_heat,
-            ]) / m_out_c)
-        p_3_c = (self.inlet_air.P * self.total_pressure_recovery)
+    @property
+    def state_3(self):
+        return self._outlet_state(False)
 
-        return GasState.from_Ph(
-            P=p_3_c,
-            h=h_3_c,
-            m_dot=m_out_c,
-            composition=self.outlet_composition,
-            name=f"{self.name}_state_3_c",
-            ref=self.inlet_air.ref,
-        )
+    @property
+    def state_3_c(self):
+        return self._outlet_state(True)
 
-    @cached_property
-    def pressure_loss(self) -> float | None:
-        return (self.inlet_air.P - self.state_3.P)
+    @property
+    def pressure_loss(self):
+        return getattr(self.inlet_air, 'P', None) - self.state_3.P

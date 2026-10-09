@@ -1,99 +1,131 @@
-from functools import cached_property
-
-from dataclasses import dataclass, field
-from typing import Optional
-
+from src.base.system import System
 from src.GT_model.components.chamber import Chamber
 from src.GT_model.components.compressor import Compressor
 from src.GT_model.components.turbine import Turbine
 from src.GT_model.config import GTModelConfig
-from src.working_fluid.gas import GasState
 
 
-@dataclass
-class GTModel:
-    state_1: GasState | None = None
-    compressor_outlet: GasState | None = None
-    fuel: GasState | None = None
-    state_4: GasState | None = None
-    config: GTModelConfig = field(default_factory=GTModelConfig)
-    actual_power: Optional[float] = None
+class GTModel(System):
+    """Gas-turbine system with a fresh connected device graph per evaluation."""
 
-    # ── 组件 ──
+    def __init__(
+        self,
+        state_1=None,
+        compressor_outlet=None,
+        fuel=None,
+        state_4=None,
+        config=None,
+        actual_power=None,
+        *,
+        total_pressure_recovery: float | None = None,
+        name="GT",
+        fuel_chemical_exergy=None,
+        hrsg_outlet=None,
+    ):
+        self.name = name
+        self.state_1 = state_1
+        self.compressor_outlet = compressor_outlet
+        self.fuel = fuel
+        self.state_4 = state_4
+        self.config = config if config is not None else GTModelConfig()
+        self.actual_power = actual_power
+        self.total_pressure_recovery = total_pressure_recovery
+        self.fuel_chemical_exergy = fuel_chemical_exergy
+        self.hrsg_outlet = hrsg_outlet
 
-    @cached_property
-    def compressor(self) -> Compressor:
-        return Compressor(
-            name="compressor",
+    @property
+    def hrsg_inlet(self):
+        return self.state_4
+
+    @property
+    def work(self):
+        return self.actual_power if self.actual_power is not None else self.net_power
+
+    def energy_balance(self):
+        # 流股焓只包含显热，燃料有效化学释热单独计入。
+        return super().energy_balance() + self.chamber.energy_source
+
+    def exergy_balance(self):
+        # 流股只计算物理火用，燃料化学火用单独计入。
+        return super().exergy_balance() + self.chamber.exergy_source
+
+    @property
+    def devices(self):
+        compressor = Compressor(
+            name=f"{self.name}_compressor",
             inlet_gas=self.state_1,
             outlet_gas=self.compressor_outlet,
             bleeding_mass_fraction=self.config.compressor_bleeding_mass_fraction,
             bleeding_pressure_fraction=self.config.compressor_bleeding_pressure_fraction,
             bleeding_energy_fraction=self.config.compressor_bleeding_energy_fraction,
         )
-
-    @cached_property
-    def chamber(self) -> Chamber:
-        return Chamber(
-            name="chamber",
-            inlet_air=self.compressor.state_2,
+        chamber = Chamber(
+            name=f"{self.name}_chamber",
+            inlet_air=compressor.state_2,
             inlet_fuel=self.fuel,
-            outlet_composition=self.state_4.composition,
-            total_pressure_recovery=self.config.total_pressure_recovery,
+            outlet_composition=getattr(self.state_4, "composition", None),
+            total_pressure_recovery=self.total_pressure_recovery,
             combustion_efficiency=self.config.combustion_efficiency,
-            bleeding=self.compressor.bleeding,
+            bleeding=compressor.bleeding,
+            fuel_chemical_exergy=self.fuel_chemical_exergy,
         )
-
-    @cached_property
-    def turbine(self) -> Turbine:
-        return Turbine(
-            name="turbine",
-            state_3_c=self.chamber.state_3_c,
+        turbine = Turbine(
+            name=f"{self.name}_turbine",
+            state_3_c=chamber.state_3_c,
             state_4=self.state_4,
         )
+        return [compressor, chamber, turbine]
 
-    # ── 状态点（state_1, state_4 为构造参数） ──
+    @property
+    def compressor(self):
+        return self.devices[0]
 
-    @cached_property
-    def state_2(self) -> GasState:
+    @property
+    def chamber(self):
+        return self.devices[1]
+
+    @property
+    def turbine(self):
+        return self.devices[2]
+
+    @property
+    def state_2(self):
         return self.compressor.state_2
 
-    @cached_property
-    def state_3(self) -> GasState:
+    @property
+    def state_3(self):
         return self.chamber.state_3
 
-    @cached_property
-    def state_3_c(self) -> GasState:
+    @property
+    def state_3_c(self):
         return self.chamber.state_3_c
 
-    # ── 性能指标 ──
+    @property
+    def flue_gas_flow(self):
+        return getattr(self.state_4, "m_dot", None)
 
-    @cached_property
-    def flue_gas_flow(self) -> Optional[float]:
-        return self.state_4.m_dot
+    @property
+    def net_power(self):
+        compressor, _, turbine = self.devices
+        return turbine.power - compressor.power
 
-    @cached_property
-    def net_power(self) -> Optional[float]:
-        return (self.turbine.power - self.compressor.power)
+    @property
+    def fuel_energy(self):
+        return self.chamber.fuel_lhv * getattr(self.fuel, 'm_dot', None)
 
-    @cached_property
-    def fuel_energy(self) -> Optional[float]:
-        if self.fuel is None:
-            return None
-        return (self.chamber.fuel_lhv * self.fuel.m_dot)
+    @property
+    def thermal_efficiency(self):
+        return self.actual_power / self.fuel_energy
 
-    @cached_property
-    def thermal_efficiency(self) -> Optional[float]:
-        return (self.actual_power / self.fuel_energy)
+    @property
+    def generation_power_share(self):
+        return self.thermal_efficiency
 
-    @cached_property
-    def generation_power_share(self) -> Optional[float]:
-        return (self.actual_power / self.fuel_energy)
+    @property
+    def compressor_power_share(self):
+        return self.compressor.power / self.fuel_energy
 
-    @cached_property
-    def compressor_power_share(self) -> Optional[float]:
-        return (self.compressor.power / self.fuel_energy)
-
-    @cached_property
-    def exhaust_loss_share(self) -> Optional[float]:
-        return (1 - self.generation_power_share)
+    @property
+    def exhaust_loss_share(self):
+        # Remaining fuel input also contains other losses; retained for compatibility.
+        return 1.0 - self.generation_power_share

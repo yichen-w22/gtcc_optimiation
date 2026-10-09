@@ -1,18 +1,11 @@
-"""hrsg2_lp system assembly and composite boundaries."""
-import pandas as pd
-from src.base.system import SystemBook, ThermodynamicSystem
-from .components import build_components
+"""hrsg2_lp full system definition."""
 
 
-def build_system(row, streams, ports=None):
-    s = streams.connect(ports or {})
-    components = build_components(row, s, "hrsg2_lp")
-    model = SystemBook("hrsg2_lp", row)
-    model.add_many(components.components.values())
-    lp2_bank = ThermodynamicSystem("lp2_pump_bank", "composite")
-    lp2_bank.add_component(model.components["lp2_pump_split"])
-    lp2_bank.add_component(model.components["lp2_pump1"])
-    lp2_bank.add_component(model.components["lp2_pump2"])
-    lp2_bank.add_component(model.components["lp2_pump_merge"])
-    model.composites = [lp2_bank.result()]
-    return model
+SYSTEM_DEFINITIONS = {
+    "hrsg2_lp": {
+        "devices": ["lp2_heat_recovery_return", "lp2_feed_split", "lp2_recycle_mix", "lp2_economizer", "lp2_recycle_split", "lp2_pump_split", "lp2_pump1", "lp2_pump2", "lp2_pump_merge", "lp2_bypass_mix", "lp2_drum_feed_valve", "lp2_drum_evaporator", "lp2_water_split", "lp2_superheater", "lp2_main_split", "lp2_bypass_valve", "lp2_bypass_spray"],
+        "work": "hrsg2_lp.work",
+        "heat": "hrsg2_lp.heat",
+        "heat_exergy": "hrsg2_lp.heat_exergy",
+    },
+}

@@ -1,37 +1,180 @@
-"""hrsg2_hp owned streams."""
-from src.working_fluid.stream import StreamBook
+"""本系统流股定义；按需构建，输入使用 SI 单位。"""
 
-# 2. 流股
-def build_streams(row, ref_env):
-    row = dict(row)
-    row.setdefault("hrsg2.hp_drum_steam.P", row.get("hrsg2.hp_drum_pressure"))
-    row.setdefault("hrsg2.hp_drum_steam.x", 1.0)
-    streams = StreamBook(row, ref_env)
-    streams.add("hrsg2.hp_pump_in")
-    streams.add("hrsg2.hp_pump1_in")
-    streams.add("hrsg2.hp_pump2_in")
-    streams.add("hrsg2.hp_pump1_out")
-    streams.add("hrsg2.hp_pump2_out")
-    streams.add("hrsg2.hp_pump_out")
-    streams.add("hrsg2.hp_feed")
-    streams.add("hrsg2.hp_economizer1_out")
-    streams.add("hrsg2.hp_economizer2_out")
-    streams.add("hrsg2.hp_economizer_in")
-    streams.add("hrsg2.hp_to_drum")
-    streams.add("hrsg2.hp_drum_steam")
-    streams.add("hrsg2.hp_drum_drain")
-    streams.add("hrsg2.hp_sh1_out")
-    streams.add("hrsg2.hp_before_spray")
-    streams.add("hrsg2.hp_spray")
-    streams.add("hrsg2.hp_after_spray")
-    streams.add("hrsg2.hp_sh2_out")
-    streams.add("hrsg2.hp_main")
-    streams.add("hrsg2.hp_to_st")
-    streams.add("hrsg2.hp_bypass_in")
-    streams.add("hrsg2.hp_bypass_throttled")
-    streams.add("hrsg2.hp_bypass_spray")
-    streams.add("hrsg2.hp_bypass_out")
-    streams.add("hrsg2.hp_pump_return", "泵回流去向和流量未闭合前作为待核对边界")
-    return streams
-
-
+STREAM_DEFINITIONS = {
+    "2号炉高压给水泵入口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump_in.P",
+        "T": "hrsg2.hp_pump_in.T",
+        "m_dot": "hrsg2.hp_pump_in.m_dot",
+    },
+    "2号炉高压给水泵1入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump1_in.P",
+        "T": "hrsg2.hp_pump1_in.T",
+        "m_dot": "hrsg2.hp_pump1_in.m_dot",
+    },
+    "2号炉高压给水泵2入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump2_in.P",
+        "T": "hrsg2.hp_pump2_in.T",
+        "m_dot": "hrsg2.hp_pump2_in.m_dot",
+    },
+    "2号炉高压给水泵1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump1_out.P",
+        "T": "hrsg2.hp_pump1_out.T",
+        "m_dot": "hrsg2.hp_pump1_out.m_dot",
+    },
+    "2号炉高压给水泵2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump2_out.P",
+        "T": "hrsg2.hp_pump2_out.T",
+        "m_dot": "hrsg2.hp_pump2_out.m_dot",
+    },
+    "2号炉低压汽包高压给水泵后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump_out.P",
+        "T": "hrsg2.hp_pump_out.T",
+        "m_dot": "hrsg2.hp_pump_out.m_dot",
+    },
+    "2号炉高压给水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_feed.P",
+        "T": "hrsg2.hp_feed.T",
+        "m_dot": "hrsg2.hp_feed.m_dot",
+    },
+    "2号炉高压省煤器1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_economizer1_out.P",
+        "T": "hrsg2.hp_economizer1_out.T",
+        "m_dot": "hrsg2.hp_economizer1_out.m_dot",
+    },
+    "2号炉高压省煤器2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_economizer2_out.P",
+        "T": "hrsg2.hp_economizer2_out.T",
+        "m_dot": "hrsg2.hp_economizer2_out.m_dot",
+    },
+    "2号炉高压省煤器入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_economizer_in.P",
+        "T": "hrsg2.hp_economizer_in.T",
+        "m_dot": "hrsg2.hp_economizer_in.m_dot",
+    },
+    "2号炉高压汽包入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_to_drum.P",
+        "T": "hrsg2.hp_to_drum.T",
+        "m_dot": "hrsg2.hp_to_drum.m_dot",
+    },
+    "2号炉高压汽包饱和蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_Px",
+        "P": "hrsg2.hp_drum_pressure",
+        "x": 1.0,
+        "m_dot": "hrsg2.hp_drum_steam.m_dot",
+    },
+    "2号炉高压汽包排污": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_drum_drain.P",
+        "T": "hrsg2.hp_drum_drain.T",
+        "m_dot": "hrsg2.hp_drum_drain.m_dot",
+    },
+    "2号炉高压过热器1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_sh1_out.P",
+        "T": "hrsg2.hp_sh1_out.T",
+        "m_dot": "hrsg2.hp_sh1_out.m_dot",
+    },
+    "2号炉高压减温前蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_before_spray.P",
+        "T": "hrsg2.hp_before_spray.T",
+        "m_dot": "hrsg2.hp_before_spray.m_dot",
+    },
+    "2号炉高压减温水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_spray.P",
+        "T": "hrsg2.hp_spray.T",
+        "m_dot": "hrsg2.hp_spray.m_dot",
+    },
+    "2号炉高压减温后蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_after_spray.P",
+        "T": "hrsg2.hp_after_spray.T",
+        "m_dot": "hrsg2.hp_after_spray.m_dot",
+    },
+    "2号炉高压过热器2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_sh2_out.P",
+        "T": "hrsg2.hp_sh2_out.T",
+        "m_dot": "hrsg2.hp_sh2_out.m_dot",
+    },
+    "2号炉高压主蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_main.P",
+        "T": "hrsg2.hp_main.T",
+        "m_dot": "hrsg2.hp_main.m_dot",
+    },
+    "2号炉高压蒸汽至汽轮机": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_to_st.P",
+        "T": "hrsg2.hp_to_st.T",
+        "m_dot": "hrsg2.hp_to_st.m_dot",
+    },
+    "2号炉高压旁路入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_bypass_in.P",
+        "T": "hrsg2.hp_bypass_in.T",
+        "m_dot": "hrsg2.hp_bypass_in.m_dot",
+    },
+    "2号炉高压旁路节流后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_bypass_throttled.P",
+        "T": "hrsg2.hp_bypass_throttled.T",
+        "m_dot": "hrsg2.hp_bypass_throttled.m_dot",
+    },
+    "2号炉高压旁路减温水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_bypass_spray.P",
+        "T": "hrsg2.hp_bypass_spray.T",
+        "m_dot": "hrsg2.hp_bypass_spray.m_dot",
+    },
+    "2号炉高压旁路出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_bypass_out.P",
+        "T": "hrsg2.hp_bypass_out.T",
+        "m_dot": "hrsg2.hp_bypass_out.m_dot",
+    },
+    "2号炉高压给水泵回流": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.hp_pump_return.P",
+        "T": "hrsg2.hp_pump_return.T",
+        "m_dot": "hrsg2.hp_pump_return.m_dot",
+        "note": "泵回流去向和流量未闭合前作为待核对边界",
+    },
+}

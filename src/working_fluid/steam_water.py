@@ -1,11 +1,10 @@
 import math
 from dataclasses import dataclass
-from functools import cached_property
 from typing import Optional
 
 from iapws import IAPWS97
 
-from src.working_fluid.fluid import FlowState
+from src.base.stream import FlowState
 
 _T_FREEZE = 273.15
 _CP_ICE = 2090.0       # J/(kg·K)
@@ -44,6 +43,11 @@ class WaterSteamState(FlowState):
             h, s = _ice_h_s(T)
             return cls(name=name, T=T, P=P, m_dot=m_dot, h=h, s=s, x=0.0, ref=ref)
         try:
+            if 611.657 <= P < 22.064e6:
+                saturated = IAPWS97(P=P / 1e6, x=0)
+                if math.isclose(T, saturated.T, abs_tol=1e-5, rel_tol=0):
+                    state = _invalid_state(cls, P=P, T=T, m_dot=m_dot, name=name, ref=ref)
+                    return state
             w = IAPWS97(P=P / 1e6, T=T)
         except Exception:
             return _invalid_state(cls, P=P, T=T, m_dot=m_dot, name=name, ref=ref)
@@ -169,7 +173,7 @@ class WaterSteamState(FlowState):
             ref=ref,
         )
 
-    @cached_property
+    @property
     def exergy(self):
         if self.ref is None or (self.h is None or isinstance(self.h, float) and math.isnan(self.h)) or (self.s is None or isinstance(self.s, float) and math.isnan(self.s)):
             return None
@@ -213,7 +217,7 @@ def infer_m2_by_enthalpy_balance(
     if any((state.h is None or isinstance(state.h, float) and math.isnan(state.h)) for state in (state1, state2, state3)):
         return None, None
 
-    numerator = (m1 * state1.h - state3.h + q_dot)
+    numerator = (m1 * (state1.h - state3.h) + q_dot)
     denominator = (state3.h - state2.h)
 
     if (numerator is None or isinstance(numerator, float) and math.isnan(numerator)) or (denominator is None or isinstance(denominator, float) and math.isnan(denominator)):

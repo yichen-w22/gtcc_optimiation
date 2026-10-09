@@ -7,7 +7,7 @@ from typing import Dict, Optional
 
 import CoolProp.CoolProp as CP
 
-from src.working_fluid.fluid import FlowState
+from src.base.stream import FlowState
 
 R_UNIVERSAL = 8.314462618
 T_REF = 298.15
@@ -326,7 +326,7 @@ def solve_temperature_from_property(
         T_mid = 0.5 * (T_low + T_high)
         value_mid = calc_property(T_mid)
 
-        if abs(value_mid - target_value) <= tol * target_value:
+        if abs(value_mid - target_value) <= tol * max(abs(target_value), 1.0):
             return T_mid
         if value_mid < target_value:
             T_low = T_mid
@@ -390,7 +390,7 @@ class GasState(FlowState):
             return cls(name=name, P=P, m_dot=m_dot, h=None, s=s, ref=ref, composition=composition)
         return cls.from_TP(T, P, m_dot=m_dot, composition=composition, name=name, ref=ref)
 
-    @cached_property
+    @property
     def exergy(self):
         if self.h is None or self.s is None or self.ref is None:
             return None

@@ -1,41 +1,194 @@
-"""hrsg2_lp owned streams."""
-from src.working_fluid.stream import StreamBook
+"""本系统流股定义；按需构建，输入使用 SI 单位。"""
 
-# 2. 流股
-def build_streams(row, ref_env):
-    row = dict(row)
-    row.setdefault("hrsg2.lp_saturated_steam.P", row.get("hrsg2.lp_drum_pressure"))
-    row.setdefault("hrsg2.lp_saturated_steam.x", 1.0)
-    row.setdefault("hrsg2.lp_water.P", row.get("hrsg2.lp_drum_pressure"))
-    row.setdefault("hrsg2.lp_water.x", 0.0)
-    streams = StreamBook(row, ref_env)
-    streams.add("hrsg2.lp_feed")
-    streams.add("hrsg2.lp_economizer_in")
-    streams.add("hrsg2.lp_economizer_out")
-    streams.add("hrsg2.lp_economizer_bypass")
-    streams.add("hrsg2.lp_feed_to_mix")
-    streams.add("hrsg2.lp_feed_mixed")
-    streams.add("hrsg2.lp_drum_valve_in")
-    streams.add("hrsg2.lp_to_drum")
-    streams.add("hrsg2.lp_to_heat_recovery")
-    streams.add("hrsg2.lp_from_heat_recovery")
-    streams.add("hrsg2.lp_feed_after_recovery")
-    streams.add("hrsg2.lp_recirc_in")
-    streams.add("hrsg2.lp_recirc_pump1_in")
-    streams.add("hrsg2.lp_recirc_pump2_in")
-    streams.add("hrsg2.lp_recirc_pump1_out")
-    streams.add("hrsg2.lp_recirc_pump2_out")
-    streams.add("hrsg2.lp_recirc_out")
-    streams.add("hrsg2.lp_water")
-    streams.add("hrsg2.lp_saturated_steam", "汽包蒸汽出口；不采用饱和液体代替")
-    streams.add("hrsg2.lp_drum_drain")
-    streams.add("hrsg2.lp_main")
-    streams.add("hrsg2.lp_to_st")
-    streams.add("hrsg2.lp_to_heat")
-    streams.add("hrsg2.lp_bypass_in")
-    streams.add("hrsg2.lp_bypass_throttled")
-    streams.add("hrsg2.lp_bypass_spray")
-    streams.add("hrsg2.lp_bypass_out")
-    return streams
-
-
+STREAM_DEFINITIONS = {
+    "2号炉低压给水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_feed.P",
+        "T": "hrsg2.lp_feed.T",
+        "m_dot": "hrsg2.lp_feed.m_dot",
+    },
+    "2号炉低压省煤器入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_economizer_in.P",
+        "T": "hrsg2.lp_economizer_in.T",
+        "m_dot": "hrsg2.lp_economizer_in.m_dot",
+    },
+    "2号炉低压省煤器出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_economizer_out.P",
+        "T": "hrsg2.lp_economizer_out.T",
+        "m_dot": "hrsg2.lp_economizer_out.m_dot",
+    },
+    "2号炉低压省煤器旁路": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_economizer_bypass.P",
+        "T": "hrsg2.lp_economizer_bypass.T",
+        "m_dot": "hrsg2.lp_economizer_bypass.m_dot",
+    },
+    "2号炉低压给水至混合点": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_feed_to_mix.P",
+        "T": "hrsg2.lp_feed_to_mix.T",
+        "m_dot": "hrsg2.lp_feed_to_mix.m_dot",
+    },
+    "2号炉低压给水混合后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_feed_mixed.P",
+        "T": "hrsg2.lp_feed_mixed.T",
+        "m_dot": "hrsg2.lp_feed_mixed.m_dot",
+    },
+    "2号炉低压汽包调节阀前": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_drum_valve_in.P",
+        "T": "hrsg2.lp_drum_valve_in.T",
+        "m_dot": "hrsg2.lp_drum_valve_in.m_dot",
+    },
+    "2号炉低压汽包入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_to_drum.P",
+        "T": "hrsg2.lp_to_drum.T",
+        "m_dot": "hrsg2.lp_to_drum.m_dot",
+    },
+    "2号炉低压水至余热回收": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_to_heat_recovery.P",
+        "T": "hrsg2.lp_to_heat_recovery.T",
+        "m_dot": "hrsg2.lp_to_heat_recovery.m_dot",
+    },
+    "2号炉余热回收返回低压水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_from_heat_recovery.P",
+        "T": "hrsg2.lp_from_heat_recovery.T",
+        "m_dot": "hrsg2.lp_from_heat_recovery.m_dot",
+    },
+    "2号炉低压给水余热回收后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_feed_after_recovery.P",
+        "T": "hrsg2.lp_feed_after_recovery.T",
+        "m_dot": "hrsg2.lp_feed_after_recovery.m_dot",
+    },
+    "2号炉低压再循环泵入口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_recirc_in.P",
+        "T": "hrsg2.lp_recirc_in.T",
+        "m_dot": "hrsg2.lp_recirc_in.m_dot",
+    },
+    "2号炉低压再循环泵1入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_recirc_pump1_in.P",
+        "T": "hrsg2.lp_recirc_pump1_in.T",
+        "m_dot": "hrsg2.lp_recirc_pump1_in.m_dot",
+    },
+    "2号炉低压再循环泵2入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_recirc_pump2_in.P",
+        "T": "hrsg2.lp_recirc_pump2_in.T",
+        "m_dot": "hrsg2.lp_recirc_pump2_in.m_dot",
+    },
+    "2号炉低压再循环泵1出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_recirc_pump1_out.P",
+        "T": "hrsg2.lp_recirc_pump1_out.T",
+        "m_dot": "hrsg2.lp_recirc_pump1_out.m_dot",
+    },
+    "2号炉低压再循环泵2出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_recirc_pump2_out.P",
+        "T": "hrsg2.lp_recirc_pump2_out.T",
+        "m_dot": "hrsg2.lp_recirc_pump2_out.m_dot",
+    },
+    "2号炉低压再循环泵出口母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_recirc_out.P",
+        "T": "hrsg2.lp_recirc_out.T",
+        "m_dot": "hrsg2.lp_recirc_out.m_dot",
+    },
+    "2号炉低压汽包": {
+        "type": "WaterSteamState",
+        "method": "from_Px",
+        "P": "hrsg2.lp_drum_pressure",
+        "x": 0.0,
+        "m_dot": "hrsg2.lp_water.m_dot",
+    },
+    "2号炉低压汽包饱和蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_Px",
+        "P": "hrsg2.lp_drum_pressure",
+        "x": 1.0,
+        "m_dot": "hrsg2.lp_saturated_steam.m_dot",
+        "note": "汽包蒸汽出口；不采用饱和液体代替",
+    },
+    "2号炉低压汽包排污": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_drum_drain.P",
+        "T": "hrsg2.lp_drum_drain.T",
+        "m_dot": "hrsg2.lp_drum_drain.m_dot",
+    },
+    "2号炉低压主蒸汽": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_main.P",
+        "T": "hrsg2.lp_main.T",
+        "m_dot": "hrsg2.lp_main.m_dot",
+    },
+    "2号炉低压蒸汽至汽轮机": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_to_st.P",
+        "T": "hrsg2.lp_to_st.T",
+        "m_dot": "hrsg2.lp_to_st.m_dot",
+    },
+    "2号炉低压蒸汽至供热": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_to_heat.P",
+        "T": "hrsg2.lp_to_heat.T",
+        "m_dot": "hrsg2.lp_to_heat.m_dot",
+    },
+    "2号炉低压旁路入口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_bypass_in.P",
+        "T": "hrsg2.lp_bypass_in.T",
+        "m_dot": "hrsg2.lp_bypass_in.m_dot",
+    },
+    "2号炉低压旁路节流后": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_bypass_throttled.P",
+        "T": "hrsg2.lp_bypass_throttled.T",
+        "m_dot": "hrsg2.lp_bypass_throttled.m_dot",
+    },
+    "2号炉低压旁路减温水": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_bypass_spray.P",
+        "T": "hrsg2.lp_bypass_spray.T",
+        "m_dot": "hrsg2.lp_bypass_spray.m_dot",
+    },
+    "2号炉低压旁路出口": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "hrsg2.lp_bypass_out.P",
+        "T": "hrsg2.lp_bypass_out.T",
+        "m_dot": "hrsg2.lp_bypass_out.m_dot",
+    },
+}

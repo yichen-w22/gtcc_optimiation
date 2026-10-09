@@ -1,13 +1,11 @@
-"""heating system assembly and composite boundaries."""
-import pandas as pd
-from src.base.system import SystemBook, ThermodynamicSystem
-from .components import build_components
+"""heating full system definition."""
 
 
-def build_system(row, streams, ports=None):
-    s = streams.connect(ports or {})
-    components = build_components(row, s, "heating")
-    model = SystemBook("heating", row)
-    model.add_many(components.components.values())
-    model.composites = []
-    return model
+SYSTEM_DEFINITIONS = {
+    "heating": {
+        "devices": ["heating_steam_merge", "heating_exchangers_boundary", "heating_drain_return_boundary", "heat_recovery1", "heat_recovery2"],
+        "work": "heating.work",
+        "heat": "heating.heat",
+        "heat_exergy": "heating.heat_exergy",
+    },
+}

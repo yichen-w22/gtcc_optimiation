@@ -1,25 +1,11 @@
-"""condenser system assembly and composite boundaries."""
-import pandas as pd
-from src.base.system import SystemBook, ThermodynamicSystem
-from .components import build_components
+"""condenser full system definition."""
 
 
-def build_system(row, streams, ports=None):
-    s = streams.connect(ports or {})
-    components = build_components(row, s, "condenser")
-    model = SystemBook("condenser", row)
-    model.add_many(components.components.values())
-    pre_bank = ThermodynamicSystem("pre_pump_bank", "composite")
-    pre_bank.add_component(model.components["pre_pump_split"])
-    pre_bank.add_component(model.components["pre_pump1"])
-    pre_bank.add_component(model.components["pre_pump2"])
-    pre_bank.add_component(model.components["pre_pump3"])
-    pre_bank.add_component(model.components["pre_pump_merge"])
-    cond_bank = ThermodynamicSystem("cond_pump_bank", "composite")
-    cond_bank.add_component(model.components["cond_pump_split"])
-    cond_bank.add_component(model.components["cond_pump1"])
-    cond_bank.add_component(model.components["cond_pump2"])
-    cond_bank.add_component(model.components["cond_pump3"])
-    cond_bank.add_component(model.components["cond_pump_merge"])
-    model.composites = [pre_bank.result(), cond_bank.result()]
-    return model
+SYSTEM_DEFINITIONS = {
+    "condenser": {
+        "devices": ["condenser", "vacuum_pump1", "vacuum_pump2", "vacuum_pump3", "hotwell_outlet_pipe", "pre_pump_split", "pre_pump1", "pre_pump2", "pre_pump3", "pre_pump_merge", "pre_recycle_split", "cond_control_split", "cond_control", "cond_control_bypass", "cond_control_merge", "heating_drain_mix", "gland_heater", "cond_pump_split", "cond_pump1", "cond_pump2", "cond_pump3", "cond_pump_merge", "cond_users_split", "iron_filter", "boiler_feed_split"],
+        "work": "condenser.work",
+        "heat": "condenser.heat",
+        "heat_exergy": "condenser.heat_exergy",
+    },
+}

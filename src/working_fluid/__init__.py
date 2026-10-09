@@ -1,6 +1,6 @@
 """Working-fluid state public API."""
 
-from src.working_fluid.fluid import (
+from src.base.stream import (
     FlowState,
     ReferenceEnv,
     create_ref_env,
@@ -20,12 +20,9 @@ from src.working_fluid.steam_water import (
     WaterSteamState,
     infer_m2_by_enthalpy_balance,
 )
-from src.working_fluid.stream import Stream, StreamBook, water
 
 __all__ = [
     "FlowState",
-    "Stream",
-    "StreamBook",
     "GasComposition",
     "GasState",
     "ReferenceEnv",
@@ -39,5 +36,4 @@ __all__ = [
     "mixture_h_s_cp",
     "relative_humidity_to_mole_fraction",
     "solve_temperature_from_property",
-    "water",
 ]

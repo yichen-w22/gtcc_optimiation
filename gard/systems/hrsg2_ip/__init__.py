@@ -9,25 +9,13 @@ __all__ = [
     "STREAM_DEFINITIONS",
     "DEVICE_DEFINITIONS",
     "POINT_BINDINGS",
-    "read_bindings",
-    "load_raw_data",
-    "prepare_inputs",
-    "load_inputs",
     "SYSTEM_DEFINITIONS",
-    "prepare_system_inputs",
 ]
 
 
 def __getattr__(name):
     # 读取流股定义无需加载数据、设备和系统模块。
-    if name in (
-        "POINT_BINDINGS",
-        "read_bindings",
-        "load_raw_data",
-        "prepare_inputs",
-        "load_inputs",
-        "prepare_system_inputs",
-    ):
+    if name == "POINT_BINDINGS":
         module = import_module(".data", __name__)
     elif name == "SYSTEM_DEFINITIONS":
         module = import_module(".system", __name__)

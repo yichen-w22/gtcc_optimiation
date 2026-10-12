@@ -120,7 +120,8 @@ def test_hrsg_assembles_without_unmeasured_internal_gas(unit, level):
     row[f"{level}{unit}_pump1.power"] = 1000.0
     row[f"{level}{unit}_pump2.power"] = 2000.0
     reference = ReferenceEnv(298.15, 101325)
-    inputs = module.prepare_system_inputs(row)
+    inputs = row.copy()
+    inputs[f"hrsg{unit}_{level}.work"] = -3000.0
     model = build_system(
         f"hrsg{unit}_{level}", module.SYSTEM_DEFINITIONS, DEVICE_DEFINITIONS,
         STREAM_DEFINITIONS, inputs, reference,

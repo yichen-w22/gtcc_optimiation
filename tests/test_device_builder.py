@@ -64,6 +64,16 @@ def row():
             values[prefix + ".T"] = temperature
             values[prefix + ".P"] = pressure
             values[prefix + ".m_dot"] = flow
+    values.update({
+        "condenser.work": -9000.0,
+        "heating.work": -1000.0,
+        "heating.heat": 300.0,
+        "heating.heat_exergy": 30.0,
+        "st.work": 5000.0,
+    })
+    for unit in (1, 2):
+        for level in ("hp", "ip", "lp"):
+            values[f"hrsg{unit}_{level}.work"] = -2000.0
     return values
 
 
@@ -102,7 +112,7 @@ def test_systems_build_all_declared_ports_from_registry(system_name, count, row)
     definitions = module.DEVICE_DEFINITIONS
     reference = ReferenceEnv(298.15, 101325)
 
-    inputs = module.prepare_system_inputs(row)
+    inputs = row.copy()
     model = build_system(
         system_name, module.SYSTEM_DEFINITIONS, DEVICE_DEFINITIONS,
         STREAM_DEFINITIONS, inputs, reference,
@@ -128,7 +138,7 @@ def test_systems_build_all_declared_ports_from_registry(system_name, count, row)
     }
     assert model.work == expected_work[system_name]
     assert inputs is not row
-    assert row.get("hrsg1_hp.work") is None
+    assert row["hrsg1_hp.work"] == -2000.0
 
 
 @pytest.mark.parametrize("unit", [1, 2])
@@ -187,9 +197,9 @@ def test_system_builder_only_builds_selected_system_and_resolves_sources(row, mo
 
 
 def test_hp_definition_builds_complete_high_pressure_system(row):
-    from gard.systems.hrsg1_hp import SYSTEM_DEFINITIONS, prepare_system_inputs
+    from gard.systems.hrsg1_hp import SYSTEM_DEFINITIONS
 
-    inputs = prepare_system_inputs(row)
+    inputs = row.copy()
     model = build_system(
         "hrsg1_hp", SYSTEM_DEFINITIONS, DEVICE_DEFINITIONS,
         STREAM_DEFINITIONS, inputs, ReferenceEnv(298.15, 101325),
@@ -257,26 +267,17 @@ def test_gt_dictionary_builds_only_boundary_gases_and_preserves_config(unit, row
     assert model.hrsg_inlet.energy_flow > model.hrsg_outlet.energy_flow
 
 
-def test_common_entry_prepares_only_selected_system(row, monkeypatch):
+def test_common_entry_does_not_derive_boundary_work(row):
     from gard.systems import build_system as build_by_name
-    from gard.systems.system_registry import SYSTEM_INPUT_PREPARERS
 
-    called_names = []
-
-    def record_prepare(name, original):
-        def prepare(values):
-            called_names.append(name)
-            return original(values)
-        return prepare
-
-    for name, prepare in list(SYSTEM_INPUT_PREPARERS.items()):
-        monkeypatch.setitem(SYSTEM_INPUT_PREPARERS, name, record_prepare(name, prepare))
-
+    row.pop("hrsg1_hp.work")
+    original = deepcopy(row)
     model = build_by_name("hrsg1_hp", row, ReferenceEnv(298.15, 101325))
 
-    assert called_names == ["hrsg1_hp"]
+    assert model.work is None
     assert model.name == "hrsg1_hp"
     assert len(model.devices) == 18
+    assert row == original
 
 
 @pytest.fixture

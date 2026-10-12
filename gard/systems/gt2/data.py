@@ -3,6 +3,8 @@
 温度由排气/锅炉边界的多点测量汇总；未确认的压力基准、流量和成分
 保持缺失，不用内部换热器参数代替边界测量。
 """
+import pandas as pd
+
 
 INPUT_UNITS = {
     "gt2.air_in.P": "Pa (absolute)",
@@ -29,6 +31,7 @@ INPUT_UNITS = {
 }
 
 
-def prepare_system_inputs(row):
-    """燃机输入已使用 SI 单位，直接复制供系统构建使用。"""
-    return row.copy()
+# Raw measurements are not configured yet.
+POINT_BINDINGS = pd.DataFrame(
+    [], columns=["field", "code", "expected_unit", "unit", "scale", "offset", "pressure_basis"]
+).astype({"scale": float, "offset": float})

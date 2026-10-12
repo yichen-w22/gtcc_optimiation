@@ -158,7 +158,9 @@ def test_mixing_flow_closes_independent_energy_balance():
 
 
 def test_gard_partial_input_and_hrsg_device_sides():
-    pytest.importorskip("gard.data_io", reason="Legacy gard data pipeline has been removed")
+    gard = pytest.importorskip("gard")
+    if not hasattr(gard, "compute_si"):
+        pytest.skip("Legacy gard.compute_si API has been removed")
     from gard import compute_si
     from gard.plant import build_stream_groups_from_row, build_plant_from_streams
 
@@ -184,38 +186,3 @@ def test_gard_partial_input_and_hrsg_device_sides():
     assert isinstance(exchanger.gas_inlets[0], GasState)
     assert isinstance(exchanger.water_inlets[0], WaterSteamState)
     assert exchanger.gas_energy_release is None
-
-
-def test_history_units_coverage_and_pressure_basis():
-    pytest.importorskip("gard.data_io", reason="Legacy gard data pipeline has been removed")
-    from gard.data_io import resolve_bindings, convert_values, summarize_history
-
-    bindings = resolve_bindings(
-        pd.DataFrame(
-            [
-                ["test.P", "pressure", "MPa", "MPa", 1e6, 0],
-                ["test.T", "temperature", "℃", "℃", 1, 273.15],
-            ],
-            columns=["field", "code", "expected_unit", "unit", "scale", "offset"],
-        )
-    )
-    row, _ = convert_values({"pressure": 1, "temperature": 100}, bindings)
-    assert row["test.P"] is None
-    assert row["test.T"] == 373.15
-    row, _ = convert_values({"pressure": 1, "P0": 101000}, bindings, "gauge")
-    assert row["test.P"] == 1101000
-    start = pd.Timestamp("2026-10-08T00:00:00Z")
-    end = start + pd.Timedelta(minutes=30)
-    data = pd.DataFrame(
-        {
-            "time": pd.date_range(start, end, freq="30s", inclusive="left"),
-            "code": "pressure",
-            "value": 2.0,
-        }
-    )
-    values, quality = summarize_history(data, start, end)
-    assert values["pressure"] == 2
-    assert quality.iloc[0].valid_bins == 6
-    values, quality = summarize_history(data.iloc[:1], start, end)
-    assert pd.isna(values["pressure"])
-    assert quality.iloc[0].valid_bins == 0

@@ -1,6 +1,13 @@
 """本系统流股定义；按需构建，输入使用 SI 单位。"""
 
 STREAM_DEFINITIONS = {
+    "热网低压补汽母管": {
+        "type": "WaterSteamState",
+        "method": "from_PT",
+        "P": "heat.lp_steam_header.P",
+        "T": "heat.lp_steam_header.T",
+        "m_dot": "heat.lp_steam_header.m_dot",
+    },
     "供热系统疏水返回": {
         "type": "WaterSteamState",
         "method": "from_PT",

@@ -1,0 +1,3303 @@
+{
+  "date": "2026-10-13",
+  "scope": "two LP water/steam circuits, working-fluid side only",
+  "units_review": "用户要求不考虑单位问题；使用工程单位，原标注仅作证据，单位不计缺项",
+  "source_hashes": {
+    "C:\\MyFolder\\Projects\\gtcc_optimization\\docs\\点表-高安屯.xlsx": "8011f8910d6dbcc0936b0498e24a38b482a9990c61a55503451b2f8fd9dfc5ea",
+    "C:\\Users\\32697\\Desktop\\全部原始编码.xlsx": "5d588fefbbc0611405dd2697a485cd86734852536eee316c67f2d6d3b470b7ba"
+  },
+  "units": [
+    {
+      "unit": 1,
+      "active_devices": 13,
+      "bound_inputs": 23,
+      "existing_histories": 17,
+      "missing_histories": 6,
+      "unselected_independent_fields": 4,
+      "bounded_window": {
+        "start": "2024-06-01 00:30 Asia/Shanghai",
+        "end": "2024-06-01 01:00 Asia/Shanghai",
+        "available_SI_inputs": 8,
+        "operation_status": "unknown"
+      }
+    },
+    {
+      "unit": 2,
+      "active_devices": 13,
+      "bound_inputs": 23,
+      "existing_histories": 17,
+      "missing_histories": 6,
+      "unselected_independent_fields": 4,
+      "bounded_window": {
+        "start": "2024-06-01 00:30 Asia/Shanghai",
+        "end": "2024-06-01 01:00 Asia/Shanghai",
+        "available_SI_inputs": 6,
+        "operation_status": "unknown"
+      }
+    }
+  ],
+  "bindings": [
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed_after_recovery.P",
+      "code": "GARD_11HAA70WP021BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HAA70WP021BP01XQ01",
+          "plant_code": "11HAA70CP101",
+          "point_type": "AX",
+          "description": "#1炉冷凝水进水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1473,
+          "code_cell": "B1473",
+          "description_cell": "D1473",
+          "unit_cell": "E1473"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉冷凝水进水压力+GARD_11HAA70WP021BP01XQ01.parquet",
+          "bytes": 169601744,
+          "rows": 26938154,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:00:10.286000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.03311155,
+          "metadata_value_max": 3.3475463
+        }
+      ],
+      "excel": {
+        "row": 75,
+        "values": [
+          "1号炉低压给水余热回收后压力",
+          "hrsg1.lp_feed_after_recovery.P",
+          "GARD_11HAA70WP021BP01XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1473/E1473；用户确认余热回收返回混合后取点"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed_after_recovery.T",
+      "code": "GARD_11HAA70WP021BT01XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAA70WP021BT01XQ01",
+          "plant_code": "11HAA70CT301",
+          "point_type": "AX",
+          "description": "#1炉低压省煤器冷凝水进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1474,
+          "code_cell": "B1474",
+          "description_cell": "D1474",
+          "unit_cell": "E1474"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压省煤器冷凝水进水温度+GARD_11HAA70WP021BT01XQ01.parquet",
+          "bytes": 41447805,
+          "rows": 23374911,
+          "row_groups": 183,
+          "min_time": "2024-06-01T00:04:43.115000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 22.885376,
+          "metadata_value_max": 94.02439
+        }
+      ],
+      "excel": {
+        "row": 76,
+        "values": [
+          "1号炉低压给水余热回收后温度",
+          "hrsg1.lp_feed_after_recovery.T",
+          "GARD_11HAA70WP021BT01XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1474/E1474；用户确认余热回收返回混合后取点"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.P",
+      "code": "GARD_11HAA13QN101BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HAA13QN101BP02XQ01",
+          "plant_code": "11LCA93CP102",
+          "point_type": "AX",
+          "description": "至#1炉烟气热网再循环凝结水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1640,
+          "code_cell": "B1640",
+          "description_cell": "D1640",
+          "unit_cell": "E1640"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 73,
+        "values": [
+          "1号炉热网水水换热器回水压力",
+          "hrsg1.lp_from_heat_recovery.P",
+          "GARD_11HAA13QN101BP02XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1640/E1640；用户确认工质侧返回口；历史文件待补"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.T",
+      "code": "GARD_11HAA11WP011BT02XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAA11WP011BT02XQ01",
+          "plant_code": "11LCA91CT302",
+          "point_type": "AX",
+          "description": "1号炉烟气换热器凝结水出口温度",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1823,
+          "code_cell": "B1823",
+          "description_cell": "D1823",
+          "unit_cell": "E1823"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_11HAA11WP011BT02XQ01",
+        "original_unit": "%",
+        "effective_unit": "℃",
+        "authority": "用户指定热网返回水温度测点；按已确认工程温度单位导入，原标注保留"
+      },
+      "history": [],
+      "excel": {
+        "row": 74,
+        "values": [
+          "1号炉热网水水换热器回水温度",
+          "hrsg1.lp_from_heat_recovery.T",
+          "GARD_11HAA11WP011BT02XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1823/E1823；用户确认工质侧返回口；历史文件待补；原单位%保留为证据，按用户约定℃导入"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed.m_dot",
+      "code": "GARD_11HAA70WP021BF02XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11HAA70WP021BF02XQ01",
+          "plant_code": "11HAA70CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉低压省煤器进水流量选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2758,
+          "code_cell": "B2758",
+          "description_cell": "D2758",
+          "unit_cell": "E2758"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压省煤器进水流量选择值+GARD_11HAA70WP021BF02XQ01.parquet",
+          "bytes": 191418965,
+          "rows": 27525177,
+          "row_groups": 216,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 3.9380012,
+          "metadata_value_max": 556.9141
+        }
+      ],
+      "excel": {
+        "row": 72,
+        "values": [
+          "1号炉低压给水质量流量",
+          "hrsg1.lp_feed.m_dot",
+          "GARD_11HAA70WP021BF02XQ01",
+          "t/h",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B2758/E2758"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_out.T",
+      "code": "GARD_11HAA80QN102BT01XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAA80QN102BT01XQ01",
+          "plant_code": "11HAA80CT301",
+          "point_type": "AX",
+          "description": "#1炉低压省煤器出水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1478,
+          "code_cell": "B1478",
+          "description_cell": "D1478",
+          "unit_cell": "E1478"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压省煤器出水温度+GARD_11HAA80QN102BT01XQ01.parquet",
+          "bytes": 170137525,
+          "rows": 26839601,
+          "row_groups": 210,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 16.648443,
+          "metadata_value_max": 178.40468
+        }
+      ],
+      "excel": {
+        "row": 78,
+        "values": [
+          "1号炉低压省煤器出口温度",
+          "hrsg1.lp_economizer_out.T",
+          "GARD_11HAA80QN102BT01XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1478/E1478"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_valve_in.P",
+      "code": "GARD_11HAA80QN102BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HAA80QN102BP01XQ01",
+          "plant_code": "11HAA80CP101",
+          "point_type": "AX",
+          "description": "#1炉低压汽包进水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1477,
+          "code_cell": "B1477",
+          "description_cell": "D1477",
+          "unit_cell": "E1477"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压汽包进水压力+GARD_11HAA80QN102BP01XQ01.parquet",
+          "bytes": 170986225,
+          "rows": 26949807,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.039126556,
+          "metadata_value_max": 3.0951192
+        }
+      ],
+      "excel": {
+        "row": 79,
+        "values": [
+          "1号炉低压汽包给水调节阀入口压力",
+          "hrsg1.lp_drum_valve_in.P",
+          "GARD_11HAA80QN102BP01XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1477/E1477；压力基准待确认；原描述低压汽包进水压力，阀前/阀后安装位置待核对"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_drum.T",
+      "code": "GARD_11HAA80QN102BT02XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAA80QN102BT02XQ01",
+          "plant_code": "11HAA80CT302",
+          "point_type": "AX",
+          "description": "#1炉低压汽包进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1479,
+          "code_cell": "B1479",
+          "description_cell": "D1479",
+          "unit_cell": "E1479"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压汽包进水温度+GARD_11HAA80QN102BT02XQ01.parquet",
+          "bytes": 170627771,
+          "rows": 26840048,
+          "row_groups": 210,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 13.327716,
+          "metadata_value_max": 171.02032
+        }
+      ],
+      "excel": {
+        "row": 80,
+        "values": [
+          "1号炉低压汽包入口温度",
+          "hrsg1.lp_to_drum.T",
+          "GARD_11HAA80QN102BT02XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1479/E1479"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_out.P",
+      "code": "GARD_11HAA85WP011BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HAA85WP011BP01XQ01",
+          "plant_code": "11HAA85CP101",
+          "point_type": "AX",
+          "description": "#1炉LP省煤器#1再循环泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1483,
+          "code_cell": "B1483",
+          "description_cell": "D1483",
+          "unit_cell": "E1483"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉LP省煤器#1再循环泵出口压力+GARD_11HAA85WP011BP01XQ01.parquet",
+          "bytes": 172637761,
+          "rows": 26964502,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.004643671,
+          "metadata_value_max": 3.5490596
+        }
+      ],
+      "excel": {
+        "row": 85,
+        "values": [
+          "1号炉低压再循环泵1出口压力",
+          "hrsg1.lp_recirc_pump1_out.P",
+          "GARD_11HAA85WP011BP01XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1483/E1483；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_out.P",
+      "code": "GARD_11HAA85WP012BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HAA85WP012BP02XQ01",
+          "plant_code": "11HAA85CP102",
+          "point_type": "AX",
+          "description": "#1炉LP省煤器#2再循环泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1693,
+          "code_cell": "B1693",
+          "description_cell": "D1693",
+          "unit_cell": "E1693"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉LP省煤器#2再循环泵出口压力+GARD_11HAA85WP012BP02XQ01.parquet",
+          "bytes": 171627610,
+          "rows": 26977470,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.017645951,
+          "metadata_value_max": 3.6309044
+        }
+      ],
+      "excel": {
+        "row": 86,
+        "values": [
+          "1号炉低压再循环泵2出口压力",
+          "hrsg1.lp_recirc_pump2_out.P",
+          "GARD_11HAA85WP012BP02XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1693/E1693；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_main.P",
+      "code": "GARD_11LBA01WP001BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LBA01WP001BP02XQ01",
+          "plant_code": "11LBA90CP101-SEL",
+          "point_type": "AX",
+          "description": "#1炉低压主蒸汽压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2774,
+          "code_cell": "B2774",
+          "description_cell": "D2774",
+          "unit_cell": "E2774"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压主蒸汽压力选择值+GARD_11LBA01WP001BP02XQ01.parquet",
+          "bytes": 85957791,
+          "rows": 24847143,
+          "row_groups": 195,
+          "min_time": "2024-06-01T00:00:48.941000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.009741225,
+          "metadata_value_max": 1.12
+        }
+      ],
+      "excel": {
+        "row": 88,
+        "values": [
+          "1号炉低压主蒸汽压力",
+          "hrsg1.lp_main.P",
+          "GARD_11LBA01WP001BP02XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B2774/E2774；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_main.m_dot",
+      "code": "GARD_11LBA01WP001BF04XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11LBA01WP001BF04XQ01",
+          "plant_code": "11LBA90CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉低压主蒸汽流量补偿后选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2778,
+          "code_cell": "B2778",
+          "description_cell": "D2778",
+          "unit_cell": "E2778"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压主蒸汽流量补偿后选择值+GARD_11LBA01WP001BF04XQ01.parquet",
+          "bytes": 160409627,
+          "rows": 27267188,
+          "row_groups": 214,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.19129536,
+          "metadata_value_max": 74.83938
+        }
+      ],
+      "excel": {
+        "row": 90,
+        "values": [
+          "1号炉低压主蒸汽质量流量",
+          "hrsg1.lp_main.m_dot",
+          "GARD_11LBA01WP001BF04XQ01",
+          "t/h",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B2778/E2778"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_st.P",
+      "code": "GARD_11LBA20WP011BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LBA20WP011BP01XQ01",
+          "plant_code": "11LBA20CP101",
+          "point_type": "AX",
+          "description": "#1炉至汽机低压蒸汽压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 119,
+          "code_cell": "B119",
+          "description_cell": "D119",
+          "unit_cell": "E119"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉至汽机低压蒸汽压力+GARD_11LBA20WP011BP01XQ01.parquet",
+          "bytes": 81969825,
+          "rows": 24619464,
+          "row_groups": 193,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.02,
+          "metadata_value_max": 0.7005859
+        }
+      ],
+      "excel": {
+        "row": 91,
+        "values": [
+          "1号炉低压蒸汽至汽轮机压力",
+          "hrsg1.lp_to_st.P",
+          "GARD_11LBA20WP011BP01XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B119/E119；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_st.T",
+      "code": "GARD_11LBA20WP011BP04XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LBA20WP011BP04XQ01",
+          "plant_code": "11LBA20CT601",
+          "point_type": "AX",
+          "description": "#1炉至汽机低压蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 122,
+          "code_cell": "B122",
+          "description_cell": "D122",
+          "unit_cell": "E122"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉至汽机低压蒸汽温度+GARD_11LBA20WP011BP04XQ01.parquet",
+          "bytes": 53103257,
+          "rows": 23751739,
+          "row_groups": 186,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 22.382582,
+          "metadata_value_max": 296.5363
+        }
+      ],
+      "excel": {
+        "row": 92,
+        "values": [
+          "1号炉低压蒸汽至汽轮机温度",
+          "hrsg1.lp_to_st.T",
+          "GARD_11LBA20WP011BP04XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B122/E122"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_pressure",
+      "code": "GARD_11HBK11CM001BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HBK11CM001BP02XQ01",
+          "plant_code": "11HAD90CP101-SEL",
+          "point_type": "AX",
+          "description": "#1炉低压汽包压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2920,
+          "code_cell": "B2920",
+          "description_cell": "D2920",
+          "unit_cell": "E2920"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 87,
+        "values": [
+          "1号炉低压汽包压力",
+          "hrsg1.lp_drum_pressure",
+          "GARD_11HBK11CM001BP02XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B2920/E2920；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_in.T",
+      "code": "GARD_11HAA70WP021BT02XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAA70WP021BT02XQ01",
+          "plant_code": "11HAA70CT302",
+          "point_type": "AX",
+          "description": "#1炉低压省煤器进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1475,
+          "code_cell": "B1475",
+          "description_cell": "D1475",
+          "unit_cell": "E1475"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 77,
+        "values": [
+          "1号炉低压省煤器入口温度",
+          "hrsg1.lp_economizer_in.T",
+          "GARD_11HAA70WP021BT02XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1475/E1475；历史文件缺失；可另用混合焓模型温度"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_in.m_dot",
+      "code": "GARD_11HAA85WP001BF01XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11HAA85WP001BF01XQ01",
+          "plant_code": "11HAA85CF101",
+          "point_type": "AX",
+          "description": "#1炉低压省煤器再循环流量",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1482,
+          "code_cell": "B1482",
+          "description_cell": "D1482",
+          "unit_cell": "E1482"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 81,
+        "values": [
+          "1号炉低压再循环泵入口母管质量流量",
+          "hrsg1.lp_recirc_in.m_dot",
+          "GARD_11HAA85WP001BF01XQ01",
+          "t/h",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1482/E1482"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_main.T",
+      "code": "GARD_11LBA01WP001BT03XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LBA01WP001BT03XQ01",
+          "plant_code": "11LBA90CT611-SEL",
+          "point_type": "AX",
+          "description": "#1炉低压主蒸汽温度选择值",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2776,
+          "code_cell": "B2776",
+          "description_cell": "D2776",
+          "unit_cell": "E2776"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_11LBA01WP001BT03XQ01",
+        "original_unit": "%",
+        "effective_unit": "℃",
+        "authority": "用户：默认单位正确，本轮不考虑单位问题；按温度工程单位导入"
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低压主蒸汽温度选择值+GARD_11LBA01WP001BT03XQ01.parquet",
+          "bytes": 58707333,
+          "rows": 23895760,
+          "row_groups": 187,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 5.2141123,
+          "metadata_value_max": 252.71489
+        }
+      ],
+      "excel": {
+        "row": 89,
+        "values": [
+          "1号炉低压主蒸汽温度",
+          "hrsg1.lp_main.T",
+          "GARD_11LBA01WP001BT03XQ01",
+          "℃",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B2776/E2776；原标注保留，按工程温度单位导入"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1.current",
+      "code": "GARD_11HAA85GP001BC01XQ01",
+      "engineering_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_11HAA85GP001BC01XQ01",
+          "plant_code": "11HAA85CE101",
+          "point_type": "AX",
+          "description": "#1炉低省#1再循环泵电流",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1481,
+          "code_cell": "B1481",
+          "description_cell": "D1481",
+          "unit_cell": "E1481"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_11HAA85GP001BC01XQ01",
+        "original_unit": "%",
+        "effective_unit": "A",
+        "authority": "用户：默认单位正确，本轮不考虑单位问题；按电流工程单位导入"
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉低省#1再循环泵电流+GARD_11HAA85GP001BC01XQ01.parquet",
+          "bytes": 14143567,
+          "rows": 22607270,
+          "row_groups": 177,
+          "min_time": "2024-06-01T00:09:33+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 389.006
+        }
+      ],
+      "excel": {
+        "row": 82,
+        "values": [
+          "1号炉低压省煤器再循环泵1电流",
+          "hrsg1.lp_recirc_pump1.current",
+          "GARD_11HAA85GP001BC01XQ01",
+          "A",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1481/E1481；原标注保留，按电流A导入；运行默认阈值10 A"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2.current",
+      "code": "GARD_11HAA85GP002BC02XQ01",
+      "engineering_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_11HAA85GP002BC02XQ01",
+          "plant_code": "11HAA85CE102",
+          "point_type": "AX",
+          "description": "#1炉低省#2再循环泵电流",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1692,
+          "code_cell": "B1692",
+          "description_cell": "D1692",
+          "unit_cell": "E1692"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_11HAA85GP002BC02XQ01",
+        "original_unit": "%",
+        "effective_unit": "A",
+        "authority": "用户：默认单位正确，本轮不考虑单位问题；按电流工程单位导入"
+      },
+      "history": [],
+      "excel": {
+        "row": 83,
+        "values": [
+          "1号炉低压省煤器再循环泵2电流",
+          "hrsg1.lp_recirc_pump2.current",
+          "GARD_11HAA85GP002BC02XQ01",
+          "A",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B1692/E1692；原标注保留，按电流A导入；运行默认阈值10 A"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.hp_main.m_dot",
+      "code": "GARD_11LBA21WP001BF03XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11LBA21WP001BF03XQ01",
+          "plant_code": "11LBA70CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉高压主蒸汽流量补偿后选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2704,
+          "code_cell": "B2704",
+          "description_cell": "D2704",
+          "unit_cell": "E2704"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉高压主蒸汽流量补偿后选择值+GARD_11LBA21WP001BF03XQ01.parquet",
+          "bytes": 168449256,
+          "rows": 27045287,
+          "row_groups": 212,
+          "min_time": "2024-06-01T00:01:09.578000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.22367132,
+          "metadata_value_max": 326.42325
+        }
+      ],
+      "excel": {
+        "row": 44,
+        "values": [
+          "1号炉高压主蒸汽质量流量",
+          "hrsg1.hp_main.m_dot",
+          "GARD_11LBA21WP001BF03XQ01",
+          "t/h",
+          "hrsg1_hp",
+          "点表-高安屯.xlsx：DCS!B2704/E2704"
+        ]
+      },
+      "shared_with_HP_IP": true
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.ip_feed.m_dot",
+      "code": "GARD_11HAC02WP001BF03XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11HAC02WP001BF03XQ01",
+          "plant_code": "11LAB85CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉中压省煤器进水流量选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2719,
+          "code_cell": "B2719",
+          "description_cell": "D2719",
+          "unit_cell": "E2719"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压省煤器进水流量选择值+GARD_11HAC02WP001BF03XQ01.parquet",
+          "bytes": 184210921,
+          "rows": 27485609,
+          "row_groups": 215,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.35272443,
+          "metadata_value_max": 94.53372
+        }
+      ],
+      "excel": {
+        "row": 52,
+        "values": [
+          "1号炉中压给水质量流量",
+          "hrsg1.ip_feed.m_dot",
+          "GARD_11HAC02WP001BF03XQ01",
+          "t/h",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2719/E2719"
+        ]
+      },
+      "shared_with_HP_IP": true
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.rh_spray.m_dot",
+      "code": "GARD_11LAF80WP001BF02XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11LAF80WP001BF02XQ01",
+          "plant_code": "11LAF80CF101-X",
+          "point_type": "AX",
+          "description": "#1炉再热减温水流量计算值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2787,
+          "code_cell": "B2787",
+          "description_cell": "D2787",
+          "unit_cell": "E2787"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉再热减温水流量计算值+GARD_11LAF80WP001BF02XQ01.parquet",
+          "bytes": 163558649,
+          "rows": 27427281,
+          "row_groups": 215,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 17.608997
+        }
+      ],
+      "excel": {
+        "row": 53,
+        "values": [
+          "1号炉再热减温水质量流量",
+          "hrsg1.rh_spray.m_dot",
+          "GARD_11LAF80WP001BF02XQ01",
+          "t/h",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2787/E2787；DCS计算值，需核对计算来源"
+        ]
+      },
+      "shared_with_HP_IP": true
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed_after_recovery.P",
+      "code": "GARD_12HAA70WP021BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAA70WP021BP01XQ01",
+          "plant_code": "12HAA70CP101",
+          "point_type": "AX",
+          "description": "#2炉冷凝水进水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1976,
+          "code_cell": "B1976",
+          "description_cell": "D1976",
+          "unit_cell": "E1976"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉冷凝水进水压力+GARD_12HAA70WP021BP01XQ01.parquet",
+          "bytes": 179289910,
+          "rows": 26607610,
+          "row_groups": 208,
+          "min_time": "2024-06-01T00:03:14.330000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.020813078,
+          "metadata_value_max": 3.3152654
+        }
+      ],
+      "excel": {
+        "row": 139,
+        "values": [
+          "2号炉低压给水余热回收后压力",
+          "hrsg2.lp_feed_after_recovery.P",
+          "GARD_12HAA70WP021BP01XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1976/E1976；用户确认余热回收返回混合后取点"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed_after_recovery.T",
+      "code": "GARD_12HAA70WP021BT01XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAA70WP021BT01XQ01",
+          "plant_code": "12HAA70CT301",
+          "point_type": "AX",
+          "description": "#2炉低压省煤器冷凝水进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1977,
+          "code_cell": "B1977",
+          "description_cell": "D1977",
+          "unit_cell": "E1977"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压省煤器冷凝水进水温度+GARD_12HAA70WP021BT01XQ01.parquet",
+          "bytes": 39401278,
+          "rows": 23205714,
+          "row_groups": 182,
+          "min_time": "2024-06-01T00:00:06.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 21.815508,
+          "metadata_value_max": 87.47088
+        }
+      ],
+      "excel": {
+        "row": 140,
+        "values": [
+          "2号炉低压给水余热回收后温度",
+          "hrsg2.lp_feed_after_recovery.T",
+          "GARD_12HAA70WP021BT01XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1977/E1977；用户确认余热回收返回混合后取点"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.P",
+      "code": "GARD_12HAA13QN101BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAA13QN101BP02XQ01",
+          "plant_code": "12LCA93CP102",
+          "point_type": "AX",
+          "description": "至#2炉烟气热网再循环凝结水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2141,
+          "code_cell": "B2141",
+          "description_cell": "D2141",
+          "unit_cell": "E2141"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 137,
+        "values": [
+          "2号炉热网水水换热器回水压力",
+          "hrsg2.lp_from_heat_recovery.P",
+          "GARD_12HAA13QN101BP02XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2141/E2141；用户确认工质侧返回口；历史文件待补"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.T",
+      "code": "GARD_12HAA11WP011BT02XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAA11WP011BT02XQ01",
+          "plant_code": "12LCA91CT302",
+          "point_type": "AX",
+          "description": "#2炉烟气水水换热凝结水出口温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2361,
+          "code_cell": "B2361",
+          "description_cell": "D2361",
+          "unit_cell": "E2361"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 138,
+        "values": [
+          "2号炉热网水水换热器回水温度",
+          "hrsg2.lp_from_heat_recovery.T",
+          "GARD_12HAA11WP011BT02XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2361/E2361；用户确认工质侧返回口；历史文件待补"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed.m_dot",
+      "code": "GARD_12HAA70WP021BF02XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12HAA70WP021BF02XQ01",
+          "plant_code": "12HAA70CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉低压省煤器进水流量选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2759,
+          "code_cell": "B2759",
+          "description_cell": "D2759",
+          "unit_cell": "E2759"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压省煤器进水流量选择值+GARD_12HAA70WP021BF02XQ01.parquet",
+          "bytes": 173329724,
+          "rows": 26456137,
+          "row_groups": 207,
+          "min_time": "2024-06-01T00:03:17.515000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 1006.74725
+        }
+      ],
+      "excel": {
+        "row": 136,
+        "values": [
+          "2号炉低压给水质量流量",
+          "hrsg2.lp_feed.m_dot",
+          "GARD_12HAA70WP021BF02XQ01",
+          "t/h",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2759/E2759"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_out.T",
+      "code": "GARD_12HAA80QN102BT01XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAA80QN102BT01XQ01",
+          "plant_code": "12HAA80CT301",
+          "point_type": "AX",
+          "description": "#2炉低压省煤器出水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1984,
+          "code_cell": "B1984",
+          "description_cell": "D1984",
+          "unit_cell": "E1984"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压省煤器出水温度+GARD_12HAA80QN102BT01XQ01.parquet",
+          "bytes": 119396567,
+          "rows": 25965207,
+          "row_groups": 203,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 20.573242,
+          "metadata_value_max": 179.67188
+        }
+      ],
+      "excel": {
+        "row": 142,
+        "values": [
+          "2号炉低压省煤器出口温度",
+          "hrsg2.lp_economizer_out.T",
+          "GARD_12HAA80QN102BT01XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1984/E1984"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_valve_in.P",
+      "code": "GARD_12HAA80QN102BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAA80QN102BP01XQ01",
+          "plant_code": "12HAA80CP101",
+          "point_type": "AX",
+          "description": "#2炉低压汽包进水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1983,
+          "code_cell": "B1983",
+          "description_cell": "D1983",
+          "unit_cell": "E1983"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压汽包进水压力+GARD_12HAA80QN102BP01XQ01.parquet",
+          "bytes": 181068207,
+          "rows": 26676752,
+          "row_groups": 209,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.02414709,
+          "metadata_value_max": 3.0946257
+        }
+      ],
+      "excel": {
+        "row": 143,
+        "values": [
+          "2号炉低压汽包给水调节阀入口压力",
+          "hrsg2.lp_drum_valve_in.P",
+          "GARD_12HAA80QN102BP01XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1983/E1983；压力基准待确认；原描述低压汽包进水压力，阀前/阀后安装位置待核对"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_drum.T",
+      "code": "GARD_12HAA80QN102BT02XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAA80QN102BT02XQ01",
+          "plant_code": "12HAA80CT302",
+          "point_type": "AX",
+          "description": "#2炉低压汽包进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1985,
+          "code_cell": "B1985",
+          "description_cell": "D1985",
+          "unit_cell": "E1985"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压汽包进水温度+GARD_12HAA80QN102BT02XQ01.parquet",
+          "bytes": 120688853,
+          "rows": 26116729,
+          "row_groups": 205,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 20.69043,
+          "metadata_value_max": 170.38672
+        }
+      ],
+      "excel": {
+        "row": 144,
+        "values": [
+          "2号炉低压汽包入口温度",
+          "hrsg2.lp_to_drum.T",
+          "GARD_12HAA80QN102BT02XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1985/E1985"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_out.P",
+      "code": "GARD_12HAA85WP011BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAA85WP011BP01XQ01",
+          "plant_code": "12HAA85CP101",
+          "point_type": "AX",
+          "description": "#2炉LP省煤器#1再循环泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1991,
+          "code_cell": "B1991",
+          "description_cell": "D1991",
+          "unit_cell": "E1991"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉LP省煤器#1再循环泵出口压力+GARD_12HAA85WP011BP01XQ01.parquet",
+          "bytes": 179938628,
+          "rows": 26659395,
+          "row_groups": 209,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.013002278,
+          "metadata_value_max": 3.5976226
+        }
+      ],
+      "excel": {
+        "row": 149,
+        "values": [
+          "2号炉低压再循环泵1出口压力",
+          "hrsg2.lp_recirc_pump1_out.P",
+          "GARD_12HAA85WP011BP01XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1991/E1991；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_out.P",
+      "code": "GARD_12HAA85WP012BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAA85WP012BP02XQ01",
+          "plant_code": "12HAA85CP102",
+          "point_type": "AX",
+          "description": "#2炉LP省煤器#2再循环泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2192,
+          "code_cell": "B2192",
+          "description_cell": "D2192",
+          "unit_cell": "E2192"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉LP省煤器#2再循环泵出口压力+GARD_12HAA85WP012BP02XQ01.parquet",
+          "bytes": 125074999,
+          "rows": 23745071,
+          "row_groups": 186,
+          "min_time": "2024-06-01T00:00:08.286000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.032505695,
+          "metadata_value_max": 3.4090676
+        }
+      ],
+      "excel": {
+        "row": 150,
+        "values": [
+          "2号炉低压再循环泵2出口压力",
+          "hrsg2.lp_recirc_pump2_out.P",
+          "GARD_12HAA85WP012BP02XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2192/E2192；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_main.P",
+      "code": "GARD_12LBA01WP001BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LBA01WP001BP02XQ01",
+          "plant_code": "12LBA90CP101-SEL",
+          "point_type": "AX",
+          "description": "#2炉低压主蒸汽压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2775,
+          "code_cell": "B2775",
+          "description_cell": "D2775",
+          "unit_cell": "E2775"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压主蒸汽压力选择值+GARD_12LBA01WP001BP02XQ01.parquet",
+          "bytes": 89382123,
+          "rows": 24914714,
+          "row_groups": 195,
+          "min_time": "2024-06-01T00:01:07.547000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.0019775368,
+          "metadata_value_max": 1.1600001
+        }
+      ],
+      "excel": {
+        "row": 152,
+        "values": [
+          "2号炉低压主蒸汽压力",
+          "hrsg2.lp_main.P",
+          "GARD_12LBA01WP001BP02XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2775/E2775；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_main.m_dot",
+      "code": "GARD_12LBA01WP001BF04XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12LBA01WP001BF04XQ01",
+          "plant_code": "12LBA90CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉低压主蒸汽流量补偿后选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2779,
+          "code_cell": "B2779",
+          "description_cell": "D2779",
+          "unit_cell": "E2779"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压主蒸汽流量补偿后选择值+GARD_12LBA01WP001BF04XQ01.parquet",
+          "bytes": 169045317,
+          "rows": 26334174,
+          "row_groups": 206,
+          "min_time": "2024-06-01T00:03:13.409000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 65.75046
+        }
+      ],
+      "excel": {
+        "row": 154,
+        "values": [
+          "2号炉低压主蒸汽质量流量",
+          "hrsg2.lp_main.m_dot",
+          "GARD_12LBA01WP001BF04XQ01",
+          "t/h",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2779/E2779"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_st.P",
+      "code": "GARD_12LBA20WP011BP01XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LBA20WP011BP01XQ01",
+          "plant_code": "12LBA20CP101",
+          "point_type": "AX",
+          "description": "#2炉至汽机低压蒸汽压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 312,
+          "code_cell": "B312",
+          "description_cell": "D312",
+          "unit_cell": "E312"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉至汽机低压蒸汽压力+GARD_12LBA20WP011BP01XQ01.parquet",
+          "bytes": 86633236,
+          "rows": 24927334,
+          "row_groups": 195,
+          "min_time": "2024-06-01T00:00:30.290000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.02,
+          "metadata_value_max": 0.6721436
+        }
+      ],
+      "excel": {
+        "row": 155,
+        "values": [
+          "2号炉低压蒸汽至汽轮机压力",
+          "hrsg2.lp_to_st.P",
+          "GARD_12LBA20WP011BP01XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B312/E312；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_st.T",
+      "code": "GARD_12LBA20WP011BP04XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LBA20WP011BP04XQ01",
+          "plant_code": "12LBA20CT601",
+          "point_type": "AX",
+          "description": "#2炉至汽机低压蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 315,
+          "code_cell": "B315",
+          "description_cell": "D315",
+          "unit_cell": "E315"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉至汽机低压蒸汽温度+GARD_12LBA20WP011BP04XQ01.parquet",
+          "bytes": 54912071,
+          "rows": 23836162,
+          "row_groups": 187,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 21.712307,
+          "metadata_value_max": 250.46783
+        }
+      ],
+      "excel": {
+        "row": 156,
+        "values": [
+          "2号炉低压蒸汽至汽轮机温度",
+          "hrsg2.lp_to_st.T",
+          "GARD_12LBA20WP011BP04XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B315/E315"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_pressure",
+      "code": "GARD_12HAG11CM001BP02XQ01",
+      "engineering_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAG11CM001BP02XQ01",
+          "plant_code": "12HAD90CP101-SEL",
+          "point_type": "AX",
+          "description": "#2炉低压汽包压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2930,
+          "code_cell": "B2930",
+          "description_cell": "D2930",
+          "unit_cell": "E2930"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 151,
+        "values": [
+          "2号炉低压汽包压力",
+          "hrsg2.lp_drum_pressure",
+          "GARD_12HAG11CM001BP02XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2930/E2930；压力基准待确认"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_in.T",
+      "code": "GARD_12HAA70WP021BT02XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAA70WP021BT02XQ01",
+          "plant_code": "12HAA70CT302",
+          "point_type": "AX",
+          "description": "#2炉低压省煤器进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1978,
+          "code_cell": "B1978",
+          "description_cell": "D1978",
+          "unit_cell": "E1978"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 141,
+        "values": [
+          "2号炉低压省煤器入口温度",
+          "hrsg2.lp_economizer_in.T",
+          "GARD_12HAA70WP021BT02XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1978/E1978；历史文件缺失；可另用混合焓模型温度"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_in.m_dot",
+      "code": "GARD_12HAA85WP001BF01XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12HAA85WP001BF01XQ01",
+          "plant_code": "12HAA85CF101",
+          "point_type": "AX",
+          "description": "#2炉低压省煤器再循环流量",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1990,
+          "code_cell": "B1990",
+          "description_cell": "D1990",
+          "unit_cell": "E1990"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [],
+      "excel": {
+        "row": 145,
+        "values": [
+          "2号炉低压再循环泵入口母管质量流量",
+          "hrsg2.lp_recirc_in.m_dot",
+          "GARD_12HAA85WP001BF01XQ01",
+          "t/h",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1990/E1990"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_main.T",
+      "code": "GARD_12LBA01WP001BT03XQ01",
+      "engineering_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LBA01WP001BT03XQ01",
+          "plant_code": "12LBA90CT611-SEL",
+          "point_type": "AX",
+          "description": "#2炉低压主蒸汽温度选择值",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2777,
+          "code_cell": "B2777",
+          "description_cell": "D2777",
+          "unit_cell": "E2777"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_12LBA01WP001BT03XQ01",
+        "original_unit": "%",
+        "effective_unit": "℃",
+        "authority": "用户：默认单位正确，本轮不考虑单位问题；按温度工程单位导入"
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低压主蒸汽温度选择值+GARD_12LBA01WP001BT03XQ01.parquet",
+          "bytes": 59582852,
+          "rows": 24052795,
+          "row_groups": 188,
+          "min_time": "2024-06-01T00:00:50.295000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 13.5183525,
+          "metadata_value_max": 252.54271
+        }
+      ],
+      "excel": {
+        "row": 153,
+        "values": [
+          "2号炉低压主蒸汽温度",
+          "hrsg2.lp_main.T",
+          "GARD_12LBA01WP001BT03XQ01",
+          "℃",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2777/E2777；原标注保留，按工程温度单位导入"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1.current",
+      "code": "GARD_12HAA85GP001BC01XQ01",
+      "engineering_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_12HAA85GP001BC01XQ01",
+          "plant_code": "12HAA85CE101",
+          "point_type": "AX",
+          "description": "#2炉低省#1再循环泵电流",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1989,
+          "code_cell": "B1989",
+          "description_cell": "D1989",
+          "unit_cell": "E1989"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_12HAA85GP001BC01XQ01",
+        "original_unit": "%",
+        "effective_unit": "A",
+        "authority": "用户：默认单位正确，本轮不考虑单位问题；按电流工程单位导入"
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉低省#1再循环泵电流+GARD_12HAA85GP001BC01XQ01.parquet",
+          "bytes": 14384241,
+          "rows": 22756541,
+          "row_groups": 178,
+          "min_time": "2024-06-01T00:05:49.083000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 409.393
+        }
+      ],
+      "excel": {
+        "row": 146,
+        "values": [
+          "2号炉低压省煤器再循环泵1电流",
+          "hrsg2.lp_recirc_pump1.current",
+          "GARD_12HAA85GP001BC01XQ01",
+          "A",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B1989/E1989；原标注保留，按电流A导入；运行默认阈值10 A"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2.current",
+      "code": "GARD_12HAA85GP002BC02XQ01",
+      "engineering_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_12HAA85GP002BC02XQ01",
+          "plant_code": "12HAA85CE102",
+          "point_type": "AX",
+          "description": "#2炉低省#2再循环泵电流",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2191,
+          "code_cell": "B2191",
+          "description_cell": "D2191",
+          "unit_cell": "E2191"
+        }
+      ],
+      "unit_source_record": {
+        "code": "GARD_12HAA85GP002BC02XQ01",
+        "original_unit": "%",
+        "effective_unit": "A",
+        "authority": "用户：默认单位正确，本轮不考虑单位问题；按电流工程单位导入"
+      },
+      "history": [],
+      "excel": {
+        "row": 147,
+        "values": [
+          "2号炉低压省煤器再循环泵2电流",
+          "hrsg2.lp_recirc_pump2.current",
+          "GARD_12HAA85GP002BC02XQ01",
+          "A",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2191/E2191；原标注保留，按电流A导入；运行默认阈值10 A"
+        ]
+      },
+      "shared_with_HP_IP": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.hp_main.m_dot",
+      "code": "GARD_12LBA21WP001BF03XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12LBA21WP001BF03XQ01",
+          "plant_code": "12LBA70CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉高压主蒸汽流量补偿后选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2705,
+          "code_cell": "B2705",
+          "description_cell": "D2705",
+          "unit_cell": "E2705"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉高压主蒸汽流量补偿后选择值+GARD_12LBA21WP001BF03XQ01.parquet",
+          "bytes": 180508313,
+          "rows": 26671176,
+          "row_groups": 209,
+          "min_time": "2024-06-01T00:05:49.081000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 331.9619
+        }
+      ],
+      "excel": {
+        "row": 107,
+        "values": [
+          "2号炉高压主蒸汽质量流量",
+          "hrsg2.hp_main.m_dot",
+          "GARD_12LBA21WP001BF03XQ01",
+          "t/h",
+          "hrsg2_hp",
+          "点表-高安屯.xlsx：DCS!B2705/E2705"
+        ]
+      },
+      "shared_with_HP_IP": true
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.ip_feed.m_dot",
+      "code": "GARD_12HAC02WP001BF03XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12HAC02WP001BF03XQ01",
+          "plant_code": "12LAB85CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉中压省煤器进水流量选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2718,
+          "code_cell": "B2718",
+          "description_cell": "D2718",
+          "unit_cell": "E2718"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压省煤器进水流量选择值+GARD_12HAC02WP001BF03XQ01.parquet",
+          "bytes": 188030350,
+          "rows": 27321294,
+          "row_groups": 214,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 94.43933
+        }
+      ],
+      "excel": {
+        "row": 116,
+        "values": [
+          "2号炉中压给水质量流量",
+          "hrsg2.ip_feed.m_dot",
+          "GARD_12HAC02WP001BF03XQ01",
+          "t/h",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2718/E2718"
+        ]
+      },
+      "shared_with_HP_IP": true
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.rh_spray.m_dot",
+      "code": "GARD_12LAF80WP001BF02XQ01",
+      "engineering_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12LAF80WP001BF02XQ01",
+          "plant_code": "12LAF80CF101-X",
+          "point_type": "AX",
+          "description": "#2炉再热减温水流量计算值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2788,
+          "code_cell": "B2788",
+          "description_cell": "D2788",
+          "unit_cell": "E2788"
+        }
+      ],
+      "unit_source_record": null,
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉再热减温水流量计算值+GARD_12LAF80WP001BF02XQ01.parquet",
+          "bytes": 95905329,
+          "rows": 25162940,
+          "row_groups": 197,
+          "min_time": "2024-06-01T00:07:05.359000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 18.32351
+        }
+      ],
+      "excel": {
+        "row": 117,
+        "values": [
+          "2号炉再热减温水质量流量",
+          "hrsg2.rh_spray.m_dot",
+          "GARD_12LAF80WP001BF02XQ01",
+          "t/h",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2788/E2788；DCS计算值，需核对计算来源"
+        ]
+      },
+      "shared_with_HP_IP": true
+    }
+  ],
+  "current_field_inventory": [
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed.P",
+      "stream": "1号炉低压给水",
+      "quantity": "P",
+      "status": "point_or_definition_missing",
+      "rule": "原HAA70压力已按用户指定移至混合后；混合前需独立测点或明确近似"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed.T",
+      "stream": "1号炉低压给水",
+      "quantity": "T",
+      "status": "point_or_definition_missing",
+      "rule": "原HAA70温度已按用户指定移至混合后；不能把同一测温当作混合前实测"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed.m_dot",
+      "stream": "1号炉低压给水",
+      "quantity": "m_dot",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_in.P",
+      "stream": "1号炉低压省煤器入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "用户确认等于lp_feed_after_recovery.P（HAA70WP021BP01）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_in.T",
+      "stream": "1号炉低压省煤器入口",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_in.m_dot",
+      "stream": "1号炉低压省煤器入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_feed_after_recovery.m_dot+lp_recirc_in.m_dot"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_out.P",
+      "stream": "1号炉低压省煤器出口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "用户确认等于lp_feed_after_recovery.P（HAA70WP021BP01）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_out.T",
+      "stream": "1号炉低压省煤器出口",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_out.m_dot",
+      "stream": "1号炉低压省煤器出口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_economizer_in.m_dot"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_valve_in.P",
+      "stream": "1号炉低压汽包给水调节阀入口",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_valve_in.T",
+      "stream": "1号炉低压汽包给水调节阀入口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "当前无旁路分流节点，取lp_economizer_out.T"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_valve_in.m_dot",
+      "stream": "1号炉低压汽包给水调节阀入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "闭合循环默认等于lp_feed.m_dot，循环量缺失仍可确定；非闭合时为给水+返回-送出"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_drum.P",
+      "stream": "1号炉低压汽包入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "用户确认给水阀后压力等于lp_drum_pressure"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_drum.T",
+      "stream": "1号炉低压汽包入口",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_drum.m_dot",
+      "stream": "1号炉低压汽包入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "等于lp_drum_valve_in.m_dot，不强制与汽包出口总量相等"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat_recovery.P",
+      "stream": "1号炉低压水至余热回收",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.P，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat_recovery.T",
+      "stream": "1号炉低压水至余热回收",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.T，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat_recovery.m_dot",
+      "stream": "1号炉低压水至余热回收",
+      "quantity": "m_dot",
+      "status": "point_or_definition_missing",
+      "rule": "用户明确暂留空；闭合循环返回量等于送出量，但不能由给水量推得循环量"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.P",
+      "stream": "1号炉热网水水换热器回水",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.T",
+      "stream": "1号炉热网水水换热器回水",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.m_dot",
+      "stream": "1号炉热网水水换热器回水",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "默认稳态无泄漏工质侧闭合循环，等于lp_to_heat_recovery.m_dot；配置可关闭此近似"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed_after_recovery.P",
+      "stream": "1号炉低压给水余热回收后",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed_after_recovery.T",
+      "stream": "1号炉低压给水余热回收后",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed_after_recovery.m_dot",
+      "stream": "1号炉低压给水余热回收后",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_feed.m_dot+lp_from_heat_recovery.m_dot"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_in.P",
+      "stream": "1号炉低压再循环泵入口母管",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.P，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_in.T",
+      "stream": "1号炉低压再循环泵入口母管",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.T，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_in.m_dot",
+      "stream": "1号炉低压再循环泵入口母管",
+      "quantity": "m_dot",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_in.P",
+      "stream": "1号炉低压再循环泵1入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "lp_economizer_out.P，来自省煤器而非汽包饱和水"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_in.T",
+      "stream": "1号炉低压再循环泵1入口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_in.m_dot",
+      "stream": "1号炉低压再循环泵1入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_in.P",
+      "stream": "1号炉低压再循环泵2入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "lp_economizer_out.P，来自省煤器而非汽包饱和水"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_in.T",
+      "stream": "1号炉低压再循环泵2入口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_in.m_dot",
+      "stream": "1号炉低压再循环泵2入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_out.P",
+      "stream": "1号炉低压再循环泵1出口",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_out.T",
+      "stream": "1号炉低压再循环泵1出口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump1_out.m_dot",
+      "stream": "1号炉低压再循环泵1出口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_out.P",
+      "stream": "1号炉低压再循环泵2出口",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_out.T",
+      "stream": "1号炉低压再循环泵2出口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2_out.m_dot",
+      "stream": "1号炉低压再循环泵2出口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_out.P",
+      "stream": "1号炉低压再循环泵出口母管",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "唯一运行再循环泵出口P；运行状态不可判定时None"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_out.T",
+      "stream": "1号炉低压再循环泵出口母管",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "运行泵出口T，按已确认的泵出口T等于入口T近似"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_out.m_dot",
+      "stream": "1号炉低压再循环泵出口母管",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_recirc_in.m_dot"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_pressure",
+      "stream": "1号炉低压汽包水",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_water.m_dot",
+      "stream": "1号炉低压汽包水",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "hp_main.m_dot+ip_feed.m_dot+rh_spray.m_dot"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_saturated_steam.m_dot",
+      "stream": "1号炉低压汽包饱和蒸汽",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_main.m_dot（简化稳态过热器无额外分流）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_main.P",
+      "stream": "1号炉低压主蒸汽",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_main.T",
+      "stream": "1号炉低压主蒸汽",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_main.m_dot",
+      "stream": "1号炉低压主蒸汽",
+      "quantity": "m_dot",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_st.P",
+      "stream": "1号炉低压蒸汽至汽轮机",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_st.T",
+      "stream": "1号炉低压蒸汽至汽轮机",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_st.m_dot",
+      "stream": "1号炉低压蒸汽至汽轮机",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_main.m_dot-lp_to_heat.m_dot，负差值None"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat.P",
+      "stream": "1号炉低压蒸汽至供热",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "简单分叉出口取lp_main.P；不代表下游共同母管压力"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat.T",
+      "stream": "1号炉低压蒸汽至供热",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "简单分叉出口取lp_main.T；不代表下游共同母管温度"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat.m_dot",
+      "stream": "1号炉低压蒸汽至供热",
+      "quantity": "m_dot",
+      "status": "point_or_definition_missing",
+      "rule": "每炉需要一个独立分流依据；全厂供热总流量不能唯一分配到两炉"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.hp_pump_in.m_dot",
+      "stream": "1号炉高压给水泵入口母管",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "hp_main.m_dot（已确认高压供水总量）"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.ip_pump_in.m_dot",
+      "stream": "1号炉中压给水泵入口母管",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "ip_feed.m_dot+rh_spray.m_dot（已确认中压供水总量）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed.P",
+      "stream": "2号炉低压给水",
+      "quantity": "P",
+      "status": "point_or_definition_missing",
+      "rule": "原HAA70压力已按用户指定移至混合后；混合前需独立测点或明确近似"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed.T",
+      "stream": "2号炉低压给水",
+      "quantity": "T",
+      "status": "point_or_definition_missing",
+      "rule": "原HAA70温度已按用户指定移至混合后；不能把同一测温当作混合前实测"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed.m_dot",
+      "stream": "2号炉低压给水",
+      "quantity": "m_dot",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_in.P",
+      "stream": "2号炉低压省煤器入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "用户确认等于lp_feed_after_recovery.P（HAA70WP021BP01）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_in.T",
+      "stream": "2号炉低压省煤器入口",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_in.m_dot",
+      "stream": "2号炉低压省煤器入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_feed_after_recovery.m_dot+lp_recirc_in.m_dot"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_out.P",
+      "stream": "2号炉低压省煤器出口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "用户确认等于lp_feed_after_recovery.P（HAA70WP021BP01）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_out.T",
+      "stream": "2号炉低压省煤器出口",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_out.m_dot",
+      "stream": "2号炉低压省煤器出口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_economizer_in.m_dot"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_valve_in.P",
+      "stream": "2号炉低压汽包给水调节阀入口",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_valve_in.T",
+      "stream": "2号炉低压汽包给水调节阀入口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "当前无旁路分流节点，取lp_economizer_out.T"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_valve_in.m_dot",
+      "stream": "2号炉低压汽包给水调节阀入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "闭合循环默认等于lp_feed.m_dot，循环量缺失仍可确定；非闭合时为给水+返回-送出"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_drum.P",
+      "stream": "2号炉低压汽包入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "用户确认给水阀后压力等于lp_drum_pressure"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_drum.T",
+      "stream": "2号炉低压汽包入口",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_drum.m_dot",
+      "stream": "2号炉低压汽包入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "等于lp_drum_valve_in.m_dot，不强制与汽包出口总量相等"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat_recovery.P",
+      "stream": "2号炉低压水至余热回收",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.P，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat_recovery.T",
+      "stream": "2号炉低压水至余热回收",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.T，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat_recovery.m_dot",
+      "stream": "2号炉低压水至余热回收",
+      "quantity": "m_dot",
+      "status": "point_or_definition_missing",
+      "rule": "用户明确暂留空；闭合循环返回量等于送出量，但不能由给水量推得循环量"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.P",
+      "stream": "2号炉热网水水换热器回水",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.T",
+      "stream": "2号炉热网水水换热器回水",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.m_dot",
+      "stream": "2号炉热网水水换热器回水",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "默认稳态无泄漏工质侧闭合循环，等于lp_to_heat_recovery.m_dot；配置可关闭此近似"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed_after_recovery.P",
+      "stream": "2号炉低压给水余热回收后",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed_after_recovery.T",
+      "stream": "2号炉低压给水余热回收后",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed_after_recovery.m_dot",
+      "stream": "2号炉低压给水余热回收后",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_feed.m_dot+lp_from_heat_recovery.m_dot"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_in.P",
+      "stream": "2号炉低压再循环泵入口母管",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.P，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_in.T",
+      "stream": "2号炉低压再循环泵入口母管",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "当前分流节点取lp_economizer_out.T，暂不增加管路压降/散热"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_in.m_dot",
+      "stream": "2号炉低压再循环泵入口母管",
+      "quantity": "m_dot",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_in.P",
+      "stream": "2号炉低压再循环泵1入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "lp_economizer_out.P，来自省煤器而非汽包饱和水"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_in.T",
+      "stream": "2号炉低压再循环泵1入口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_in.m_dot",
+      "stream": "2号炉低压再循环泵1入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_in.P",
+      "stream": "2号炉低压再循环泵2入口",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "lp_economizer_out.P，来自省煤器而非汽包饱和水"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_in.T",
+      "stream": "2号炉低压再循环泵2入口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_in.m_dot",
+      "stream": "2号炉低压再循环泵2入口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_out.P",
+      "stream": "2号炉低压再循环泵1出口",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_out.T",
+      "stream": "2号炉低压再循环泵1出口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump1_out.m_dot",
+      "stream": "2号炉低压再循环泵1出口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_out.P",
+      "stream": "2号炉低压再循环泵2出口",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_out.T",
+      "stream": "2号炉低压再循环泵2出口",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "lp_economizer_out.T（泵出口T等于入口T近似）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2_out.m_dot",
+      "stream": "2号炉低压再循环泵2出口",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "唯一运行泵承担再循环总量，备用0；原始时序切泵/矛盾时None"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_out.P",
+      "stream": "2号炉低压再循环泵出口母管",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "唯一运行再循环泵出口P；运行状态不可判定时None"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_out.T",
+      "stream": "2号炉低压再循环泵出口母管",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "运行泵出口T，按已确认的泵出口T等于入口T近似"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_out.m_dot",
+      "stream": "2号炉低压再循环泵出口母管",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_recirc_in.m_dot"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_pressure",
+      "stream": "2号炉低压汽包水",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_water.m_dot",
+      "stream": "2号炉低压汽包水",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "hp_main.m_dot+ip_feed.m_dot+rh_spray.m_dot"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_saturated_steam.m_dot",
+      "stream": "2号炉低压汽包饱和蒸汽",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_main.m_dot（简化稳态过热器无额外分流）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_main.P",
+      "stream": "2号炉低压主蒸汽",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_main.T",
+      "stream": "2号炉低压主蒸汽",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_main.m_dot",
+      "stream": "2号炉低压主蒸汽",
+      "quantity": "m_dot",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_st.P",
+      "stream": "2号炉低压蒸汽至汽轮机",
+      "quantity": "P",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_st.T",
+      "stream": "2号炉低压蒸汽至汽轮机",
+      "quantity": "T",
+      "status": "raw_bound",
+      "rule": "原始外部输入；缺文件与缺测点定义分开统计"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_st.m_dot",
+      "stream": "2号炉低压蒸汽至汽轮机",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "lp_main.m_dot-lp_to_heat.m_dot，负差值None"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat.P",
+      "stream": "2号炉低压蒸汽至供热",
+      "quantity": "P",
+      "status": "derived",
+      "rule": "简单分叉出口取lp_main.P；不代表下游共同母管压力"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat.T",
+      "stream": "2号炉低压蒸汽至供热",
+      "quantity": "T",
+      "status": "derived",
+      "rule": "简单分叉出口取lp_main.T；不代表下游共同母管温度"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat.m_dot",
+      "stream": "2号炉低压蒸汽至供热",
+      "quantity": "m_dot",
+      "status": "point_or_definition_missing",
+      "rule": "每炉需要一个独立分流依据；全厂供热总流量不能唯一分配到两炉"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.hp_pump_in.m_dot",
+      "stream": "2号炉高压给水泵入口母管",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "hp_main.m_dot（已确认高压供水总量）"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.ip_pump_in.m_dot",
+      "stream": "2号炉中压给水泵入口母管",
+      "quantity": "m_dot",
+      "status": "derived",
+      "rule": "ip_feed.m_dot+rh_spray.m_dot（已确认中压供水总量）"
+    }
+  ],
+  "missing_inputs": [
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.P",
+      "kind": "history_missing",
+      "code": "GARD_11HAA13QN101BP02XQ01",
+      "meaning": "至#1炉烟气热网再循环凝结水压力",
+      "engineering_unit": "MPa"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_from_heat_recovery.T",
+      "kind": "history_missing",
+      "code": "GARD_11HAA11WP011BT02XQ01",
+      "meaning": "1号炉烟气换热器凝结水出口温度",
+      "engineering_unit": "℃"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_drum_pressure",
+      "kind": "history_missing",
+      "code": "GARD_11HBK11CM001BP02XQ01",
+      "meaning": "#1炉低压汽包压力选择值",
+      "engineering_unit": "MPa"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_economizer_in.T",
+      "kind": "history_missing",
+      "code": "GARD_11HAA70WP021BT02XQ01",
+      "meaning": "#1炉低压省煤器进水温度",
+      "engineering_unit": "℃"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_in.m_dot",
+      "kind": "history_missing",
+      "code": "GARD_11HAA85WP001BF01XQ01",
+      "meaning": "#1炉低压省煤器再循环流量",
+      "engineering_unit": "t/h"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_recirc_pump2.current",
+      "kind": "history_missing",
+      "code": "GARD_11HAA85GP002BC02XQ01",
+      "meaning": "#1炉低省#2再循环泵电流",
+      "engineering_unit": "A"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed.P",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "余热回收返回混合前低压给水压力",
+      "note": "原HAA70压力已按用户指定移至混合后；混合前需独立测点或明确近似"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_feed.T",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "余热回收返回混合前低压给水温度",
+      "note": "原HAA70温度已按用户指定移至混合后；不能把同一测温当作混合前实测"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat_recovery.m_dot",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "水水换热器工质侧循环总流量",
+      "note": "用户明确暂留空；闭合循环返回量等于送出量，但不能由给水量推得循环量"
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.lp_to_heat.m_dot",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "本炉低压蒸汽至供热流量",
+      "note": "每炉需要一个独立分流依据；全厂供热总流量不能唯一分配到两炉"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.P",
+      "kind": "history_missing",
+      "code": "GARD_12HAA13QN101BP02XQ01",
+      "meaning": "至#2炉烟气热网再循环凝结水压力",
+      "engineering_unit": "MPa"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_from_heat_recovery.T",
+      "kind": "history_missing",
+      "code": "GARD_12HAA11WP011BT02XQ01",
+      "meaning": "#2炉烟气水水换热凝结水出口温度",
+      "engineering_unit": "℃"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_drum_pressure",
+      "kind": "history_missing",
+      "code": "GARD_12HAG11CM001BP02XQ01",
+      "meaning": "#2炉低压汽包压力选择值",
+      "engineering_unit": "MPa"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_economizer_in.T",
+      "kind": "history_missing",
+      "code": "GARD_12HAA70WP021BT02XQ01",
+      "meaning": "#2炉低压省煤器进水温度",
+      "engineering_unit": "℃"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_in.m_dot",
+      "kind": "history_missing",
+      "code": "GARD_12HAA85WP001BF01XQ01",
+      "meaning": "#2炉低压省煤器再循环流量",
+      "engineering_unit": "t/h"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_recirc_pump2.current",
+      "kind": "history_missing",
+      "code": "GARD_12HAA85GP002BC02XQ01",
+      "meaning": "#2炉低省#2再循环泵电流",
+      "engineering_unit": "A"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed.P",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "余热回收返回混合前低压给水压力",
+      "note": "原HAA70压力已按用户指定移至混合后；混合前需独立测点或明确近似"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_feed.T",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "余热回收返回混合前低压给水温度",
+      "note": "原HAA70温度已按用户指定移至混合后；不能把同一测温当作混合前实测"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat_recovery.m_dot",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "水水换热器工质侧循环总流量",
+      "note": "用户明确暂留空；闭合循环返回量等于送出量，但不能由给水量推得循环量"
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.lp_to_heat.m_dot",
+      "kind": "point_or_definition_missing",
+      "code": null,
+      "meaning": "本炉低压蒸汽至供热流量",
+      "note": "每炉需要一个独立分流依据；全厂供热总流量不能唯一分配到两炉"
+    },
+    {
+      "unit": "shared",
+      "field": "heat.lp_steam_header.P",
+      "kind": "shared_interface_definition_missing",
+      "code": null,
+      "meaning": "两炉低压供热支路汇合后母管压力",
+      "note": "新确认汇合节点；尚未选定测点或混合压力近似"
+    },
+    {
+      "unit": "shared",
+      "field": "heat.lp_steam_header.T",
+      "kind": "shared_interface_definition_missing",
+      "code": null,
+      "meaning": "两炉低压供热支路汇合后母管温度",
+      "note": "尚未选定测点；两炉温度不同时不能直接复制任一炉温度"
+    }
+  ],
+  "recovery_location_candidates": [
+    {
+      "code": "GARD_11HAA11WP001BP01XQ01",
+      "master_records": [
+        {
+          "code": "GARD_11HAA11WP001BP01XQ01",
+          "plant_code": "11LCA91CP101",
+          "point_type": "AX",
+          "description": "#1炉烟气热网换热器凝水入口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1636,
+          "code_cell": "B1636",
+          "description_cell": "D1636",
+          "unit_cell": "E1636"
+        }
+      ],
+      "history_exists": false,
+      "status": "location_candidate_only_not_bound"
+    },
+    {
+      "code": "GARD_11HAA11WP001BT01XQ01",
+      "master_records": [
+        {
+          "code": "GARD_11HAA11WP001BT01XQ01",
+          "plant_code": "11LCA91CT301",
+          "point_type": "AX",
+          "description": "1号炉烟气换热器凝结水入口温度",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1822,
+          "code_cell": "B1822",
+          "description_cell": "D1822",
+          "unit_cell": "E1822"
+        }
+      ],
+      "history_exists": false,
+      "status": "location_candidate_only_not_bound"
+    },
+    {
+      "code": "GARD_12HAA11WP001BP01XQ01",
+      "master_records": [
+        {
+          "code": "GARD_12HAA11WP001BP01XQ01",
+          "plant_code": "12LCA91CP101",
+          "point_type": "AX",
+          "description": "#2炉烟气热网换热器凝水入口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2137,
+          "code_cell": "B2137",
+          "description_cell": "D2137",
+          "unit_cell": "E2137"
+        }
+      ],
+      "history_exists": false,
+      "status": "location_candidate_only_not_bound"
+    },
+    {
+      "code": "GARD_12HAA11WP001BT01XQ01",
+      "master_records": [
+        {
+          "code": "GARD_12HAA11WP001BT01XQ01",
+          "plant_code": "12LCA91CT301",
+          "point_type": "AX",
+          "description": "#2炉烟气水水换热凝结水入口温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2360,
+          "code_cell": "B2360",
+          "description_cell": "D2360",
+          "unit_cell": "E2360"
+        }
+      ],
+      "history_exists": false,
+      "status": "location_candidate_only_not_bound"
+    }
+  ],
+  "counts": {
+    "history_missing": 12,
+    "point_or_definition_missing": 8,
+    "shared_interface_definition_missing": 2
+  },
+  "model_assumptions": [
+    "每炉13设备，与当前拓扑一致；移除每炉24个旧字段",
+    "沿用单泵互备、默认10 A阈值；此为可配置运行假设，电流不能计算电功",
+    "泵出口温度等于入口温度；低压再循环泵入口为省煤器出口状态",
+    "默认水水换热器工质侧稳态无泄漏，返回量等于送出量；不含热网循环水",
+    "余热回收混合后P/T用HAA70WP021BP01/BT01；省煤器进出口P用同一压力，给水阀后P用汽包P",
+    "省煤器入口T优先测点BT02；缺失时具备混合流量、状态和出口P才按焓流计算",
+    "供热支路为主汽简单分叉出口，P/T取本炉主汽；两炉至汽机支路、至供热支路分别汇合，不均分流量",
+    "热网低压补汽汇合母管P/T仍独立；本次仅连接该工质侧汇合节点，未重构其余热网设备",
+    "保留独立低压给水与汽包总出口质量差；系统功/热量/热量火用缺失时不输出完整能量/火用结果"
+  ],
+  "measurement_location_issue": "HAA80QN102BP01原描述为低压汽包进水压力，保留既有lp_drum_valve_in.P绑定，阀前安装位置尚需核对；不影响已确认的省煤器P和阀后P规则",
+  "parameter_table_verification": {
+    "before": 252,
+    "removed_LP_derived": 10,
+    "added_LP_mixed_T": 2,
+    "added_shared_header_states": 2,
+    "updated_LP_rows": 14,
+    "after": 246,
+    "example_and_other_systems_preserved": true,
+    "all_spacing_styles_and_blank_sheets_preserved": true,
+    "source_point_workbooks_unchanged": true,
+    "backup": "C:\\MyFolder\\Projects\\gtcc_optimization\\outputs\\20261013_lp_confirmed\\support\\previous_version.xlsx",
+    "output_sha256": "5d588fefbbc0611405dd2697a485cd86734852536eee316c67f2d6d3b470b7ba",
+    "delivered_to": "C:\\Users\\32697\\Desktop\\全部原始编码.xlsx"
+  },
+  "deferred": [
+    "压力基准仍按用户安排后续确认",
+    "无完整实测工况及热量火用边界，不能宣称完整火用已求得"
+  ]
+}

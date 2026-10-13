@@ -2,9 +2,14 @@
 
 
 DEVICE_DEFINITIONS = {
+    "heating_lp_steam_merge": {
+        "type": "Mixer",
+        "inlets": ["1号炉低压蒸汽至供热", "2号炉低压蒸汽至供热"],
+        "outlets": ["热网低压补汽母管"],
+    },
     "heating_steam_merge": {
         "type": "Mixer",
-        "inlets": ["汽轮机供热抽汽", "1号炉低压蒸汽至供热", "2号炉低压蒸汽至供热", "1号炉中压旁路至供热", "2号炉中压旁路至供热"],
+        "inlets": ["汽轮机供热抽汽", "热网低压补汽母管"],
         "outlets": ["供热系统蒸汽母管"],
     },
     "heating_exchangers_boundary": {

@@ -13,6 +13,7 @@ import math
 
 import numpy as np
 import pandas as pd
+from gard.config import DEFAULT_ENVIRONMENT_PRESSURE
 
 
 MAX_HOLD = pd.Timedelta(seconds=60)
@@ -178,14 +179,46 @@ def convert_values(point_values, bindings, *, atmospheric_pressure=None):
     return row
 
 
-def prepare_inputs(system_name, point_values, *, atmospheric_pressure=None):
+def prepare_inputs(system_name, point_values, *, atmospheric_pressure=DEFAULT_ENVIRONMENT_PRESSURE):
     """将已有原始测点数值转换为 SI 字典，不生成派生字段。"""
     return convert_values(point_values, _bindings(system_name), atmospheric_pressure=atmospheric_pressure)
 
 
-def load_inputs(system_name, directory, start, end, *, atmospheric_pressure=None, timezone="Asia/Shanghai"):
+def load_inputs(system_name, directory, start, end, *, atmospheric_pressure=DEFAULT_ENVIRONMENT_PRESSURE, timezone="Asia/Shanghai", hp_config=None, ip_config=None, lp_config=None):
     """加载一个半小时工况，仅返回 row；压力基准由系统 data.py 决定。"""
     bindings = _bindings(system_name)
     raw = read_history(directory, start, end, bindings, timezone=timezone)
     values = summarize_history(raw, start, end, timezone=timezone)
-    return convert_values(values, bindings, atmospheric_pressure=atmospheric_pressure)
+    row = convert_values(values, bindings, atmospheric_pressure=atmospheric_pressure)
+    if system_name in {"hrsg1_hp", "hrsg2_hp", "hrsg1_ip", "hrsg2_ip", "hrsg1_lp", "hrsg2_lp"}:
+        from gard.systems.hrsg_hp import HPPreparationConfig, qualify_current_history
+        level=system_name.split('_')[1]
+        if level=='hp':
+            operation_config=hp_config or HPPreparationConfig()
+        elif level=='ip':
+            from gard.systems.hrsg_ip import IPPreparationConfig
+            operation_config=ip_config or IPPreparationConfig()
+        else:
+            from gard.systems.hrsg_lp import LPPreparationConfig
+            operation_config=lp_config or LPPreparationConfig()
+        prefix = system_name.split("_")[0]
+        pump_stem = 'lp_recirc_pump' if level=='lp' else f'{level}_pump'
+        codes = tuple(bindings.loc[bindings.field == f"{prefix}.{pump_stem}{j}.current", "code"].iloc[0]
+                      if (bindings.field == f"{prefix}.{pump_stem}{j}.current").any() else "" for j in (1, 2))
+        # Custom bindings used by callers may omit the operation channels.
+        if any(codes):
+            operation_flow=row.get(f"{prefix}.hp_main.m_dot")
+            if level=='ip':
+                feed=_finite(row.get(f'{prefix}.ip_feed.m_dot'))
+                spray=_finite(row.get(f'{prefix}.rh_spray.m_dot'))
+                operation_flow=feed+spray if feed is not None and feed>=0 and spray is not None and spray>=0 else None
+            elif level=='lp':
+                operation_flow=_finite(row.get(f'{prefix}.lp_recirc_in.m_dot'))
+            row[f"{prefix}.{level}_operation_status"] = qualify_current_history(
+                raw, start, end, codes, operation_flow, operation_config, timezone)
+            row[f"{prefix}.{level}_operation_source"] = "raw_history"
+            row[f"{prefix}.{level}_operation_parameters"] = {
+                "current_threshold_A": operation_config.current_threshold_A,
+                "allow_single_current_inference": operation_config.allow_single_current_inference,
+            }
+    return row

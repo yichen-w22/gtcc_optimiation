@@ -1,0 +1,47 @@
+[
+  {
+    "title": "IDAES Pressure Changer",
+    "url": "https://idaes-pse.readthedocs.io/en/stable/reference_guides/model_libraries/generic/unit_models/pressure_changer.html",
+    "status": 200,
+    "checked_date": "2026-10-13",
+    "html_sha256": "a459d225ff19024159128e17452b472c8fc75ea242dc19cf21ff78fee5b1dcfc",
+    "section_or_term_presence": {
+      "Isentropic Assumption": true,
+      "Pump (Incompressible Fluid) Assumption": true,
+      "efficiency_isentropic": true
+    }
+  },
+  {
+    "title": "KSB Pump efficiency",
+    "url": "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/pump-efficiency-1116510",
+    "status": 200,
+    "checked_date": "2026-10-13",
+    "html_sha256": "13c6c2625ed65dd11781ac8e74edf5cf01f8433821cdc203ed522a159f86f96a",
+    "section_or_term_presence": {
+      "power input": true,
+      "terminals of the motor": true
+    }
+  },
+  {
+    "title": "KSB Power input",
+    "url": "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/power-input-1117260",
+    "status": 200,
+    "checked_date": "2026-10-13",
+    "html_sha256": "09a12ff9181f8ca008d76a71019651574ff93c2f0848b858f67071f2bc246453",
+    "section_or_term_presence": {
+      "pump shaft": true,
+      "Zero-flow pump input power": true
+    }
+  },
+  {
+    "title": "KSB Efficiency class",
+    "url": "https://www.ksb.com/en-global/centrifugal-pump-lexicon/article/efficiency-class-1116446",
+    "status": 200,
+    "checked_date": "2026-10-13",
+    "html_sha256": "a11083be40b9a12b73e3ae883308716b36f816e1db2511cecf4dbd8a06dd384f",
+    "section_or_term_presence": {
+      "shaft output power": true,
+      "electrical input power": true
+    }
+  }
+]

@@ -10,6 +10,8 @@ __all__ = [
     "DEVICE_DEFINITIONS",
     "POINT_BINDINGS",
     "SYSTEM_DEFINITIONS",
+    "prepare_inputs",
+    "build_system",
 ]
 
 
@@ -25,3 +27,13 @@ def __getattr__(name):
     value = getattr(module, name)
     globals()[name] = value
     return value
+
+
+def prepare_inputs(row, ref_env=None, config=None):
+    from ..hrsg_lp import prepare_lp_inputs
+    return prepare_lp_inputs(2, row, ref_env, config)
+
+
+def build_system(row, ref_env=None, config=None):
+    from ..hrsg_lp import build_lp_system
+    return build_lp_system(2, row, ref_env, config)

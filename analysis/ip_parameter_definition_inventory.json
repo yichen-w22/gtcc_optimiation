@@ -1,0 +1,1310 @@
+{
+  "date": "2026-10-13",
+  "scope": "current IP circuit inputs/prepared fields, independent interface checks and boundary terms; legacy fields removed",
+  "meaning_of_undetermined": "取值来源/建模或运行判断口径尚未明确；不等同于缺历史文件或字段名字没有含义",
+  "pressure_basis": "用户要求后续再确认；本表不重复标每个P为待定基准",
+  "active_or_interface_and_boundary": [
+    {
+      "field": "hrsg1.lp_drum_pressure",
+      "unit": 1,
+      "group": "入口",
+      "meaning": "对应低压汽包压力，泵入口P+x=0",
+      "definition_status": "已定",
+      "note": "共用输入；历史缺失，按用户安排后续补",
+      "code": "GARD_11HBK11CM001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": false,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_pump1.current",
+      "unit": 1,
+      "group": "入口",
+      "meaning": "中压泵1电流",
+      "definition_status": "已定",
+      "note": "按A解释；>10 A为运行，两泵互备；已接入",
+      "code": "GARD_11LAB81QM003BC01XQ01",
+      "original_units": [
+        "A"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_pump2.current",
+      "unit": 1,
+      "group": "入口",
+      "meaning": "中压泵2电流",
+      "definition_status": "已定",
+      "note": "按A解释；1号原%覆盖来源保留；>10 A为运行，两泵互备；已接入",
+      "code": "GARD_11LAB82QM003BC01XQ01",
+      "original_units": [
+        "%"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_pump_in.m_dot",
+      "unit": 1,
+      "group": "入口",
+      "meaning": "泵入口母管总质量流量",
+      "definition_status": "已定",
+      "note": "等于ip_feed.m_dot+rh_spray.m_dot；任一分量缺失或无效时None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump1_in.m_dot",
+      "unit": 1,
+      "group": "入口",
+      "meaning": "泵1入口流量",
+      "definition_status": "已定",
+      "note": "运行时等于ip_feed.m_dot+rh_spray.m_dot，停运0；电流证据不足/矛盾时None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump2_in.m_dot",
+      "unit": 1,
+      "group": "入口",
+      "meaning": "泵2入口流量",
+      "definition_status": "已定",
+      "note": "运行时等于ip_feed.m_dot+rh_spray.m_dot，停运0；电流证据不足/矛盾时None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump1_out.P",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵1出口压力",
+      "definition_status": "已定",
+      "note": "现有实测压力绑定",
+      "code": "GARD_11LAB81WP011BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_pump1_out.T",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵1出口温度",
+      "definition_status": "已定",
+      "note": "用户确认等于泵入口温度；等温状态近似，不自动生成绝热功边界",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump1_out.m_dot",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵1出口流量",
+      "definition_status": "已定",
+      "note": "等于泵1入口流量；运行为ip_feed.m_dot+rh_spray.m_dot，停运0",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump2_out.P",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵2出口压力",
+      "definition_status": "已定",
+      "note": "现有实测压力绑定",
+      "code": "GARD_11LAB82WP012BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_pump2_out.T",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵2出口温度",
+      "definition_status": "已定",
+      "note": "用户确认等于泵入口温度",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump2_out.m_dot",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵2出口流量",
+      "definition_status": "已定",
+      "note": "等于泵2入口流量；运行为ip_feed.m_dot+rh_spray.m_dot，停运0",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump_out.P",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵出口母管压力",
+      "definition_status": "已定",
+      "note": "取唯一运行泵出口P",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump_out.T",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵出口母管温度",
+      "definition_status": "已定",
+      "note": "采用唯一运行泵出口状态，T等于入口T",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_pump_out.m_dot",
+      "unit": 1,
+      "group": "泵出口",
+      "meaning": "泵出口母管总流量",
+      "definition_status": "已定",
+      "note": "等于ip_feed.m_dot+rh_spray.m_dot；分流质量残差为0，派生闭合不作为独立验证",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_feed.P",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压省煤器进水压力",
+      "definition_status": "已定",
+      "note": "原描述即省煤器进水压力",
+      "code": "GARD_11HAC02WP001BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_feed.T",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压省煤器进水温度",
+      "definition_status": "已定",
+      "note": "原描述即省煤器进水温度",
+      "code": "GARD_11HAC02WP001BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_feed.m_dot",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压省煤器进水流量",
+      "definition_status": "已定",
+      "note": "DCS选择值，现有绑定",
+      "code": "GARD_11HAC02WP001BF03XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_to_drum.P",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压汽包进水口压力",
+      "definition_status": "已定",
+      "note": "用户确认等于ip_drum_pressure，已落实",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_to_drum.T",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压汽包进水温度",
+      "definition_status": "已定",
+      "note": "原汽包进水测温；当前图省煤器直接连接该端口，不保留旧阀前出口字段",
+      "code": "GARD_11LAF80WP002BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_to_drum.m_dot",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压汽包进水流量",
+      "definition_status": "关系明确",
+      "note": "当前简化主路等于ip_feed.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_drum_pressure",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "中压汽包压力",
+      "definition_status": "已定",
+      "note": "1号11HBK02，2号12HAG02，现有绑定",
+      "code": "GARD_11HBK02CM001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_drum_steam.m_dot",
+      "unit": 1,
+      "group": "给水与汽包",
+      "meaning": "汽包饱和蒸汽流量",
+      "definition_status": "已定",
+      "note": "用户指定1号GARD_11HAH80WP011BF03XQ01，2号用现有对应12HAH80WP011BF03XQ01；复用ip_fresh.m_dot，保留与给水量的质量残差",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.ip_fresh.P",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "中压过热器出口/新蒸汽压力",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_11HAH80WP011BP02XQ01",
+      "original_units": [
+        "Mpa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_fresh.T",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "中压过热器出口/新蒸汽温度",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_11HAH80WP011BT02XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.ip_fresh.m_dot",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "中压新蒸汽流量",
+      "definition_status": "已定",
+      "note": "原蒸汽流量选择值，现有绑定",
+      "code": "GARD_11HAH80WP011BF03XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.cold_reheat.P",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "汽轮机高压缸返回锅炉的冷再热压力",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_11LBC10WP001BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.cold_reheat.T",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "汽轮机高压缸返回锅炉的冷再热温度",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_11LBC10WP001BT02XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.cold_reheat.m_dot",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "冷再热质量流量",
+      "definition_status": "关系明确",
+      "note": "当前简化图可由hot_reheat.m_dot-ip_fresh.m_dot-rh_spray.m_dot求得；需检查非负及DCS流量来源",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.reheat_mixed.P",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "冷再热与新蒸汽混合后压力",
+      "definition_status": "已定",
+      "note": "原冷再热混合后压力测点，现有绑定",
+      "code": "GARD_11LBC80WP001BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.reheat_mixed.T",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "冷再热与新蒸汽混合后温度",
+      "definition_status": "已定",
+      "note": "原混合后温度测点，现有绑定",
+      "code": "GARD_11LBC80WP001BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.reheat_mixed.m_dot",
+      "unit": 1,
+      "group": "新蒸汽与冷再热",
+      "meaning": "进入再热器组的总流量",
+      "definition_status": "关系明确",
+      "note": "cold_reheat.m_dot+ip_fresh.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.rh_before_spray.P",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "再热器组1～2之后、减温前压力",
+      "definition_status": "已定",
+      "note": "用户确认等于hot_reheat.P，已落实",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.rh_before_spray.T",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "再热器2出口、减温前温度",
+      "definition_status": "测点已选",
+      "note": "Excel已选HAJ80WP001BT01，原单位℃；两炉历史缺失，现已绑定并接入",
+      "code": "GARD_11HAJ80WP001BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": false,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.rh_before_spray.m_dot",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "减温前蒸汽流量",
+      "definition_status": "关系明确",
+      "note": "等于reheat_mixed.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.rh_spray.P",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "再热减温水压力",
+      "definition_status": "已定",
+      "note": "采用出口母管P，不另做节流状态变换",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.rh_spray.T",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "再热减温水温度",
+      "definition_status": "已定",
+      "note": "采用出口母管热力状态，不考虑节流",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.rh_spray.m_dot",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "再热减温水质量流量",
+      "definition_status": "测点已定，计算来源待核",
+      "note": "LAF80WP001BF02，t/h；DCS计算值已有历史，不是独立实测已验证",
+      "code": "GARD_11LAF80WP001BF02XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.rh_after_spray.P",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "再热减温后、再热器3前压力",
+      "definition_status": "已定",
+      "note": "用户确认等于hot_reheat.P",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.rh_after_spray.T",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "减温后蒸汽温度",
+      "definition_status": "测点已选",
+      "note": "HAJ80WP011BT07，原描述中压喷水后温度，℃；物理取点需随拓扑同步核对",
+      "code": "GARD_11HAJ80WP011BT07XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.rh_after_spray.m_dot",
+      "unit": 1,
+      "group": "再热减温",
+      "meaning": "减温后蒸汽总流量",
+      "definition_status": "关系明确",
+      "note": "reheat_mixed.m_dot+rh_spray.m_dot=hot_reheat.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1.hot_reheat.P",
+      "unit": 1,
+      "group": "热再热与接口",
+      "meaning": "锅炉热再热出口压力",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_11LBB01WP001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.hot_reheat.T",
+      "unit": 1,
+      "group": "热再热与接口",
+      "meaning": "锅炉热再热出口温度",
+      "definition_status": "已定",
+      "note": "使用BT13选择值；原%按用户授权℃解释，导入加273.15转K，原始来源保留",
+      "code": "GARD_11LBB01WP001BT13XQ01",
+      "original_units": [
+        "%"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.hot_reheat.m_dot",
+      "unit": 1,
+      "group": "热再热与接口",
+      "meaning": "锅炉热再热出口总流量",
+      "definition_status": "已定",
+      "note": "原流量补偿后选择值，现有绑定",
+      "code": "GARD_11LBB01WP001BF03XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.rh_to_st.P",
+      "unit": 1,
+      "group": "热再热与接口",
+      "meaning": "至汽机热再热压力",
+      "definition_status": "已定",
+      "note": "独立接口位置测点，不自动替代锅炉出口",
+      "code": "GARD_11LBB10WP001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.rh_to_st.T",
+      "unit": 1,
+      "group": "热再热与接口",
+      "meaning": "至汽机热再热温度",
+      "definition_status": "已定",
+      "note": "独立接口位置测点，不自动替代hot_reheat.T",
+      "code": "GARD_11LBB10WP001BT05XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg1.rh_to_st.m_dot",
+      "unit": 1,
+      "group": "热再热与接口",
+      "meaning": "送往汽机的热再热流量",
+      "definition_status": "已定",
+      "note": "用户确认等于hot_reheat.m_dot，已落实",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1_ip.work",
+      "unit": 1,
+      "group": "边界量",
+      "meaning": "IP工质系统边界功，输出正",
+      "definition_status": "暂不考虑",
+      "note": "用户暂不考虑系统能量输入输出，保持None，不使用电流计算",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1_ip.heat",
+      "unit": 1,
+      "group": "边界量",
+      "meaning": "IP工质系统净入热",
+      "definition_status": "暂不考虑",
+      "note": "用户暂不考虑系统能量输入输出，保持None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg1_ip.heat_exergy",
+      "unit": 1,
+      "group": "边界量",
+      "meaning": "热量穿过IP边界携带的火用",
+      "definition_status": "暂不考虑",
+      "note": "系统能量/完整火用暂不计算，保持None而非0",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.lp_drum_pressure",
+      "unit": 2,
+      "group": "入口",
+      "meaning": "对应低压汽包压力，泵入口P+x=0",
+      "definition_status": "已定",
+      "note": "共用输入；历史缺失，按用户安排后续补",
+      "code": "GARD_12HAG11CM001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": false,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_pump1.current",
+      "unit": 2,
+      "group": "入口",
+      "meaning": "中压泵1电流",
+      "definition_status": "已定",
+      "note": "按A解释；>10 A为运行，两泵互备；已接入",
+      "code": "GARD_12LAB81QM003BC01XQ01",
+      "original_units": [
+        "A"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_pump2.current",
+      "unit": 2,
+      "group": "入口",
+      "meaning": "中压泵2电流",
+      "definition_status": "已定",
+      "note": "按A解释；1号原%覆盖来源保留；>10 A为运行，两泵互备；已接入",
+      "code": "GARD_12LAB82QM003BC01XQ01",
+      "original_units": [
+        "A"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_pump_in.m_dot",
+      "unit": 2,
+      "group": "入口",
+      "meaning": "泵入口母管总质量流量",
+      "definition_status": "已定",
+      "note": "等于ip_feed.m_dot+rh_spray.m_dot；任一分量缺失或无效时None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump1_in.m_dot",
+      "unit": 2,
+      "group": "入口",
+      "meaning": "泵1入口流量",
+      "definition_status": "已定",
+      "note": "运行时等于ip_feed.m_dot+rh_spray.m_dot，停运0；电流证据不足/矛盾时None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump2_in.m_dot",
+      "unit": 2,
+      "group": "入口",
+      "meaning": "泵2入口流量",
+      "definition_status": "已定",
+      "note": "运行时等于ip_feed.m_dot+rh_spray.m_dot，停运0；电流证据不足/矛盾时None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump1_out.P",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵1出口压力",
+      "definition_status": "已定",
+      "note": "现有实测压力绑定",
+      "code": "GARD_12LAB81WP011BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_pump1_out.T",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵1出口温度",
+      "definition_status": "已定",
+      "note": "用户确认等于泵入口温度；等温状态近似，不自动生成绝热功边界",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump1_out.m_dot",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵1出口流量",
+      "definition_status": "已定",
+      "note": "等于泵1入口流量；运行为ip_feed.m_dot+rh_spray.m_dot，停运0",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump2_out.P",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵2出口压力",
+      "definition_status": "已定",
+      "note": "现有实测压力绑定",
+      "code": "GARD_12LAB82WP012BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_pump2_out.T",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵2出口温度",
+      "definition_status": "已定",
+      "note": "用户确认等于泵入口温度",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump2_out.m_dot",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵2出口流量",
+      "definition_status": "已定",
+      "note": "等于泵2入口流量；运行为ip_feed.m_dot+rh_spray.m_dot，停运0",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump_out.P",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵出口母管压力",
+      "definition_status": "已定",
+      "note": "取唯一运行泵出口P",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump_out.T",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵出口母管温度",
+      "definition_status": "已定",
+      "note": "采用唯一运行泵出口状态，T等于入口T",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_pump_out.m_dot",
+      "unit": 2,
+      "group": "泵出口",
+      "meaning": "泵出口母管总流量",
+      "definition_status": "已定",
+      "note": "等于ip_feed.m_dot+rh_spray.m_dot；分流质量残差为0，派生闭合不作为独立验证",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_feed.P",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压省煤器进水压力",
+      "definition_status": "已定",
+      "note": "原描述即省煤器进水压力",
+      "code": "GARD_12HAC02WP001BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_feed.T",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压省煤器进水温度",
+      "definition_status": "已定",
+      "note": "原描述即省煤器进水温度",
+      "code": "GARD_12HAC02WP001BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_feed.m_dot",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压省煤器进水流量",
+      "definition_status": "已定",
+      "note": "DCS选择值，现有绑定",
+      "code": "GARD_12HAC02WP001BF03XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_to_drum.P",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压汽包进水口压力",
+      "definition_status": "已定",
+      "note": "用户确认等于ip_drum_pressure，已落实",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_to_drum.T",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压汽包进水温度",
+      "definition_status": "已定",
+      "note": "原汽包进水测温；当前图省煤器直接连接该端口，不保留旧阀前出口字段",
+      "code": "GARD_12LAF80WP002BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_to_drum.m_dot",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压汽包进水流量",
+      "definition_status": "关系明确",
+      "note": "当前简化主路等于ip_feed.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_drum_pressure",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "中压汽包压力",
+      "definition_status": "已定",
+      "note": "1号11HBK02，2号12HAG02，现有绑定",
+      "code": "GARD_12HAG02CM001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_drum_steam.m_dot",
+      "unit": 2,
+      "group": "给水与汽包",
+      "meaning": "汽包饱和蒸汽流量",
+      "definition_status": "已定",
+      "note": "用户指定1号GARD_11HAH80WP011BF03XQ01，2号用现有对应12HAH80WP011BF03XQ01；复用ip_fresh.m_dot，保留与给水量的质量残差",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.ip_fresh.P",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "中压过热器出口/新蒸汽压力",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_12HAH80WP011BP02XQ01",
+      "original_units": [
+        "Mpa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_fresh.T",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "中压过热器出口/新蒸汽温度",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_12HAH80WP011BT02XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.ip_fresh.m_dot",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "中压新蒸汽流量",
+      "definition_status": "已定",
+      "note": "原蒸汽流量选择值，现有绑定",
+      "code": "GARD_12HAH80WP011BF03XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.cold_reheat.P",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "汽轮机高压缸返回锅炉的冷再热压力",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_12LBC10WP001BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.cold_reheat.T",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "汽轮机高压缸返回锅炉的冷再热温度",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_12LBC10WP001BT02XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.cold_reheat.m_dot",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "冷再热质量流量",
+      "definition_status": "关系明确",
+      "note": "当前简化图可由hot_reheat.m_dot-ip_fresh.m_dot-rh_spray.m_dot求得；需检查非负及DCS流量来源",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.reheat_mixed.P",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "冷再热与新蒸汽混合后压力",
+      "definition_status": "已定",
+      "note": "原冷再热混合后压力测点，现有绑定",
+      "code": "GARD_12LBC80WP001BP01XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.reheat_mixed.T",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "冷再热与新蒸汽混合后温度",
+      "definition_status": "已定",
+      "note": "原混合后温度测点，现有绑定",
+      "code": "GARD_12LBC80WP001BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.reheat_mixed.m_dot",
+      "unit": 2,
+      "group": "新蒸汽与冷再热",
+      "meaning": "进入再热器组的总流量",
+      "definition_status": "关系明确",
+      "note": "cold_reheat.m_dot+ip_fresh.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.rh_before_spray.P",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "再热器组1～2之后、减温前压力",
+      "definition_status": "已定",
+      "note": "用户确认等于hot_reheat.P，已落实",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.rh_before_spray.T",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "再热器2出口、减温前温度",
+      "definition_status": "测点已选",
+      "note": "Excel已选HAJ80WP001BT01，原单位℃；两炉历史缺失，现已绑定并接入",
+      "code": "GARD_12HAJ80WP001BT01XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": false,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.rh_before_spray.m_dot",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "减温前蒸汽流量",
+      "definition_status": "关系明确",
+      "note": "等于reheat_mixed.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.rh_spray.P",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "再热减温水压力",
+      "definition_status": "已定",
+      "note": "采用出口母管P，不另做节流状态变换",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.rh_spray.T",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "再热减温水温度",
+      "definition_status": "已定",
+      "note": "采用出口母管热力状态，不考虑节流",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.rh_spray.m_dot",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "再热减温水质量流量",
+      "definition_status": "测点已定，计算来源待核",
+      "note": "LAF80WP001BF02，t/h；DCS计算值已有历史，不是独立实测已验证",
+      "code": "GARD_12LAF80WP001BF02XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.rh_after_spray.P",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "再热减温后、再热器3前压力",
+      "definition_status": "已定",
+      "note": "用户确认等于hot_reheat.P",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.rh_after_spray.T",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "减温后蒸汽温度",
+      "definition_status": "测点已选",
+      "note": "HAJ80WP011BT07，原描述中压喷水后温度，℃；物理取点需随拓扑同步核对",
+      "code": "GARD_12HAJ80WP011BT07XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.rh_after_spray.m_dot",
+      "unit": 2,
+      "group": "再热减温",
+      "meaning": "减温后蒸汽总流量",
+      "definition_status": "关系明确",
+      "note": "reheat_mixed.m_dot+rh_spray.m_dot=hot_reheat.m_dot，已实现",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2.hot_reheat.P",
+      "unit": 2,
+      "group": "热再热与接口",
+      "meaning": "锅炉热再热出口压力",
+      "definition_status": "已定",
+      "note": "现有绑定",
+      "code": "GARD_12LBB01WP001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.hot_reheat.T",
+      "unit": 2,
+      "group": "热再热与接口",
+      "meaning": "锅炉热再热出口温度",
+      "definition_status": "已定",
+      "note": "使用BT13选择值；原%按用户授权℃解释，导入加273.15转K，原始来源保留",
+      "code": "GARD_12LBB01WP001BT13XQ01",
+      "original_units": [
+        "%"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.hot_reheat.m_dot",
+      "unit": 2,
+      "group": "热再热与接口",
+      "meaning": "锅炉热再热出口总流量",
+      "definition_status": "已定",
+      "note": "原流量补偿后选择值，现有绑定",
+      "code": "GARD_12LBB01WP001BF03XQ01",
+      "original_units": [
+        "t/h"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.rh_to_st.P",
+      "unit": 2,
+      "group": "热再热与接口",
+      "meaning": "至汽机热再热压力",
+      "definition_status": "已定",
+      "note": "独立接口位置测点，不自动替代锅炉出口",
+      "code": "GARD_12LBB10WP001BP02XQ01",
+      "original_units": [
+        "MPa"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.rh_to_st.T",
+      "unit": 2,
+      "group": "热再热与接口",
+      "meaning": "至汽机热再热温度",
+      "definition_status": "已定",
+      "note": "独立接口位置测点，不自动替代hot_reheat.T",
+      "code": "GARD_12LBB10WP001BT05XQ01",
+      "original_units": [
+        "℃"
+      ],
+      "historical_file_exists": true,
+      "bound_in_ip_data_py": true
+    },
+    {
+      "field": "hrsg2.rh_to_st.m_dot",
+      "unit": 2,
+      "group": "热再热与接口",
+      "meaning": "送往汽机的热再热流量",
+      "definition_status": "已定",
+      "note": "用户确认等于hot_reheat.m_dot，已落实",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2_ip.work",
+      "unit": 2,
+      "group": "边界量",
+      "meaning": "IP工质系统边界功，输出正",
+      "definition_status": "暂不考虑",
+      "note": "用户暂不考虑系统能量输入输出，保持None，不使用电流计算",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2_ip.heat",
+      "unit": 2,
+      "group": "边界量",
+      "meaning": "IP工质系统净入热",
+      "definition_status": "暂不考虑",
+      "note": "用户暂不考虑系统能量输入输出，保持None",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    },
+    {
+      "field": "hrsg2_ip.heat_exergy",
+      "unit": 2,
+      "group": "边界量",
+      "meaning": "热量穿过IP边界携带的火用",
+      "definition_status": "暂不考虑",
+      "note": "系统能量/完整火用暂不计算，保持None而非0",
+      "code": null,
+      "original_units": [],
+      "historical_file_exists": null,
+      "bound_in_ip_data_py": false
+    }
+  ],
+  "removed_legacy_field_count": 72,
+  "legacy": []
+}

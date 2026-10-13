@@ -1,9 +1,19 @@
 """hrsg2_ip measurement configuration."""
 import pandas as pd
 
+UNIT_OVERRIDES = {
+    "hrsg2.hot_reheat.T": {
+        "code": "GARD_12LBB01WP001BT13XQ01", "original_unit": "%", "effective_unit": "℃",
+        "authority": "用户于2026-10-13明确要求当前热再热温度选择值按摄氏度解释；导入转K",
+    },
+}
+
 # 1. 原始测点和数据导入
 POINT_BINDINGS = pd.DataFrame(
     [
+        ["hrsg2.lp_drum_pressure", "GARD_12HAG11CM001BP02XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
+        ["hrsg2.ip_pump1.current", "GARD_12LAB81QM003BC01XQ01", "A", "A", 1.0, 0.0, None],
+        ["hrsg2.ip_pump2.current", "GARD_12LAB82QM003BC01XQ01", "A", "A", 1.0, 0.0, None],
         ["hrsg2.ip_pump1_out.P", "GARD_12LAB81WP011BP01XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
         ["hrsg2.ip_pump2_out.P", "GARD_12LAB82WP012BP01XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
         ["hrsg2.ip_feed.P", "GARD_12HAC02WP001BP01XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
@@ -17,8 +27,10 @@ POINT_BINDINGS = pd.DataFrame(
         ["hrsg2.reheat_mixed.P", "GARD_12LBC80WP001BP01XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
         ["hrsg2.reheat_mixed.T", "GARD_12LBC80WP001BT01XQ01", "℃", "\u2103", 1.0, 273.15, None],
         ["hrsg2.rh_spray.m_dot", "GARD_12LAF80WP001BF02XQ01", "t/h", "t/h", 1 / 3.6, 0.0, None],
+        ["hrsg2.rh_before_spray.T", "GARD_12HAJ80WP001BT01XQ01", "℃", "℃", 1.0, 273.15, None],
         ["hrsg2.rh_after_spray.T", "GARD_12HAJ80WP011BT07XQ01", "℃", "\u2103", 1.0, 273.15, None],
         ["hrsg2.hot_reheat.P", "GARD_12LBB01WP001BP02XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
+        ["hrsg2.hot_reheat.T", "GARD_12LBB01WP001BT13XQ01", "℃", "℃", 1.0, 273.15, None],
         ["hrsg2.hot_reheat.m_dot", "GARD_12LBB01WP001BF03XQ01", "t/h", "t/h", 1 / 3.6, 0.0, None],
         ["hrsg2.cold_reheat.P", "GARD_12LBC10WP001BP01XQ01", "MPa", "MPa", 1000000.0, 0.0, "absolute"],
         ["hrsg2.cold_reheat.T", "GARD_12LBC10WP001BT02XQ01", "℃", "\u2103", 1.0, 273.15, None],

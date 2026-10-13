@@ -1,0 +1,2766 @@
+{
+  "date": "2026-10-13",
+  "scope": "two IP feedwater circuits and connected reheat source prerequisites; read-only audit, no model/Excel edits",
+  "user_deferred_items": [
+    "missing LP drum history files to be supplied later",
+    "pressure basis confirmation deferred"
+  ],
+  "units": [
+    {
+      "unit": 1,
+      "bound_inputs": 25,
+      "bound_inputs_with_history": 23,
+      "window": {
+        "start": "2024-06-01T00:30:00+08:00",
+        "end": "2024-06-01T01:00:00+08:00"
+      },
+      "raw_means_with_sufficient_coverage": 11,
+      "si_values_available": 10,
+      "raw_point_means": {
+        "GARD_11HAC02WP001BF03XQ01": 5.4685404616258335,
+        "GARD_11HAC02WP001BP01XQ01": null,
+        "GARD_11HAC02WP001BT01XQ01": null,
+        "GARD_11HAH80WP011BF03XQ01": null,
+        "GARD_11HAH80WP011BP02XQ01": 0.031585681602290555,
+        "GARD_11HAH80WP011BT02XQ01": 24.3119822407477,
+        "GARD_11HAJ80WP011BT07XQ01": null,
+        "GARD_11HBK02CM001BP02XQ01": null,
+        "GARD_11LAB81QM003BC01XQ01": null,
+        "GARD_11LAB81WP011BP01XQ01": null,
+        "GARD_11LAB82QM003BC01XQ01": null,
+        "GARD_11LAB82WP012BP01XQ01": -0.02845497489080258,
+        "GARD_11LAF80WP001BF02XQ01": 2.2803766996537225,
+        "GARD_11LAF80WP002BT01XQ01": 27.786305172602223,
+        "GARD_11LBB01WP001BF03XQ01": null,
+        "GARD_11LBB01WP001BP02XQ01": null,
+        "GARD_11LBB01WP001BT13XQ01": 32.47147073013333,
+        "GARD_11LBB10WP001BP02XQ01": 0.030312096632528332,
+        "GARD_11LBB10WP001BT05XQ01": null,
+        "GARD_11LBC10WP001BP01XQ01": 0.001512032044470739,
+        "GARD_11LBC10WP001BT02XQ01": 26.667718219736113,
+        "GARD_11LBC80WP001BP01XQ01": null,
+        "GARD_11LBC80WP001BT01XQ01": 24.40177545730278
+      },
+      "si_inputs": {
+        "hrsg1.lp_drum_pressure": null,
+        "hrsg1.ip_pump1.current": null,
+        "hrsg1.ip_pump2.current": null,
+        "hrsg1.ip_pump1_out.P": null,
+        "hrsg1.ip_pump2_out.P": null,
+        "hrsg1.ip_feed.P": null,
+        "hrsg1.ip_feed.T": null,
+        "hrsg1.ip_feed.m_dot": 1.5190390171182873,
+        "hrsg1.ip_to_drum.T": 300.9363051726022,
+        "hrsg1.ip_drum_pressure": null,
+        "hrsg1.ip_fresh.P": 31585.681602290555,
+        "hrsg1.ip_fresh.T": 297.46198224074766,
+        "hrsg1.ip_fresh.m_dot": null,
+        "hrsg1.reheat_mixed.P": null,
+        "hrsg1.reheat_mixed.T": 297.55177545730277,
+        "hrsg1.rh_spray.m_dot": 0.633437972126034,
+        "hrsg1.rh_before_spray.T": null,
+        "hrsg1.rh_after_spray.T": null,
+        "hrsg1.hot_reheat.P": null,
+        "hrsg1.hot_reheat.T": 305.6214707301333,
+        "hrsg1.hot_reheat.m_dot": null,
+        "hrsg1.cold_reheat.P": 1512.0320444707388,
+        "hrsg1.cold_reheat.T": 299.8177182197361,
+        "hrsg1.rh_to_st.P": 30312.096632528333,
+        "hrsg1.rh_to_st.T": null
+      },
+      "legacy_active_device_count": 12,
+      "legacy_extra_devices": [],
+      "feedwater_pressure_description": "#1炉中压省煤器进水压力",
+      "feedwater_temperature_description": "#1炉中压省煤器进水温度"
+    },
+    {
+      "unit": 2,
+      "bound_inputs": 25,
+      "bound_inputs_with_history": 23,
+      "window": {
+        "start": "2024-06-01T00:30:00+08:00",
+        "end": "2024-06-01T01:00:00+08:00"
+      },
+      "raw_means_with_sufficient_coverage": 12,
+      "si_values_available": 11,
+      "raw_point_means": {
+        "GARD_12HAC02WP001BF03XQ01": 5.9681785044362226,
+        "GARD_12HAC02WP001BP01XQ01": 0.0059123849437315995,
+        "GARD_12HAC02WP001BT01XQ01": null,
+        "GARD_12HAG02CM001BP02XQ01": 0.08125508386592667,
+        "GARD_12HAH80WP011BF03XQ01": null,
+        "GARD_12HAH80WP011BP02XQ01": 0.03726429216298332,
+        "GARD_12HAH80WP011BT02XQ01": 21.184718438188707,
+        "GARD_12HAJ80WP011BT07XQ01": null,
+        "GARD_12LAB81QM003BC01XQ01": null,
+        "GARD_12LAB81WP011BP01XQ01": null,
+        "GARD_12LAB82QM003BC01XQ01": null,
+        "GARD_12LAB82WP012BP01XQ01": -0.0353315541490857,
+        "GARD_12LAF80WP001BF02XQ01": null,
+        "GARD_12LAF80WP002BT01XQ01": 27.633027498536666,
+        "GARD_12LBB01WP001BF03XQ01": null,
+        "GARD_12LBB01WP001BP02XQ01": null,
+        "GARD_12LBB01WP001BT13XQ01": 31.98009698106889,
+        "GARD_12LBB10WP001BP02XQ01": 0.02494520966788111,
+        "GARD_12LBB10WP001BT05XQ01": null,
+        "GARD_12LBC10WP001BP01XQ01": 0.0025214109871449886,
+        "GARD_12LBC10WP001BT02XQ01": 26.349551925541668,
+        "GARD_12LBC80WP001BP01XQ01": null,
+        "GARD_12LBC80WP001BT01XQ01": 25.58993400222889
+      },
+      "si_inputs": {
+        "hrsg2.lp_drum_pressure": null,
+        "hrsg2.ip_pump1.current": null,
+        "hrsg2.ip_pump2.current": null,
+        "hrsg2.ip_pump1_out.P": null,
+        "hrsg2.ip_pump2_out.P": null,
+        "hrsg2.ip_feed.P": 5912.384943731599,
+        "hrsg2.ip_feed.T": null,
+        "hrsg2.ip_feed.m_dot": 1.6578273623433952,
+        "hrsg2.ip_to_drum.T": 300.7830274985366,
+        "hrsg2.ip_drum_pressure": 81255.08386592667,
+        "hrsg2.ip_fresh.P": 37264.29216298332,
+        "hrsg2.ip_fresh.T": 294.3347184381887,
+        "hrsg2.ip_fresh.m_dot": null,
+        "hrsg2.reheat_mixed.P": null,
+        "hrsg2.reheat_mixed.T": 298.7399340022289,
+        "hrsg2.rh_spray.m_dot": null,
+        "hrsg2.rh_before_spray.T": null,
+        "hrsg2.rh_after_spray.T": null,
+        "hrsg2.hot_reheat.P": null,
+        "hrsg2.hot_reheat.T": 305.13009698106885,
+        "hrsg2.hot_reheat.m_dot": null,
+        "hrsg2.cold_reheat.P": 2521.4109871449887,
+        "hrsg2.cold_reheat.T": 299.49955192554165,
+        "hrsg2.rh_to_st.P": 24945.20966788111,
+        "hrsg2.rh_to_st.T": null
+      },
+      "legacy_active_device_count": 12,
+      "legacy_extra_devices": [],
+      "feedwater_pressure_description": "#2炉中压省煤器进水压力",
+      "feedwater_temperature_description": "#2炉中压省煤器进水温度"
+    }
+  ],
+  "parameters": [
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.lp_drum_pressure",
+      "code": "GARD_11HBK11CM001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HBK11CM001BP02XQ01",
+          "plant_code": "11HAD90CP101-SEL",
+          "point_type": "AX",
+          "description": "#1炉低压汽包压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2920,
+          "code_cell": "B2920",
+          "description_cell": "D2920",
+          "unit_cell": "E2920"
+        }
+      ],
+      "excel": {
+        "row": 102,
+        "values": [
+          "1号炉低压汽包压力",
+          "hrsg1.lp_drum_pressure",
+          "GARD_11HBK11CM001BP02XQ01",
+          "MPa",
+          "hrsg1_lp",
+          "点表-高安屯.xlsx：DCS!B2920/E2920；压力基准待确认"
+        ]
+      },
+      "history": [],
+      "unit_override": null,
+      "problems": [
+        "history_file_missing"
+      ]
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_pump1.current",
+      "code": "GARD_11LAB81QM003BC01XQ01",
+      "status": "bound",
+      "expected_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_11LAB81QM003BC01XQ01",
+          "plant_code": "11LAB81CE102",
+          "point_type": "AX",
+          "description": "#1炉1号中压给水泵电流",
+          "unit": "A",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1578,
+          "code_cell": "B1578",
+          "description_cell": "D1578",
+          "unit_cell": "E1578"
+        }
+      ],
+      "excel": {
+        "row": 48,
+        "values": [
+          "1号炉中压给水泵1电流",
+          "hrsg1.ip_pump1.current",
+          "GARD_11LAB81QM003BC01XQ01",
+          "A",
+          "hrsg1_ip",
+          "用户确认单泵运行，>10 A为运行；仅状态识别，不算电功"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉1号中压给水泵电流+GARD_11LAB81QM003BC01XQ01.parquet",
+          "bytes": 158977617,
+          "rows": 27006416,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:08:43.534000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -4.9999986,
+          "metadata_value_max": 343.4814
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_pump2.current",
+      "code": "GARD_11LAB82QM003BC01XQ01",
+      "status": "bound",
+      "expected_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_11LAB82QM003BC01XQ01",
+          "plant_code": "11LAB82CE102",
+          "point_type": "AX",
+          "description": "#1炉#2中压给水泵电流",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1770,
+          "code_cell": "B1770",
+          "description_cell": "D1770",
+          "unit_cell": "E1770"
+        }
+      ],
+      "excel": {
+        "row": 49,
+        "values": [
+          "1号炉中压给水泵2电流",
+          "hrsg1.ip_pump2.current",
+          "GARD_11LAB82QM003BC01XQ01",
+          "A",
+          "hrsg1_ip",
+          "用户确认单泵运行，>10 A为运行；仅状态识别，不算电功；用户指定原%按A解释"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉#2中压给水泵电流+GARD_11LAB82QM003BC01XQ01.parquet",
+          "bytes": 163688445,
+          "rows": 27056461,
+          "row_groups": 212,
+          "min_time": "2024-06-01T00:02:35.270000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -4.291055,
+          "metadata_value_max": 281.76932
+        }
+      ],
+      "unit_override": {
+        "code": "GARD_11LAB82QM003BC01XQ01",
+        "original_unit": "%",
+        "effective_unit": "A",
+        "authority": "用户于2026-10-13明确要求中压电流按A解释"
+      },
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_pump1_out.P",
+      "code": "GARD_11LAB81WP011BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LAB81WP011BP01XQ01",
+          "plant_code": "11LAB81CP101",
+          "point_type": "AX",
+          "description": "#1炉#1中压给水泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1579,
+          "code_cell": "B1579",
+          "description_cell": "D1579",
+          "unit_cell": "E1579"
+        }
+      ],
+      "excel": {
+        "row": 46,
+        "values": [
+          "1号炉中压给水泵1出口压力",
+          "hrsg1.ip_pump1_out.P",
+          "GARD_11LAB81WP011BP01XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1579/E1579；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉#1中压给水泵出口压力+GARD_11LAB81WP011BP01XQ01.parquet",
+          "bytes": 147486902,
+          "rows": 26404152,
+          "row_groups": 207,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.055724055,
+          "metadata_value_max": 4.364369
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_pump2_out.P",
+      "code": "GARD_11LAB82WP012BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LAB82WP012BP01XQ01",
+          "plant_code": "11LAB82CP101",
+          "point_type": "AX",
+          "description": "#1炉#2中压给水泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1771,
+          "code_cell": "B1771",
+          "description_cell": "D1771",
+          "unit_cell": "E1771"
+        }
+      ],
+      "excel": {
+        "row": 47,
+        "values": [
+          "1号炉中压给水泵2出口压力",
+          "hrsg1.ip_pump2_out.P",
+          "GARD_11LAB82WP012BP01XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1771/E1771；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉#2中压给水泵出口压力+GARD_11LAB82WP012BP01XQ01.parquet",
+          "bytes": 157769909,
+          "rows": 26422135,
+          "row_groups": 207,
+          "min_time": "2024-06-01T00:00:34.292000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.04550798,
+          "metadata_value_max": 4.2545714
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_feed.P",
+      "code": "GARD_11HAC02WP001BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HAC02WP001BP01XQ01",
+          "plant_code": "11LAB85CP101",
+          "point_type": "AX",
+          "description": "#1炉中压省煤器进水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1776,
+          "code_cell": "B1776",
+          "description_cell": "D1776",
+          "unit_cell": "E1776"
+        }
+      ],
+      "excel": {
+        "row": 50,
+        "values": [
+          "1号炉中压给水压力",
+          "hrsg1.ip_feed.P",
+          "GARD_11HAC02WP001BP01XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1776/E1776；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压省煤器进水压力+GARD_11HAC02WP001BP01XQ01.parquet",
+          "bytes": 168246070,
+          "rows": 26883538,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.014859746,
+          "metadata_value_max": 5.5783296
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_feed.T",
+      "code": "GARD_11HAC02WP001BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAC02WP001BT01XQ01",
+          "plant_code": "11LAB85CT601",
+          "point_type": "AX",
+          "description": "#1炉中压省煤器进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1777,
+          "code_cell": "B1777",
+          "description_cell": "D1777",
+          "unit_cell": "E1777"
+        }
+      ],
+      "excel": {
+        "row": 51,
+        "values": [
+          "1号炉中压给水温度",
+          "hrsg1.ip_feed.T",
+          "GARD_11HAC02WP001BT01XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1777/E1777"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压省煤器进水温度+GARD_11HAC02WP001BT01XQ01.parquet",
+          "bytes": 52966051,
+          "rows": 23657823,
+          "row_groups": 185,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 9.508147,
+          "metadata_value_max": 169.98431
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_feed.m_dot",
+      "code": "GARD_11HAC02WP001BF03XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11HAC02WP001BF03XQ01",
+          "plant_code": "11LAB85CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉中压省煤器进水流量选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2719,
+          "code_cell": "B2719",
+          "description_cell": "D2719",
+          "unit_cell": "E2719"
+        }
+      ],
+      "excel": {
+        "row": 52,
+        "values": [
+          "1号炉中压给水质量流量",
+          "hrsg1.ip_feed.m_dot",
+          "GARD_11HAC02WP001BF03XQ01",
+          "t/h",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2719/E2719"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压省煤器进水流量选择值+GARD_11HAC02WP001BF03XQ01.parquet",
+          "bytes": 184210921,
+          "rows": 27485609,
+          "row_groups": 215,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.35272443,
+          "metadata_value_max": 94.53372
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_to_drum.T",
+      "code": "GARD_11LAF80WP002BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LAF80WP002BT01XQ01",
+          "plant_code": "11HAC80CT601",
+          "point_type": "AX",
+          "description": "#1炉中压汽包进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1706,
+          "code_cell": "B1706",
+          "description_cell": "D1706",
+          "unit_cell": "E1706"
+        }
+      ],
+      "excel": {
+        "row": 54,
+        "values": [
+          "1号炉中压汽包入口温度",
+          "hrsg1.ip_to_drum.T",
+          "GARD_11LAF80WP002BT01XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1706/E1706"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压汽包进水温度+GARD_11LAF80WP002BT01XQ01.parquet",
+          "bytes": 173912540,
+          "rows": 27221457,
+          "row_groups": 213,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 241.70354
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_drum_pressure",
+      "code": "GARD_11HBK02CM001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11HBK02CM001BP02XQ01",
+          "plant_code": "11HAD80CP101-SEL",
+          "point_type": "AX",
+          "description": "#1炉中压汽包压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2917,
+          "code_cell": "B2917",
+          "description_cell": "D2917",
+          "unit_cell": "E2917"
+        }
+      ],
+      "excel": {
+        "row": 55,
+        "values": [
+          "1号炉中压汽包压力",
+          "hrsg1.ip_drum_pressure",
+          "GARD_11HBK02CM001BP02XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2917/E2917；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压汽包压力选择值+GARD_11HBK02CM001BP02XQ01.parquet",
+          "bytes": 98286242,
+          "rows": 24834810,
+          "row_groups": 195,
+          "min_time": "2024-06-01T00:06:16.920000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.019775424,
+          "metadata_value_max": 3.3469238
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_fresh.P",
+      "code": "GARD_11HAH80WP011BP02XQ01",
+      "status": "bound",
+      "expected_unit": "Mpa",
+      "master_records": [
+        {
+          "code": "GARD_11HAH80WP011BP02XQ01",
+          "plant_code": "11HAH80CP101-SEL",
+          "point_type": "AX",
+          "description": "#1炉中压过热器出口压力",
+          "unit": "Mpa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2770,
+          "code_cell": "B2770",
+          "description_cell": "D2770",
+          "unit_cell": "E2770"
+        }
+      ],
+      "excel": {
+        "row": 56,
+        "values": [
+          "1号炉中压新蒸汽压力",
+          "hrsg1.ip_fresh.P",
+          "GARD_11HAH80WP011BP02XQ01",
+          "Mpa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2770/E2770；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压过热器出口压力+GARD_11HAH80WP011BP02XQ01.parquet",
+          "bytes": 102478748,
+          "rows": 25005499,
+          "row_groups": 196,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.047241233,
+          "metadata_value_max": 3.269409
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_fresh.T",
+      "code": "GARD_11HAH80WP011BT02XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAH80WP011BT02XQ01",
+          "plant_code": "11HAH80CT601-SEL",
+          "point_type": "AX",
+          "description": "#1炉中压过热器出口温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2772,
+          "code_cell": "B2772",
+          "description_cell": "D2772",
+          "unit_cell": "E2772"
+        }
+      ],
+      "excel": {
+        "row": 57,
+        "values": [
+          "1号炉中压新蒸汽温度",
+          "hrsg1.ip_fresh.T",
+          "GARD_11HAH80WP011BT02XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2772/E2772"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压过热器出口温度+GARD_11HAH80WP011BT02XQ01.parquet",
+          "bytes": 57300834,
+          "rows": 23873093,
+          "row_groups": 187,
+          "min_time": "2024-06-01T00:02:01.188000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 12.849456,
+          "metadata_value_max": 333.64127
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.ip_fresh.m_dot",
+      "code": "GARD_11HAH80WP011BF03XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11HAH80WP011BF03XQ01",
+          "plant_code": "11HAH80CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉中压过热器出口蒸汽流量选择",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2768,
+          "code_cell": "B2768",
+          "description_cell": "D2768",
+          "unit_cell": "E2768"
+        }
+      ],
+      "excel": {
+        "row": 58,
+        "values": [
+          "1号炉中压新蒸汽质量流量",
+          "hrsg1.ip_fresh.m_dot",
+          "GARD_11HAH80WP011BF03XQ01",
+          "t/h",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2768/E2768；用户确认汽包饱和蒸汽量复用此点"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉中压过热器出口蒸汽流量选择+GARD_11HAH80WP011BF03XQ01.parquet",
+          "bytes": 159039111,
+          "rows": 27109309,
+          "row_groups": 212,
+          "min_time": "2024-06-01T00:00:10.798000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.22540157,
+          "metadata_value_max": 80.25261
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.reheat_mixed.P",
+      "code": "GARD_11LBC80WP001BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LBC80WP001BP01XQ01",
+          "plant_code": "11LBC80CP101",
+          "point_type": "AX",
+          "description": "#1炉冷再热混合后蒸汽压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1820,
+          "code_cell": "B1820",
+          "description_cell": "D1820",
+          "unit_cell": "E1820"
+        }
+      ],
+      "excel": {
+        "row": 61,
+        "values": [
+          "1号炉再热器入口混合蒸汽压力",
+          "hrsg1.reheat_mixed.P",
+          "GARD_11LBC80WP001BP01XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1820/E1820；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉冷再热混合后蒸汽压力+GARD_11LBC80WP001BP01XQ01.parquet",
+          "bytes": 129707743,
+          "rows": 25342399,
+          "row_groups": 198,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.04592518,
+          "metadata_value_max": 3.1994638
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.reheat_mixed.T",
+      "code": "GARD_11LBC80WP001BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LBC80WP001BT01XQ01",
+          "plant_code": "11LBC80CT601",
+          "point_type": "AX",
+          "description": "#1炉冷再热混合后蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1821,
+          "code_cell": "B1821",
+          "description_cell": "D1821",
+          "unit_cell": "E1821"
+        }
+      ],
+      "excel": {
+        "row": 62,
+        "values": [
+          "1号炉再热器入口混合蒸汽温度",
+          "hrsg1.reheat_mixed.T",
+          "GARD_11LBC80WP001BT01XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1821/E1821"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉冷再热混合后蒸汽温度+GARD_11LBC80WP001BT01XQ01.parquet",
+          "bytes": 170613600,
+          "rows": 27150769,
+          "row_groups": 213,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 371.72858
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.rh_spray.m_dot",
+      "code": "GARD_11LAF80WP001BF02XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11LAF80WP001BF02XQ01",
+          "plant_code": "11LAF80CF101-X",
+          "point_type": "AX",
+          "description": "#1炉再热减温水流量计算值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2787,
+          "code_cell": "B2787",
+          "description_cell": "D2787",
+          "unit_cell": "E2787"
+        }
+      ],
+      "excel": {
+        "row": 53,
+        "values": [
+          "1号炉再热减温水质量流量",
+          "hrsg1.rh_spray.m_dot",
+          "GARD_11LAF80WP001BF02XQ01",
+          "t/h",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2787/E2787；DCS计算值，需核对计算来源"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉再热减温水流量计算值+GARD_11LAF80WP001BF02XQ01.parquet",
+          "bytes": 163558649,
+          "rows": 27427281,
+          "row_groups": 215,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 17.608997
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.rh_before_spray.T",
+      "code": "GARD_11HAJ80WP001BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAJ80WP001BT01XQ01",
+          "plant_code": "11HAJ80CT601",
+          "point_type": "AX",
+          "description": "#1炉再热器2出口蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1742,
+          "code_cell": "B1742",
+          "description_cell": "D1742",
+          "unit_cell": "E1742"
+        }
+      ],
+      "excel": {
+        "row": 63,
+        "values": [
+          "1号炉再热减温前蒸汽温度",
+          "hrsg1.rh_before_spray.T",
+          "GARD_11HAJ80WP001BT01XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B1742/E1742"
+        ]
+      },
+      "history": [],
+      "unit_override": null,
+      "problems": [
+        "history_file_missing"
+      ]
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.rh_after_spray.T",
+      "code": "GARD_11HAJ80WP011BT07XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11HAJ80WP011BT07XQ01",
+          "plant_code": "11HAJ80CT602-SEL",
+          "point_type": "AX",
+          "description": "中压喷水后温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 12781,
+          "code_cell": "B12781",
+          "description_cell": "D12781",
+          "unit_cell": "E12781"
+        }
+      ],
+      "excel": {
+        "row": 64,
+        "values": [
+          "1号炉再热减温后蒸汽温度",
+          "hrsg1.rh_after_spray.T",
+          "GARD_11HAJ80WP011BT07XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B12781/E12781"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/中压喷水后温度.3+GARD_11HAJ80WP011BT07XQ01.parquet",
+          "bytes": 64346909,
+          "rows": 23850408,
+          "row_groups": 187,
+          "min_time": "2024-06-01T00:00:23.853000+08:00",
+          "max_time": "2025-04-30T23:59:59.731000+08:00",
+          "metadata_value_min": 20.661161,
+          "metadata_value_max": 519.22205
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.hot_reheat.P",
+      "code": "GARD_11LBB01WP001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BP02XQ01",
+          "plant_code": "11LBB80CP101-SEL",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2766,
+          "code_cell": "B2766",
+          "description_cell": "D2766",
+          "unit_cell": "E2766"
+        }
+      ],
+      "excel": {
+        "row": 65,
+        "values": [
+          "1号炉热再热蒸汽压力",
+          "hrsg1.hot_reheat.P",
+          "GARD_11LBB01WP001BP02XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2766/E2766；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉热再热蒸汽压力选择值+GARD_11LBB01WP001BP02XQ01.parquet",
+          "bytes": 148682871,
+          "rows": 26326919,
+          "row_groups": 206,
+          "min_time": "2024-06-01T00:08:58.983000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.062497284,
+          "metadata_value_max": 3.82
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.hot_reheat.T",
+      "code": "GARD_11LBB01WP001BT13XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BT13XQ01",
+          "plant_code": "11LBB80CT611-SEL",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽温度选择值",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2764,
+          "code_cell": "B2764",
+          "description_cell": "D2764",
+          "unit_cell": "E2764"
+        }
+      ],
+      "excel": {
+        "row": 66,
+        "values": [
+          "1号炉热再热蒸汽温度",
+          "hrsg1.hot_reheat.T",
+          "GARD_11LBB01WP001BT13XQ01",
+          "℃",
+          "hrsg1_ip",
+          "热再热温度选择值；用户指定原%按℃解释，导入转K；原点表证据保留"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉热再热蒸汽温度选择值+GARD_11LBB01WP001BT13XQ01.parquet",
+          "bytes": 169635380,
+          "rows": 27209841,
+          "row_groups": 213,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 553.9253
+        }
+      ],
+      "unit_override": {
+        "code": "GARD_11LBB01WP001BT13XQ01",
+        "original_unit": "%",
+        "effective_unit": "℃",
+        "authority": "用户于2026-10-13明确要求当前热再热温度选择值按摄氏度解释；导入转K"
+      },
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.hot_reheat.m_dot",
+      "code": "GARD_11LBB01WP001BF03XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BF03XQ01",
+          "plant_code": "11LBB80CF101-SEL",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽流量补偿后选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2756,
+          "code_cell": "B2756",
+          "description_cell": "D2756",
+          "unit_cell": "E2756"
+        }
+      ],
+      "excel": {
+        "row": 67,
+        "values": [
+          "1号炉热再热蒸汽质量流量",
+          "hrsg1.hot_reheat.m_dot",
+          "GARD_11LBB01WP001BF03XQ01",
+          "t/h",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2756/E2756"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉热再热蒸汽流量补偿后选择值+GARD_11LBB01WP001BF03XQ01.parquet",
+          "bytes": 168952508,
+          "rows": 26986223,
+          "row_groups": 211,
+          "min_time": "2024-06-01T00:09:41.241000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 463.97867
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.cold_reheat.P",
+      "code": "GARD_11LBC10WP001BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LBC10WP001BP01XQ01",
+          "plant_code": "11LBC10CP101",
+          "point_type": "AX",
+          "description": "至1号炉冷再热蒸汽压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 157,
+          "code_cell": "B157",
+          "description_cell": "D157",
+          "unit_cell": "E157"
+        }
+      ],
+      "excel": {
+        "row": 59,
+        "values": [
+          "1号炉冷再热蒸汽压力",
+          "hrsg1.cold_reheat.P",
+          "GARD_11LBC10WP001BP01XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B157/E157；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/至1号炉冷再热蒸汽压力+GARD_11LBC10WP001BP01XQ01.parquet",
+          "bytes": 129413931,
+          "rows": 24809870,
+          "row_groups": 194,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.11794925,
+          "metadata_value_max": 3.2004182
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.cold_reheat.T",
+      "code": "GARD_11LBC10WP001BT02XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LBC10WP001BT02XQ01",
+          "plant_code": "11LBC10CT601",
+          "point_type": "AX",
+          "description": "至#1炉冷再热蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 159,
+          "code_cell": "B159",
+          "description_cell": "D159",
+          "unit_cell": "E159"
+        }
+      ],
+      "excel": {
+        "row": 60,
+        "values": [
+          "1号炉冷再热蒸汽温度",
+          "hrsg1.cold_reheat.T",
+          "GARD_11LBC10WP001BT02XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B159/E159"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/至#1炉冷再热蒸汽温度+GARD_11LBC10WP001BT02XQ01.parquet",
+          "bytes": 167877790,
+          "rows": 26768916,
+          "row_groups": 210,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 13.990256,
+          "metadata_value_max": 390.77786
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.rh_to_st.P",
+      "code": "GARD_11LBB10WP001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_11LBB10WP001BP02XQ01",
+          "plant_code": "11LBB10CP101-SEL",
+          "point_type": "AX",
+          "description": "#1热再热蒸汽压力选择",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2697,
+          "code_cell": "B2697",
+          "description_cell": "D2697",
+          "unit_cell": "E2697"
+        }
+      ],
+      "excel": {
+        "row": 68,
+        "values": [
+          "1号炉热再热蒸汽压力（至汽机测点）",
+          "hrsg1.rh_to_st.P",
+          "GARD_11LBB10WP001BP02XQ01",
+          "MPa",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B2697/E2697；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1热再热蒸汽压力选择+GARD_11LBB10WP001BP02XQ01.parquet",
+          "bytes": 106014801,
+          "rows": 25282772,
+          "row_groups": 198,
+          "min_time": "2024-06-01T00:00:24.290000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.068573065,
+          "metadata_value_max": 3.1064756
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 1,
+      "system": "hrsg1_ip",
+      "field": "hrsg1.rh_to_st.T",
+      "code": "GARD_11LBB10WP001BT05XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_11LBB10WP001BT05XQ01",
+          "plant_code": "11LBB10CT601",
+          "point_type": "AX",
+          "description": "#1炉至汽机热再热蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 143,
+          "code_cell": "B143",
+          "description_cell": "D143",
+          "unit_cell": "E143"
+        }
+      ],
+      "excel": {
+        "row": 69,
+        "values": [
+          "1号炉热再热蒸汽温度（至汽机测点）",
+          "hrsg1.rh_to_st.T",
+          "GARD_11LBB10WP001BT05XQ01",
+          "℃",
+          "hrsg1_ip",
+          "点表-高安屯.xlsx：DCS!B143/E143"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#1炉至汽机热再热蒸汽温度+GARD_11LBB10WP001BT05XQ01.parquet",
+          "bytes": 53431616,
+          "rows": 23801924,
+          "row_groups": 186,
+          "min_time": "2024-06-01T00:01:46.310000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 24.381823,
+          "metadata_value_max": 554.51263
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.lp_drum_pressure",
+      "code": "GARD_12HAG11CM001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAG11CM001BP02XQ01",
+          "plant_code": "12HAD90CP101-SEL",
+          "point_type": "AX",
+          "description": "#2炉低压汽包压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2930,
+          "code_cell": "B2930",
+          "description_cell": "D2930",
+          "unit_cell": "E2930"
+        }
+      ],
+      "excel": {
+        "row": 183,
+        "values": [
+          "2号炉低压汽包压力",
+          "hrsg2.lp_drum_pressure",
+          "GARD_12HAG11CM001BP02XQ01",
+          "MPa",
+          "hrsg2_lp",
+          "点表-高安屯.xlsx：DCS!B2930/E2930；压力基准待确认"
+        ]
+      },
+      "history": [],
+      "unit_override": null,
+      "problems": [
+        "history_file_missing"
+      ]
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_pump1.current",
+      "code": "GARD_12LAB81QM003BC01XQ01",
+      "status": "bound",
+      "expected_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_12LAB81QM003BC01XQ01",
+          "plant_code": "12LAB81CE102",
+          "point_type": "AX",
+          "description": "#2炉1号中压给水泵电流",
+          "unit": "A",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2080,
+          "code_cell": "B2080",
+          "description_cell": "D2080",
+          "unit_cell": "E2080"
+        }
+      ],
+      "excel": {
+        "row": 129,
+        "values": [
+          "2号炉中压给水泵1电流",
+          "hrsg2.ip_pump1.current",
+          "GARD_12LAB81QM003BC01XQ01",
+          "A",
+          "hrsg2_ip",
+          "用户确认单泵运行，>10 A为运行；仅状态识别，不算电功"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉1号中压给水泵电流+GARD_12LAB81QM003BC01XQ01.parquet",
+          "bytes": 159755986,
+          "rows": 27227509,
+          "row_groups": 213,
+          "min_time": "2024-06-01T00:07:48.855000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -2.130128,
+          "metadata_value_max": 299.32248
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_pump2.current",
+      "code": "GARD_12LAB82QM003BC01XQ01",
+      "status": "bound",
+      "expected_unit": "A",
+      "master_records": [
+        {
+          "code": "GARD_12LAB82QM003BC01XQ01",
+          "plant_code": "12LAB82CE102",
+          "point_type": "AX",
+          "description": "#2炉2号中压给水泵电流",
+          "unit": "A",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2271,
+          "code_cell": "B2271",
+          "description_cell": "D2271",
+          "unit_cell": "E2271"
+        }
+      ],
+      "excel": {
+        "row": 130,
+        "values": [
+          "2号炉中压给水泵2电流",
+          "hrsg2.ip_pump2.current",
+          "GARD_12LAB82QM003BC01XQ01",
+          "A",
+          "hrsg2_ip",
+          "用户确认单泵运行，>10 A为运行；仅状态识别，不算电功"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉2号中压给水泵电流+GARD_12LAB82QM003BC01XQ01.parquet",
+          "bytes": 152206282,
+          "rows": 27140688,
+          "row_groups": 213,
+          "min_time": "2024-06-01T00:01:12.717000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -4.9999986,
+          "metadata_value_max": 320.166
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_pump1_out.P",
+      "code": "GARD_12LAB81WP011BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LAB81WP011BP01XQ01",
+          "plant_code": "12LAB81CP101",
+          "point_type": "AX",
+          "description": "#2炉#1中压给水泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2081,
+          "code_cell": "B2081",
+          "description_cell": "D2081",
+          "unit_cell": "E2081"
+        }
+      ],
+      "excel": {
+        "row": 127,
+        "values": [
+          "2号炉中压给水泵1出口压力",
+          "hrsg2.ip_pump1_out.P",
+          "GARD_12LAB81WP011BP01XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2081/E2081；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉#1中压给水泵出口压力+GARD_12LAB81WP011BP01XQ01.parquet",
+          "bytes": 161688557,
+          "rows": 26062973,
+          "row_groups": 204,
+          "min_time": "2024-06-01T00:07:18.767000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 4.462833
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_pump2_out.P",
+      "code": "GARD_12LAB82WP012BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LAB82WP012BP01XQ01",
+          "plant_code": "12LAB82CP101",
+          "point_type": "AX",
+          "description": "#2炉#2中压给水泵出口压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2272,
+          "code_cell": "B2272",
+          "description_cell": "D2272",
+          "unit_cell": "E2272"
+        }
+      ],
+      "excel": {
+        "row": 128,
+        "values": [
+          "2号炉中压给水泵2出口压力",
+          "hrsg2.ip_pump2_out.P",
+          "GARD_12LAB82WP012BP01XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2272/E2272；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉#2中压给水泵出口压力+GARD_12LAB82WP012BP01XQ01.parquet",
+          "bytes": 169354377,
+          "rows": 26304756,
+          "row_groups": 206,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0402258,
+          "metadata_value_max": 4.4366355
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_feed.P",
+      "code": "GARD_12HAC02WP001BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAC02WP001BP01XQ01",
+          "plant_code": "12LAB85CP101",
+          "point_type": "AX",
+          "description": "#2炉中压省煤器进水压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2277,
+          "code_cell": "B2277",
+          "description_cell": "D2277",
+          "unit_cell": "E2277"
+        }
+      ],
+      "excel": {
+        "row": 131,
+        "values": [
+          "2号炉中压给水压力",
+          "hrsg2.ip_feed.P",
+          "GARD_12HAC02WP001BP01XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2277/E2277；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压省煤器进水压力+GARD_12HAC02WP001BP01XQ01.parquet",
+          "bytes": 180129926,
+          "rows": 26643918,
+          "row_groups": 209,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.035291903,
+          "metadata_value_max": 5.2939405
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_feed.T",
+      "code": "GARD_12HAC02WP001BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAC02WP001BT01XQ01",
+          "plant_code": "12LAB85CT601",
+          "point_type": "AX",
+          "description": "#2炉中压省煤器进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2278,
+          "code_cell": "B2278",
+          "description_cell": "D2278",
+          "unit_cell": "E2278"
+        }
+      ],
+      "excel": {
+        "row": 132,
+        "values": [
+          "2号炉中压给水温度",
+          "hrsg2.ip_feed.T",
+          "GARD_12HAC02WP001BT01XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2278/E2278"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压省煤器进水温度+GARD_12HAC02WP001BT01XQ01.parquet",
+          "bytes": 51444212,
+          "rows": 23818475,
+          "row_groups": 187,
+          "min_time": "2024-06-01T00:00:06.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 12.192805,
+          "metadata_value_max": 167.65134
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_feed.m_dot",
+      "code": "GARD_12HAC02WP001BF03XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12HAC02WP001BF03XQ01",
+          "plant_code": "12LAB85CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉中压省煤器进水流量选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2718,
+          "code_cell": "B2718",
+          "description_cell": "D2718",
+          "unit_cell": "E2718"
+        }
+      ],
+      "excel": {
+        "row": 133,
+        "values": [
+          "2号炉中压给水质量流量",
+          "hrsg2.ip_feed.m_dot",
+          "GARD_12HAC02WP001BF03XQ01",
+          "t/h",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2718/E2718"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压省煤器进水流量选择值+GARD_12HAC02WP001BF03XQ01.parquet",
+          "bytes": 188030350,
+          "rows": 27321294,
+          "row_groups": 214,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 94.43933
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_to_drum.T",
+      "code": "GARD_12LAF80WP002BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LAF80WP002BT01XQ01",
+          "plant_code": "12HAC80CT601",
+          "point_type": "AX",
+          "description": "#2炉中压汽包进水温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2205,
+          "code_cell": "B2205",
+          "description_cell": "D2205",
+          "unit_cell": "E2205"
+        }
+      ],
+      "excel": {
+        "row": 135,
+        "values": [
+          "2号炉中压汽包入口温度",
+          "hrsg2.ip_to_drum.T",
+          "GARD_12LAF80WP002BT01XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2205/E2205"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压汽包进水温度+GARD_12LAF80WP002BT01XQ01.parquet",
+          "bytes": 127810796,
+          "rows": 23938695,
+          "row_groups": 188,
+          "min_time": "2024-06-01T00:00:04.286000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 242.41235
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_drum_pressure",
+      "code": "GARD_12HAG02CM001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12HAG02CM001BP02XQ01",
+          "plant_code": "12HAD80CP101-SEL",
+          "point_type": "AX",
+          "description": "#2炉中压汽包压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2927,
+          "code_cell": "B2927",
+          "description_cell": "D2927",
+          "unit_cell": "E2927"
+        }
+      ],
+      "excel": {
+        "row": 136,
+        "values": [
+          "2号炉中压汽包压力",
+          "hrsg2.ip_drum_pressure",
+          "GARD_12HAG02CM001BP02XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2927/E2927；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压汽包压力选择值+GARD_12HAG02CM001BP02XQ01.parquet",
+          "bytes": 103031725,
+          "rows": 24780684,
+          "row_groups": 194,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.028137166,
+          "metadata_value_max": 3.3481443
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_fresh.P",
+      "code": "GARD_12HAH80WP011BP02XQ01",
+      "status": "bound",
+      "expected_unit": "Mpa",
+      "master_records": [
+        {
+          "code": "GARD_12HAH80WP011BP02XQ01",
+          "plant_code": "12HAH80CP101-SEL",
+          "point_type": "AX",
+          "description": "#2炉中压过热器出口压力",
+          "unit": "Mpa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2771,
+          "code_cell": "B2771",
+          "description_cell": "D2771",
+          "unit_cell": "E2771"
+        }
+      ],
+      "excel": {
+        "row": 137,
+        "values": [
+          "2号炉中压新蒸汽压力",
+          "hrsg2.ip_fresh.P",
+          "GARD_12HAH80WP011BP02XQ01",
+          "Mpa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2771/E2771；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压过热器出口压力+GARD_12HAH80WP011BP02XQ01.parquet",
+          "bytes": 110721483,
+          "rows": 24882530,
+          "row_groups": 195,
+          "min_time": "2024-06-01T00:00:06.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 0.0034180013,
+          "metadata_value_max": 3.2825317
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_fresh.T",
+      "code": "GARD_12HAH80WP011BT02XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAH80WP011BT02XQ01",
+          "plant_code": "12HAH80CT601-SEL",
+          "point_type": "AX",
+          "description": "#2炉中压过热器出口温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2773,
+          "code_cell": "B2773",
+          "description_cell": "D2773",
+          "unit_cell": "E2773"
+        }
+      ],
+      "excel": {
+        "row": 138,
+        "values": [
+          "2号炉中压新蒸汽温度",
+          "hrsg2.ip_fresh.T",
+          "GARD_12HAH80WP011BT02XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2773/E2773"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压过热器出口温度+GARD_12HAH80WP011BT02XQ01.parquet",
+          "bytes": 52863430,
+          "rows": 23742928,
+          "row_groups": 186,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 11.017004,
+          "metadata_value_max": 334.2281
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.ip_fresh.m_dot",
+      "code": "GARD_12HAH80WP011BF03XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12HAH80WP011BF03XQ01",
+          "plant_code": "12HAH80CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉中压过热器出口蒸汽流量选择",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2769,
+          "code_cell": "B2769",
+          "description_cell": "D2769",
+          "unit_cell": "E2769"
+        }
+      ],
+      "excel": {
+        "row": 139,
+        "values": [
+          "2号炉中压新蒸汽质量流量",
+          "hrsg2.ip_fresh.m_dot",
+          "GARD_12HAH80WP011BF03XQ01",
+          "t/h",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2769/E2769；用户确认汽包饱和蒸汽量复用此点"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉中压过热器出口蒸汽流量选择+GARD_12HAH80WP011BF03XQ01.parquet",
+          "bytes": 171248341,
+          "rows": 26469923,
+          "row_groups": 207,
+          "min_time": "2024-06-01T00:03:32.997000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 81.782974
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.reheat_mixed.P",
+      "code": "GARD_12LBC80WP001BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LBC80WP001BP01XQ01",
+          "plant_code": "12LBC80CP101",
+          "point_type": "AX",
+          "description": "#2炉冷再热混合后蒸汽压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2322,
+          "code_cell": "B2322",
+          "description_cell": "D2322",
+          "unit_cell": "E2322"
+        }
+      ],
+      "excel": {
+        "row": 142,
+        "values": [
+          "2号炉再热器入口混合蒸汽压力",
+          "hrsg2.reheat_mixed.P",
+          "GARD_12LBC80WP001BP01XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2322/E2322；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉冷再热混合后蒸汽压力+GARD_12LBC80WP001BP01XQ01.parquet",
+          "bytes": 100789054,
+          "rows": 23538812,
+          "row_groups": 184,
+          "min_time": "2024-06-01T00:00:04.286000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.040864304,
+          "metadata_value_max": 3.1883447
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.reheat_mixed.T",
+      "code": "GARD_12LBC80WP001BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LBC80WP001BT01XQ01",
+          "plant_code": "12LBC80CT601",
+          "point_type": "AX",
+          "description": "#2炉冷再热混合后蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2323,
+          "code_cell": "B2323",
+          "description_cell": "D2323",
+          "unit_cell": "E2323"
+        }
+      ],
+      "excel": {
+        "row": 143,
+        "values": [
+          "2号炉再热器入口混合蒸汽温度",
+          "hrsg2.reheat_mixed.T",
+          "GARD_12LBC80WP001BT01XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2323/E2323"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉冷再热混合后蒸汽温度+GARD_12LBC80WP001BT01XQ01.parquet",
+          "bytes": 169259005,
+          "rows": 27148539,
+          "row_groups": 213,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 370.18582
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.rh_spray.m_dot",
+      "code": "GARD_12LAF80WP001BF02XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12LAF80WP001BF02XQ01",
+          "plant_code": "12LAF80CF101-X",
+          "point_type": "AX",
+          "description": "#2炉再热减温水流量计算值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2788,
+          "code_cell": "B2788",
+          "description_cell": "D2788",
+          "unit_cell": "E2788"
+        }
+      ],
+      "excel": {
+        "row": 134,
+        "values": [
+          "2号炉再热减温水质量流量",
+          "hrsg2.rh_spray.m_dot",
+          "GARD_12LAF80WP001BF02XQ01",
+          "t/h",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2788/E2788；DCS计算值，需核对计算来源"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉再热减温水流量计算值+GARD_12LAF80WP001BF02XQ01.parquet",
+          "bytes": 95905329,
+          "rows": 25162940,
+          "row_groups": 197,
+          "min_time": "2024-06-01T00:07:05.359000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 18.32351
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.rh_before_spray.T",
+      "code": "GARD_12HAJ80WP001BT01XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAJ80WP001BT01XQ01",
+          "plant_code": "12HAJ80CT601",
+          "point_type": "AX",
+          "description": "#2炉再热器2出口蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2241,
+          "code_cell": "B2241",
+          "description_cell": "D2241",
+          "unit_cell": "E2241"
+        }
+      ],
+      "excel": {
+        "row": 144,
+        "values": [
+          "2号炉再热减温前蒸汽温度",
+          "hrsg2.rh_before_spray.T",
+          "GARD_12HAJ80WP001BT01XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2241/E2241"
+        ]
+      },
+      "history": [],
+      "unit_override": null,
+      "problems": [
+        "history_file_missing"
+      ]
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.rh_after_spray.T",
+      "code": "GARD_12HAJ80WP011BT07XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12HAJ80WP011BT07XQ01",
+          "plant_code": "12HAJ80CT602-SEL",
+          "point_type": "AX",
+          "description": "中压喷水后温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 12090,
+          "code_cell": "B12090",
+          "description_cell": "D12090",
+          "unit_cell": "E12090"
+        }
+      ],
+      "excel": {
+        "row": 145,
+        "values": [
+          "2号炉再热减温后蒸汽温度",
+          "hrsg2.rh_after_spray.T",
+          "GARD_12HAJ80WP011BT07XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B12090/E12090"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/中压喷水后温度.1+GARD_12HAJ80WP011BT07XQ01.parquet",
+          "bytes": 97775126,
+          "rows": 23686476,
+          "row_groups": 186,
+          "min_time": "2024-06-01T00:00:01.848000+08:00",
+          "max_time": "2025-04-30T23:59:59.731000+08:00",
+          "metadata_value_min": 20.562866,
+          "metadata_value_max": 519.5415
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.hot_reheat.P",
+      "code": "GARD_12LBB01WP001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BP02XQ01",
+          "plant_code": "12LBB80CP101-SEL",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽压力选择值",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2767,
+          "code_cell": "B2767",
+          "description_cell": "D2767",
+          "unit_cell": "E2767"
+        }
+      ],
+      "excel": {
+        "row": 146,
+        "values": [
+          "2号炉热再热蒸汽压力",
+          "hrsg2.hot_reheat.P",
+          "GARD_12LBB01WP001BP02XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2767/E2767；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉热再热蒸汽压力选择值+GARD_12LBB01WP001BP02XQ01.parquet",
+          "bytes": 160022560,
+          "rows": 25861247,
+          "row_groups": 203,
+          "min_time": "2024-06-01T00:01:59.110000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.059438985,
+          "metadata_value_max": 3.83
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.hot_reheat.T",
+      "code": "GARD_12LBB01WP001BT13XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BT13XQ01",
+          "plant_code": "12LBB80CT611-SEL",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽温度选择值",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2765,
+          "code_cell": "B2765",
+          "description_cell": "D2765",
+          "unit_cell": "E2765"
+        }
+      ],
+      "excel": {
+        "row": 147,
+        "values": [
+          "2号炉热再热蒸汽温度",
+          "hrsg2.hot_reheat.T",
+          "GARD_12LBB01WP001BT13XQ01",
+          "℃",
+          "hrsg2_ip",
+          "热再热温度选择值；用户指定原%按℃解释，导入转K；原点表证据保留"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉热再热蒸汽温度选择值+GARD_12LBB01WP001BT13XQ01.parquet",
+          "bytes": 149962725,
+          "rows": 25114913,
+          "row_groups": 197,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 554.0764
+        }
+      ],
+      "unit_override": {
+        "code": "GARD_12LBB01WP001BT13XQ01",
+        "original_unit": "%",
+        "effective_unit": "℃",
+        "authority": "用户于2026-10-13明确要求当前热再热温度选择值按摄氏度解释；导入转K"
+      },
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.hot_reheat.m_dot",
+      "code": "GARD_12LBB01WP001BF03XQ01",
+      "status": "bound",
+      "expected_unit": "t/h",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BF03XQ01",
+          "plant_code": "12LBB80CF101-SEL",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽流量补偿后选择值",
+          "unit": "t/h",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2757,
+          "code_cell": "B2757",
+          "description_cell": "D2757",
+          "unit_cell": "E2757"
+        }
+      ],
+      "excel": {
+        "row": 148,
+        "values": [
+          "2号炉热再热蒸汽质量流量",
+          "hrsg2.hot_reheat.m_dot",
+          "GARD_12LBB01WP001BF03XQ01",
+          "t/h",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2757/E2757"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉热再热蒸汽流量补偿后选择值+GARD_12LBB01WP001BF03XQ01.parquet",
+          "bytes": 188845557,
+          "rows": 26842895,
+          "row_groups": 210,
+          "min_time": "2024-06-01T00:03:13.409000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.0,
+          "metadata_value_max": 475.03012
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.cold_reheat.P",
+      "code": "GARD_12LBC10WP001BP01XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LBC10WP001BP01XQ01",
+          "plant_code": "12LBC10CP101",
+          "point_type": "AX",
+          "description": "至2号炉冷再热蒸汽压力",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 353,
+          "code_cell": "B353",
+          "description_cell": "D353",
+          "unit_cell": "E353"
+        }
+      ],
+      "excel": {
+        "row": 140,
+        "values": [
+          "2号炉冷再热蒸汽压力",
+          "hrsg2.cold_reheat.P",
+          "GARD_12LBC10WP001BP01XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B353/E353；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/至2号炉冷再热蒸汽压力+GARD_12LBC10WP001BP01XQ01.parquet",
+          "bytes": 157630976,
+          "rows": 25950245,
+          "row_groups": 203,
+          "min_time": "2024-06-01T00:00:00.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.052009113,
+          "metadata_value_max": 3.2022755
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.cold_reheat.T",
+      "code": "GARD_12LBC10WP001BT02XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LBC10WP001BT02XQ01",
+          "plant_code": "12LBC10CT601",
+          "point_type": "AX",
+          "description": "至#2炉冷再热蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 356,
+          "code_cell": "B356",
+          "description_cell": "D356",
+          "unit_cell": "E356"
+        }
+      ],
+      "excel": {
+        "row": 141,
+        "values": [
+          "2号炉冷再热蒸汽温度",
+          "hrsg2.cold_reheat.T",
+          "GARD_12LBC10WP001BT02XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B356/E356"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/至#2炉冷再热蒸汽温度+GARD_12LBC10WP001BT02XQ01.parquet",
+          "bytes": 122730247,
+          "rows": 23796516,
+          "row_groups": 186,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 24.637016,
+          "metadata_value_max": 394.9856
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.rh_to_st.P",
+      "code": "GARD_12LBB10WP001BP02XQ01",
+      "status": "bound",
+      "expected_unit": "MPa",
+      "master_records": [
+        {
+          "code": "GARD_12LBB10WP001BP02XQ01",
+          "plant_code": "12LBB10CP101-SEL",
+          "point_type": "AX",
+          "description": "#2热再热蒸汽压力选择",
+          "unit": "MPa",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2696,
+          "code_cell": "B2696",
+          "description_cell": "D2696",
+          "unit_cell": "E2696"
+        }
+      ],
+      "excel": {
+        "row": 149,
+        "values": [
+          "2号炉热再热蒸汽压力（至汽机测点）",
+          "hrsg2.rh_to_st.P",
+          "GARD_12LBB10WP001BP02XQ01",
+          "MPa",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B2696/E2696；压力基准待确认"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2热再热蒸汽压力选择+GARD_12LBB10WP001BP02XQ01.parquet",
+          "bytes": 117154295,
+          "rows": 24736818,
+          "row_groups": 194,
+          "min_time": "2024-06-01T00:00:02.284000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": -0.062164314,
+          "metadata_value_max": 3.1115112
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    },
+    {
+      "unit": 2,
+      "system": "hrsg2_ip",
+      "field": "hrsg2.rh_to_st.T",
+      "code": "GARD_12LBB10WP001BT05XQ01",
+      "status": "bound",
+      "expected_unit": "℃",
+      "master_records": [
+        {
+          "code": "GARD_12LBB10WP001BT05XQ01",
+          "plant_code": "12LBB10CT601",
+          "point_type": "AX",
+          "description": "#2炉至汽机热再热蒸汽温度",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 337,
+          "code_cell": "B337",
+          "description_cell": "D337",
+          "unit_cell": "E337"
+        }
+      ],
+      "excel": {
+        "row": 150,
+        "values": [
+          "2号炉热再热蒸汽温度（至汽机测点）",
+          "hrsg2.rh_to_st.T",
+          "GARD_12LBB10WP001BT05XQ01",
+          "℃",
+          "hrsg2_ip",
+          "点表-高安屯.xlsx：DCS!B337/E337"
+        ]
+      },
+      "history": [
+        {
+          "file": "gard_raw_data/#2炉至汽机热再热蒸汽温度+GARD_12LBB10WP001BT05XQ01.parquet",
+          "bytes": 50030246,
+          "rows": 23653792,
+          "row_groups": 185,
+          "min_time": "2024-06-01T00:00:08.286000+08:00",
+          "max_time": "2025-04-30T23:59:59.521000+08:00",
+          "metadata_value_min": 24.878845,
+          "metadata_value_max": 553.08185
+        }
+      ],
+      "unit_override": null,
+      "problems": []
+    }
+  ],
+  "supplementary_temperature_candidates": [
+    {
+      "unit": 1,
+      "field": "hrsg1.hot_reheat.T",
+      "code": "GARD_11LBB01WP001BT10XQ01",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BT10XQ01",
+          "plant_code": "11LBB80CT611",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽温度1",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1817,
+          "code_cell": "B1817",
+          "description_cell": "D1817",
+          "unit_cell": "E1817"
+        }
+      ],
+      "history_exists": false,
+      "is_selected_or_authorized": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.hot_reheat.T",
+      "code": "GARD_11LBB01WP001BT14XQ01",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BT14XQ01",
+          "plant_code": "11LBB80CT612",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽温度2",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1818,
+          "code_cell": "B1818",
+          "description_cell": "D1818",
+          "unit_cell": "E1818"
+        }
+      ],
+      "history_exists": false,
+      "is_selected_or_authorized": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.hot_reheat.T",
+      "code": "GARD_11LBB01WP001BT15XQ01",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BT15XQ01",
+          "plant_code": "11LBB80CT613",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽温度3",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 1819,
+          "code_cell": "B1819",
+          "description_cell": "D1819",
+          "unit_cell": "E1819"
+        }
+      ],
+      "history_exists": false,
+      "is_selected_or_authorized": false
+    },
+    {
+      "unit": 1,
+      "field": "hrsg1.hot_reheat.T",
+      "code": "GARD_11LBB01WP001BT13XQ01",
+      "master_records": [
+        {
+          "code": "GARD_11LBB01WP001BT13XQ01",
+          "plant_code": "11LBB80CT611-SEL",
+          "point_type": "AX",
+          "description": "#1炉热再热蒸汽温度选择值",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2764,
+          "code_cell": "B2764",
+          "description_cell": "D2764",
+          "unit_cell": "E2764"
+        }
+      ],
+      "history_exists": true,
+      "is_selected_or_authorized": true
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.hot_reheat.T",
+      "code": "GARD_12LBB01WP001BT10XQ01",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BT10XQ01",
+          "plant_code": "12LBB80CT611",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽温度1",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2319,
+          "code_cell": "B2319",
+          "description_cell": "D2319",
+          "unit_cell": "E2319"
+        }
+      ],
+      "history_exists": false,
+      "is_selected_or_authorized": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.hot_reheat.T",
+      "code": "GARD_12LBB01WP001BT14XQ01",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BT14XQ01",
+          "plant_code": "12LBB80CT612",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽温度2",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2320,
+          "code_cell": "B2320",
+          "description_cell": "D2320",
+          "unit_cell": "E2320"
+        }
+      ],
+      "history_exists": false,
+      "is_selected_or_authorized": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.hot_reheat.T",
+      "code": "GARD_12LBB01WP001BT15XQ01",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BT15XQ01",
+          "plant_code": "12LBB80CT613",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽温度3",
+          "unit": "℃",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2321,
+          "code_cell": "B2321",
+          "description_cell": "D2321",
+          "unit_cell": "E2321"
+        }
+      ],
+      "history_exists": false,
+      "is_selected_or_authorized": false
+    },
+    {
+      "unit": 2,
+      "field": "hrsg2.hot_reheat.T",
+      "code": "GARD_12LBB01WP001BT13XQ01",
+      "master_records": [
+        {
+          "code": "GARD_12LBB01WP001BT13XQ01",
+          "plant_code": "12LBB80CT611-SEL",
+          "point_type": "AX",
+          "description": "#2炉热再热蒸汽温度选择值",
+          "unit": "%",
+          "note": "",
+          "file": "docs/点表-高安屯.xlsx",
+          "sheet": "DCS",
+          "row": 2765,
+          "code_cell": "B2765",
+          "description_cell": "D2765",
+          "unit_cell": "E2765"
+        }
+      ],
+      "history_exists": true,
+      "is_selected_or_authorized": true
+    }
+  ],
+  "source_hashes": {
+    "C:\\MyFolder\\Projects\\gtcc_optimization\\docs\\点表-高安屯.xlsx": "8011f8910d6dbcc0936b0498e24a38b482a9990c61a55503451b2f8fd9dfc5ea",
+    "C:\\Users\\32697\\Desktop\\全部原始编码.xlsx": "cfd0a684eff06b9cbcfbe22e5ed66ff269a71d1b470ac6e9965dc2a26ef192db"
+  },
+  "interpretation": "File presence and metadata unit match do not prove independent measurement, stable window coverage or valid thermodynamic states. HP exclusive-duty, pump efficiency and pressure approximations are not automatically applied to IP."
+}

@@ -1,0 +1,13 @@
+{
+  "before": 286,
+  "removed_IP_derived": 12,
+  "added_IP_currents": 4,
+  "updated_IP_temperature_units": 2,
+  "after": 278,
+  "example_and_other_systems_preserved": true,
+  "all_spacing_styles_and_blank_sheets_preserved": true,
+  "source_point_workbooks_unchanged": true,
+  "backup": "C:\\MyFolder\\Projects\\gtcc_optimization\\outputs\\20261013_ip_operation\\support\\previous_version.xlsx",
+  "output_sha256": "cfd0a684eff06b9cbcfbe22e5ed66ff269a71d1b470ac6e9965dc2a26ef192db",
+  "delivered_to": "C:\\Users\\32697\\Desktop\\全部原始编码.xlsx"
+}

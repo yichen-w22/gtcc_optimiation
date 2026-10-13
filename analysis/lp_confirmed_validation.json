@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-13",
+  "scope": "LP confirmed measurements, pressure approximations and two separate LP steam merges",
+  "test_command": "python -m pytest tests/test_hrsg_lp.py tests/test_hrsg_ip.py tests/test_hrsg_hp.py tests/test_hp_parameter_audit.py tests/test_data_io.py tests/test_model_layers.py tests/test_stream_builder.py tests/test_gt_systems.py tests/test_system_stream_definitions.py -q -k 'not cooling'",
+  "result": {"passed": 202, "skipped": 1, "deselected": 2, "exit_code": 0},
+  "lp_tests": 36,
+  "coverage": [
+    "Both boilers and exact user-selected return/mixed-state point import locations",
+    "Closed unknown recovery circulation does not block measured mixed P/T or drum feed flow",
+    "Economizer and valve-outlet pressure rules overwrite stale derived values",
+    "Upstream feed states are not silently assigned downstream mixed-state readings",
+    "Missing, negative or above-main steam split flow prevents forced downstream allocation",
+    "Unequal boiler branch flows sum only within their respective turbine or heating destination",
+    "Separate turbine/heating junction mass balances and input immutability"
+  ],
+  "source_audit": {"bindings": 163, "metadata_errors": 0, "pressure_basis_confirmation_deferred": true},
+  "lp_gaps": {"missing_histories": 12, "independent_point_or_state_definitions": 8, "new_shared_header_definitions": 2},
+  "workbook_verification": "lp_parameter_table_verification.json",
+  "limitations": [
+    "Complete ST/heating/plant registry construction still references user-deleted cooling; scoped LP builds and the two steam junctions were tested without restoring cooling",
+    "Other existing heating devices, including network-water boundaries, have not been rebuilt in this LP scope",
+    "Historical-window coverage is incomplete; synthetic behavior tests do not demonstrate an actual plant energy or exergy balance"
+  ]
+}

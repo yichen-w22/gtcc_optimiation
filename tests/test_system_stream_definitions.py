@@ -58,7 +58,7 @@ def test_each_system_supports_selected_streams_by_name(system_name):
     ("hp", "高压汽包饱和蒸汽", 1.0),
     ("ip", "中压汽包饱和蒸汽", 1.0),
     ("lp", "低压汽包饱和蒸汽", 1.0),
-    ("lp", "低压汽包", 0.0),
+    ("lp", "低压汽包水", 0.0),
 ])
 def test_drum_steam_and_water_use_correct_saturated_phase(unit, level, label, quality):
     module = import_module(f"gard.systems.hrsg{unit}_{level}.streams")

@@ -1,0 +1,15 @@
+{
+  "parameters_before": 311,
+  "removed_derived_HP": 20,
+  "removed_environment_acquisition": 1,
+  "added_current_inputs": 4,
+  "parameters_after": 294,
+  "example_preserved": true,
+  "spacing_and_styles_preserved": true,
+  "blank_sheets_preserved": true,
+  "other_system_rows_preserved": true,
+  "source_point_workbooks_unchanged": true,
+  "backup": "C:\\MyFolder\\Projects\\gtcc_optimization\\outputs\\20261013_hp_validation\\support\\previous_version.xlsx",
+  "output_sha256": "b3cf0d193414952d42cd772e6217c650b61d90806d3de23eb8cd1b6871e2bf8f",
+  "delivered_to": "C:\\Users\\32697\\Desktop\\全部原始编码.xlsx"
+}

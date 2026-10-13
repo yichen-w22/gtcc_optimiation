@@ -1,46 +1,57 @@
-"""本系统流股定义；按需构建，输入使用 SI 单位。"""
+"""本系统流股定义；按需构建，输入使用 SI 单位。
+
+入口采用低压汽包饱和液水；出口焓由高压预处理的泵模型生成。
+活动系统使用当前拓扑的组合受热面；旧流股仅供尚未同步的其他系统定位。
+"""
 
 STREAM_DEFINITIONS = {
     "2号炉高压给水泵入口母管": {
         "type": "WaterSteamState",
-        "method": "from_PT",
-        "P": "hrsg2.hp_pump_in.P",
-        "T": "hrsg2.hp_pump_in.T",
+        "method": "from_Px",
+        "P": "hrsg2.lp_drum_pressure",
+        "x": 0.0,
         "m_dot": "hrsg2.hp_pump_in.m_dot",
     },
     "2号炉高压给水泵1入口": {
         "type": "WaterSteamState",
-        "method": "from_PT",
-        "P": "hrsg2.hp_pump1_in.P",
-        "T": "hrsg2.hp_pump1_in.T",
+        "method": "from_Px",
+        "P": "hrsg2.lp_drum_pressure",
+        "x": 0.0,
         "m_dot": "hrsg2.hp_pump1_in.m_dot",
     },
     "2号炉高压给水泵2入口": {
         "type": "WaterSteamState",
-        "method": "from_PT",
-        "P": "hrsg2.hp_pump2_in.P",
-        "T": "hrsg2.hp_pump2_in.T",
+        "method": "from_Px",
+        "P": "hrsg2.lp_drum_pressure",
+        "x": 0.0,
         "m_dot": "hrsg2.hp_pump2_in.m_dot",
     },
     "2号炉高压给水泵1出口": {
         "type": "WaterSteamState",
-        "method": "from_PT",
+        "method": "from_Ph",
         "P": "hrsg2.hp_pump1_out.P",
-        "T": "hrsg2.hp_pump1_out.T",
+        "h": "hrsg2.hp_pump1_out.h",
         "m_dot": "hrsg2.hp_pump1_out.m_dot",
     },
     "2号炉高压给水泵2出口": {
         "type": "WaterSteamState",
-        "method": "from_PT",
+        "method": "from_Ph",
         "P": "hrsg2.hp_pump2_out.P",
-        "T": "hrsg2.hp_pump2_out.T",
+        "h": "hrsg2.hp_pump2_out.h",
         "m_dot": "hrsg2.hp_pump2_out.m_dot",
+    },
+    "2号炉高压给水泵出口母管": {
+        "type": "WaterSteamState",
+        "method": "from_Ph",
+        "P": "hrsg2.hp_pump_out.P",
+        "h": "hrsg2.hp_pump_out.h",
+        "m_dot": "hrsg2.hp_pump_out.m_dot",
     },
     "2号炉低压汽包高压给水泵后": {
         "type": "WaterSteamState",
-        "method": "from_PT",
+        "method": "from_Ph",
         "P": "hrsg2.hp_pump_out.P",
-        "T": "hrsg2.hp_pump_out.T",
+        "h": "hrsg2.hp_pump_out.h",
         "m_dot": "hrsg2.hp_pump_out.m_dot",
     },
     "2号炉高压给水": {
@@ -74,7 +85,7 @@ STREAM_DEFINITIONS = {
     "2号炉高压汽包入口": {
         "type": "WaterSteamState",
         "method": "from_PT",
-        "P": "hrsg2.hp_to_drum.P",
+        "P": "hrsg2.hp_drum_pressure",
         "T": "hrsg2.hp_to_drum.T",
         "m_dot": "hrsg2.hp_to_drum.m_dot",
     },
@@ -108,9 +119,9 @@ STREAM_DEFINITIONS = {
     },
     "2号炉高压减温水": {
         "type": "WaterSteamState",
-        "method": "from_PT",
+        "method": "from_Ph",
         "P": "hrsg2.hp_spray.P",
-        "T": "hrsg2.hp_spray.T",
+        "h": "hrsg2.hp_spray.h",
         "m_dot": "hrsg2.hp_spray.m_dot",
     },
     "2号炉高压减温后蒸汽": {

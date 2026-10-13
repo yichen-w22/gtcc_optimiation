@@ -4,10 +4,10 @@ from typing import Optional
 @dataclass(frozen=True)
 class ReferenceEnv:
     T0: float
-    P0: float
+    P0: float = 101375.0
 
 
-def create_ref_env(T0, P0) -> ReferenceEnv:
+def create_ref_env(T0, P0=101375.0) -> ReferenceEnv:
     T0 = float(T0)
     P0 = float(P0)
     return ReferenceEnv(T0=T0, P0=P0)

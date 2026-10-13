@@ -1,0 +1,14 @@
+{
+  "before": 252,
+  "removed_LP_derived": 10,
+  "added_LP_mixed_T": 2,
+  "added_shared_header_states": 2,
+  "updated_LP_rows": 14,
+  "after": 246,
+  "example_and_other_systems_preserved": true,
+  "all_spacing_styles_and_blank_sheets_preserved": true,
+  "source_point_workbooks_unchanged": true,
+  "backup": "C:\\MyFolder\\Projects\\gtcc_optimization\\outputs\\20261013_lp_confirmed\\support\\previous_version.xlsx",
+  "output_sha256": "5d588fefbbc0611405dd2697a485cd86734852536eee316c67f2d6d3b470b7ba",
+  "delivered_to": "C:\\Users\\32697\\Desktop\\全部原始编码.xlsx"
+}
